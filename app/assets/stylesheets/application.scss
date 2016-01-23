@@ -14,3 +14,46 @@
 /* "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables" */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.alertnotice{
+    height: 10px;
+    margin: 5px 5px 5px 15px;
+    .notice{
+        color: orange;
+    }
+    .alert{
+        color: red;
+    }
+}
+
+.brand{
+    margin-top: -15px;
+    p{
+        color: white;
+    }
+}
+
+body{
+    background-image: url(flu-background.jpg);
+}
+
+#main-container{
+    background-image: linear-gradient(180deg, #4682B4, black);
+    margin-top: 75px;
+    padding: 0px 0px 15px 0px;
+    border: 2px solid;
+    border-color: black;
+    #sidebar{
+        padding: 0px 0px 15px 30px;
+    }
+    #main{
+        padding: 0px 50px 15px 50px;
+        color: white;
+        .actions{
+            color: black;
+        }
+        input{
+            color: black;
+        }
+    }
+}
