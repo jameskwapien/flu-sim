@@ -28,7 +28,7 @@
                     <% end %>
                 </li>
                 <li><% if current_user.present? %>
-                        <p class="navbar-text"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
+                        <%= button_to "Sign Out", destroy_user_session_path, :id => "signout-button", method: :delete %>
                     <% end %>
                 </li>
             </ul>
