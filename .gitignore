@@ -12,10 +12,10 @@
 /db/*.sqlite3-journal
 
 # Ignore the mysql database.
-/config/database.yml
+#/config/database.yml
 
 # Ignore secrets
-/config/secrets.yml
+#/config/secrets.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
