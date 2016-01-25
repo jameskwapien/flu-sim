@@ -1,0 +1,28 @@
+<h1>Show Class Member</h1>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th colspan="7"></th>
+        </td>
+    </thead>
+    <tbody>        
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Instructor?</td>
+            <td>Sign In Count</td>
+            <td>Last Sign in</td>
+            <td colspan="2">Controls</td>
+        </tr>
+        <tr>
+            <td><%= @user.name %></td>
+            <td><%= @user.email %></td>
+            <td><%= @user.instructor %></td>
+            <td><%= @user.sign_in_count %></td>
+            <td><%= @user.current_sign_in_at %></td>
+            <td><%= link_to 'Edit', edit_user_path(@user) %></td>
+            <td><%= link_to 'Back', users_path %></td>
+        </tr>
+    </tbody>
+</table>

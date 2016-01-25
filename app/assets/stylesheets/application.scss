@@ -15,9 +15,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Alerts & Notices */
+
 .alertnotice{
     height: 10px;
-    margin: 5px 5px 5px 15px;
+    margin: 5px 5px 5px 30px;
     .notice{
         color: orange;
     }
@@ -26,8 +28,23 @@
     }
 }
 
+/* Tables */
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{
+    background-color: #333333;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th{
+    background-color: #4682B4;
+    a{
+        color: yellow;
+    }
+}
+
+/* Navbar */
+
 .navbar{
-    background-image: linear-gradient(180deg, #4682B4, black);
+    background: black;
     .navbar-header{
         .brand{
             margin-top: -15px;
@@ -45,21 +62,25 @@
 }
 
 body{
-    background-image: url(flu-background.jpg);
+    height: 100vh;
+    background-image: linear-gradient(180deg, #4682B4, black);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 #main-container{
-    background-image: linear-gradient(180deg, #4682B4, black);
+    background: black;
     margin-top: 75px;
     padding: 0px 0px 15px 0px;
-    border: 2px solid;
-    border-color: white;
+    color: white;
+    h1{
+        color: #4682B2;
+    }
     #sidebar{
         padding: 0px 0px 15px 30px;
     }
     #main{
         padding: 0px 50px 15px 50px;
-        color: white;
         .actions{
             color: black;
         }
