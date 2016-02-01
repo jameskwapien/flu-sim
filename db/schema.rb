@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125050308) do
+ActiveRecord::Schema.define(version: 20160201024036) do
 
   create_table "blogit_comments", force: :cascade do |t|
     t.string   "name",       limit: 255,   null: false
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20160125050308) do
   end
 
   add_index "blogit_posts", ["blogger_type", "blogger_id"], name: "index_blogit_posts_on_blogger_type_and_blogger_id", using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "mem_one",    limit: 255
+    t.string   "mem_two",    limit: 255
+    t.string   "mem_three",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
