@@ -11,43 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201024036) do
+ActiveRecord::Schema.define(version: 20160206210048) do
 
-  create_table "blogit_comments", force: :cascade do |t|
-    t.string   "name",       limit: 255,   null: false
-    t.string   "email",      limit: 255,   null: false
-    t.string   "website",    limit: 255
-    t.text     "body",       limit: 65535, null: false
-    t.integer  "post_id",    limit: 4,     null: false
-    t.string   "state",      limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "comments", force: :cascade do |t|
+    t.integer  "post_id",    limit: 4
+    t.integer  "user_id",    limit: 4
+    t.text     "comment",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
-  add_index "blogit_comments", ["post_id"], name: "index_blogit_comments_on_post_id", using: :btree
-
-  create_table "blogit_posts", force: :cascade do |t|
-    t.string   "title",          limit: 255,                     null: false
-    t.text     "body",           limit: 65535,                   null: false
-    t.string   "state",          limit: 255,   default: "draft", null: false
-    t.integer  "comments_count", limit: 4,     default: 0,       null: false
-    t.integer  "blogger_id",     limit: 4
-    t.string   "blogger_type",   limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "description",    limit: 65535
-  end
-
-  add_index "blogit_posts", ["blogger_type", "blogger_id"], name: "index_blogit_posts_on_blogger_type_and_blogger_id", using: :btree
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.string   "mem_one",    limit: 255
-    t.string   "mem_two",    limit: 255
-    t.string   "mem_three",  limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "content",    limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
@@ -84,9 +75,14 @@ ActiveRecord::Schema.define(version: 20160201024036) do
     t.datetime "updated_at",                                         null: false
     t.boolean  "instructor",                         default: false
     t.string   "name",                   limit: 255
+    t.integer  "group_id",               limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["group_id"], name: "index_users_on_group_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "users"
 end
