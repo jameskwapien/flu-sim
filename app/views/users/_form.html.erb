@@ -11,7 +11,6 @@
     </div>
   <% end %>
   
-  <% if false %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
@@ -34,12 +33,6 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>  
-  <% end %>
-
-  <div class="field">
-    <%= f.label :group_id %><br />
-    <%= f.collection_select :id, Group.all, :id, :name, prompt: true %>
-  </div> 
 
   <br />
 

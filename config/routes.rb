@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  resources :memberships
   # devise authentication gem routes
   devise_scope :user do
     root to: "devise/sessions#new"
