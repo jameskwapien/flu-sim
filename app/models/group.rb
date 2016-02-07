@@ -1,4 +1,4 @@
 class Group < ActiveRecord::Base
-  has_many :members, class_name: "User", inverse_of: :user
-
+  has_many :memberships
+  has_many :users, :through => :memberships
 end
