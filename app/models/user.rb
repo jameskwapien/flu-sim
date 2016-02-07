@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_one :memberships
-  has_one :groups, :through => :memberships
+  belongs_to :group
+  accepts_nested_attributes_for :group
 end

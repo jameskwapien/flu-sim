@@ -10,18 +10,19 @@
         <tr>
             <td>Name</td>
             <td>Email</td>
+            <td>Group</td>
             <td>Instructor?</td>
             <td>Sign In Count</td>
             <td>Last Sign in</td>
-            <td colspan="2">Controls</td>
+            <td colspan="1">Controls</td>
         </tr>
         <tr>
             <td><%= @user.name %></td>
             <td><%= @user.email %></td>
+            <td><%= @user.group_id %></td>
             <td><%= @user.instructor %></td>
             <td><%= @user.sign_in_count %></td>
             <td><%= @user.current_sign_in_at %></td>
-            <td><%= link_to 'Edit', edit_user_path(@user) %></td>
             <td><%= link_to 'Back', users_path %></td>
         </tr>
     </tbody>

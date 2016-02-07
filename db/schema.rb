@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207020911) do
+ActiveRecord::Schema.define(version: 20160207060629) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -85,9 +85,11 @@ ActiveRecord::Schema.define(version: 20160207020911) do
     t.datetime "updated_at",                                         null: false
     t.boolean  "instructor",                         default: false
     t.string   "name",                   limit: 255
+    t.integer  "group_id",               limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["group_id"], name: "index_users_on_group_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "comments", "posts"
@@ -95,4 +97,5 @@ ActiveRecord::Schema.define(version: 20160207020911) do
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "users", "groups"
 end

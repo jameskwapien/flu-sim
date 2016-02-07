@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
-
-  resources :groups
-  resources :groups
-  get 'student/index'
-  
+    
   # devise authentication gem routes
   devise_scope :user do
     root to: "devise/sessions#new"
   end
   
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :users
+  resources :users  
   
+  resources :groups
+  
+  get 'student/index'
   get 'instructor/index'
 
 # The priority is based upon order of creation: first created -> highest priority.
