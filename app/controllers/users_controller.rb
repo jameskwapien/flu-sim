@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @groupless = User.not_in_any_group
   end
 
   # GET /users/new

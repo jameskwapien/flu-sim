@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.select :user_id, User.all.collect { |u| [ u.name, u.id] } %>
+    <%= f.collection_select :user_id, User.student.not_in_any_group, :id, :name, prompt: true %>
   </div>
 
   <div class="field">
     <%= f.label :group_id %><br />
-    <%= f.select :group_id, Group.all.collect { |g| [ g.name, g.id ] } %>
+    <%= f.collection_select :group_id, Group.all, :id, :name, prompt: true %>    
   </div>
 
   <br />  
