@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>FluSim</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if current_user.present? %>
+    <%-#--- BEGIN NAVIGATION BAR ----%>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><%= link_to "FluSim", root_path, method: :get %></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><% if current_user.present? && current_user.instructor? %>
+                            <p class="navbar-text">Instructor Mode</p>
+                        <% elsif current_user.present? && !current_user.instructor? %>
+                            <p class="navbar-text">Student Mode</p>
+                        <% end %>
+                    </li>
+                    <li><% if current_user.present? %>
+                            <p class="navbar-text"><%= current_user.name %></p>
+                        <% end %>
+                    </li>
+                    <li><% if current_user.present? %>
+                            <%= button_to "Sign Out", destroy_user_session_path, :id => "signout-button", method: :delete %>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<%-#--- END NAVIGATION BAR ----%>
+<% end %>
+
+<%-#--- BEGIN MAIN CONTAINER ----%>
+<div id="main-container" class="container">
+    <%-#--- BEGIN FIRST ROW ----%>
+    <div class="row">
+        <div id="sidebar" class="col-xs-6 col-md-3">
+            <% if !current_user.present? %>
+                <%= render "partials/welcome" %>
+            <% elsif current_user.instructor? %>
+                <%= render "partials/icontrol" %>
+            <% else %>
+                <%= render "partials/scontrol" %>
+            <% end %>
+        </div>
+        <div id="main" class="col-xs-6 col-md-9">
+            <%= yield %>
+        </div>
+    </div>
+    <%-#--- END FIRST ROW ----%>
+</div>
+<%-#--- END MAIN CONTAINER ----%>
+
+<%-#--- BEGIN FOOTER BAR ----%>
+<% if notice || alert %>
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="alertnotice">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+        </div>
+    </nav>
+<% end %>
+<%-#--- END FOOTER BAR ----%>
+
+</body>
+</html>

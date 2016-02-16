@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ */
+
+/* "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables" */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Alerts & Notices */
+
+.alertnotice{
+    height: 10px;
+    margin: 5px 5px 5px 30px;
+    .notice{
+        color: orange;
+    }
+    .alert{
+        color: red;
+    }
+}
+
+/* Tables */
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{
+    background-color: #333333;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th{
+    background-color: #4682B4;
+    a{
+        color: yellow;
+    }
+}
+
+/* Navbar */
+
+.navbar{
+    background: black;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    font-family: "Futura", "Cocon", Serif;
+    font-size: x-large;
+    color: #4682B4;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: yellow;
+}
+
+
+.navbar-inverse .navbar-nav > li > p{
+    color: white;
+}
+
+#signout-button{
+    margin-top: 13px;
+}
+
+/* body */
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(180deg, #4682B4, black);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#main-container{
+    background: black;
+    margin-top: 75px;
+    padding: 0px 0px 15px 0px;
+    color: white;
+    a:hover{
+      color: yellow;
+    }
+    h1{
+        color: white; 
+    }
+    #sidebar{
+        padding: 0px 0px 15px 30px;
+    }
+    #main{
+        padding: 0px 50px 15px 50px;
+        .actions{
+            color: black;
+        }
+        input{
+            color: black;
+        }
+    }
+}
