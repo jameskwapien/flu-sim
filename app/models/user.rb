@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :memberships
   has_many :groups, through: :memberships
+  has_many :posts
+  has_many :comments
 
   def self.instructor
     User.where(instructor: true)
