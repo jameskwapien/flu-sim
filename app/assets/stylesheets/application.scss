@@ -45,13 +45,18 @@
 
 .navbar{
     background: black;
-    .navbar-header{
-        .brand{
-            margin-top: -15px;
-            color: white;
-        }
-    }
 }
+
+.navbar-inverse .navbar-nav > li > a{
+    font-family: "Futura", "Cocon", Serif;
+    font-size: x-large;
+    color: #4682B4;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: yellow;
+}
+
 
 .navbar-inverse .navbar-nav > li > p{
     color: white;
@@ -60,6 +65,8 @@
 #signout-button{
     margin-top: 13px;
 }
+
+/* body */
 
 body{
     height: 100vh;
@@ -73,14 +80,23 @@ body{
     margin-top: 75px;
     padding: 0px 0px 15px 0px;
     color: white;
+    a:hover{
+      color: yellow;
+    }
     h1{
-        color: #4682B2;
+        color: white; 
     }
     #sidebar{
         padding: 0px 0px 15px 30px;
     }
     #main{
         padding: 0px 50px 15px 50px;
+        .field{
+            color: black;
+            label{
+                color: white;
+            }
+        }
         .actions{
             color: black;
         }

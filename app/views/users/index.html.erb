@@ -1,26 +1,28 @@
 <h1>Classlist</h1>
 
+<hr />
+
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th colspan="5"></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th colspan="2">Controls</th>
     </tr>
   </thead>
-
   <tbody>
-    <tr>
-        <td>Name</td>
-        <td>Email</td>
-        <td colspan="3">Controls</td>
-    </tr>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if !user.instructor? %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= link_to 'Show', user %></td>
+          <% if false %>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

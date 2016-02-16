@@ -1,14 +1,29 @@
 <h1>Control Panel</h1>
 
+<hr />
+
+<%= link_to 'Forum', instructor_index_path, class: 'btn btn-lg' %><br />
+<%= link_to 'Classlist', users_path, class: 'btn btn-lg' %><br />
+<%= link_to 'Groups', groups_path, class: 'btn btn-lg' %><br />
+<%= link_to 'Memberships', memberships_path, class: 'btn btn-lg' %><br />
+<%= link_to 'Gradebook', instructor_index_path, class: 'btn btn-lg' %><br />
+<%= link_to 'Calendar', instructor_index_path, class: 'btn btn-lg' %>
+
+<% if false %>
+<h1>Control Panel</h1>
+
 <table class="table table-condensed">
-    <tr>
-        <td><%= link_to 'Home', instructor_index_path, class: 'btn btn-lg' %></td>
-    </tr>
     <tr>
         <td><%= link_to 'Forum', instructor_index_path, class: 'btn btn-lg' %></td>
     </tr>
     <tr>
         <td><%= link_to 'Classlist', users_path, class: 'btn btn-lg' %></td>
+    </tr>
+    <tr>
+        <td><%= link_to 'Groups', groups_path, class: 'btn btn-lg' %></td>
+    </tr>
+    <tr>
+        <td><%= link_to 'Memberships', memberships_path, class: 'btn btn-lg' %>
     </tr>
     <tr>
         <td><%= link_to 'Gradebook', instructor_index_path, class: 'btn btn-lg' %></td>
@@ -17,3 +32,4 @@
         <td><%= link_to 'Calendar', instructor_index_path, class: 'btn btn-lg' %></td>
     </td>
 </table>
+<% end %>

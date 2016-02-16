@@ -1,0 +1,19 @@
+<h1>Showing Group</h1>
+ 
+<hr />
+ 
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2">Controls</th>
+    </td>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @group.name %></td>
+      <td><%= link_to 'Edit', edit_group_path(@group) %></td>
+      <td><%= link_to 'Back', groups_path %></td>
+    </tr>
+  </tbody>
+</table>
