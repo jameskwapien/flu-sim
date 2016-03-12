@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Input:</strong>
+  <%= @simulation.input %>
+</p>
+
+
+<%= button_to 'Run', run_java(@simulation.input, simulation_path), method: :get %>
+
+<br />
+
+<%= link_to 'Edit', edit_simulation_path(@simulation) %> |
+<%= link_to 'Back', simulations_path %>

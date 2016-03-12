@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207204030) do
+ActiveRecord::Schema.define(version: 20160312170043) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "post_id",    limit: 4
     t.integer  "user_id",    limit: 4
-    t.text     "comment",    limit: 65535
+    t.integer  "post_id",    limit: 4
+    t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
@@ -38,14 +38,20 @@ ActiveRecord::Schema.define(version: 20160207204030) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
     t.string   "title",      limit: 255
     t.text     "content",    limit: 65535
-    t.integer  "user_id",    limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "simulations", force: :cascade do |t|
+    t.integer  "input",      limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
@@ -82,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160207204030) do
     t.datetime "updated_at",                                         null: false
     t.boolean  "instructor",                         default: false
     t.string   "name",                   limit: 255
+    t.boolean  "admin",                              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
