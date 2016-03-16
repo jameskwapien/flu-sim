@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   get 'student/index'
-  
+  get 'student/test2'
+  get 'student/test2_main'
+  get 'student/test2_menu'
+  get 'student/Rplots'  
   # devise authentication gem routes
   devise_scope :user do
     root to: "devise/sessions#new"
