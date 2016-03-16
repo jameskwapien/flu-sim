@@ -8,12 +8,16 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
+  def self.admin
+    User.where(admin: true)
+  end
+
   def self.instructor
     User.where(instructor: true)
   end
 
   def self.student
-    User.where(instructor: false)
+    User.where(instructor: false, admin: false)
   end
 
   def self.not_in_any_group

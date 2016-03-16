@@ -1,0 +1,26 @@
+<%= simple_form_for(@output) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :group_name %>
+    <%= f.input :money_left %>
+    <%= f.input :money_spent_vaccines %>
+    <%= f.input :money_spent_ads %>
+    <%= f.input :vaccs_left %>
+    <%= f.input :population %>
+    <%= f.input :sick %>
+    <%= f.input :immune %>
+    <%= f.input :pop_age0 %>
+    <%= f.input :sick_age0 %>
+    <%= f.input :pop_age1 %>
+    <%= f.input :sick_age1 %>
+    <%= f.input :pop_age2 %>
+    <%= f.input :sick_age2 %>
+    <%= f.input :day %>
+    <%= f.input :cityID %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

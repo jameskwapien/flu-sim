@@ -1,6 +1,12 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
+  # Create group specific directories
+  def group_directory(group)
+    system "cd app/assets && mkdir '#{group}'"
+  end
+    
+
   # GET /groups
   # GET /groups.json
   def index
@@ -35,6 +41,8 @@ class GroupsController < ApplicationController
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
+
+    group_directory(@group.name)
   end
 
   # PATCH/PUT /groups/1

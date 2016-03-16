@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
  
+  resources :outputs
+  resources :inputs
   resources :simulations
   get 'simulation/show'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :users, :groups, :main
+  resources :users, :groups
   
   resources :posts do
     resources :comments
@@ -18,6 +20,6 @@ Rails.application.routes.draw do
     put :java_test_2
   end
 
-  root "main#index"
+  root "welcome#index"
  
 end

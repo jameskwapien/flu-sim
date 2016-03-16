@@ -1,0 +1,7 @@
+<% if current_user.admin? %>
+  <%= render "partials/admin_welcome" %>
+<% elsif current_user.instructor? %>
+  <%= render "partials/instructor_welcome" %>
+<% else %>
+  <%= render "partials/student_welcome" %>
+<% end %>

@@ -20,9 +20,11 @@
             </div>
             <div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><% if current_user.present? && current_user.instructor? %>
+                    <li><% if current_user.present? && current_user.admin? %>
+                            <p class="navbar-text">Admin Mode</p>
+                        <% elsif current_user.present? && current_user.instructor? %>
                             <p class="navbar-text">Instructor Mode</p>
-                        <% elsif current_user.present? && !current_user.instructor? %>
+                        <% elsif current_user.present? && (!current_user.instructor? && !current_user.admin?) %>
                             <p class="navbar-text">Student Mode</p>
                         <% end %>
                     </li>

@@ -1,9 +1,14 @@
 class SimulationsController < ApplicationController
   before_action :set_simulation, only: [:show, :edit, :update, :destroy]
-  helper_method :run_java
+  helper_method :run_java, :run_sim
 
   def run_java(input, url)
-    @result = system "cd app/assets && java TestJavaApp '#{input}' > output.txt"
+    @result = system "cd app/assets/sim && java TestJavaApp '#{input}' > output.txt"
+    url
+  end
+
+  def run_sim(input, url)
+    @result = system "cd app/assets/sim/test && java -cp .:/usr/share/java/mysql-connector-java-5.1.28.jar Main '#{input}' > output.txt &"
     url
   end
 

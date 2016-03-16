@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312170043) do
+ActiveRecord::Schema.define(version: 20160314032052) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -30,11 +30,41 @@ ActiveRecord::Schema.define(version: 20160312170043) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "inputs", force: :cascade do |t|
+    t.string   "group_name", limit: 30
+    t.integer  "vaccines",   limit: 4
+    t.integer  "school_off", limit: 4
+    t.integer  "days",       limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "group_id",   limit: 4
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "outputs", force: :cascade do |t|
+    t.string   "group_name",           limit: 30
+    t.decimal  "money_left",                      precision: 64, scale: 12
+    t.decimal  "money_spent_vaccines",            precision: 64, scale: 12
+    t.decimal  "money_spent_ads",                 precision: 64, scale: 12
+    t.integer  "vaccs_left",           limit: 4
+    t.integer  "population",           limit: 4
+    t.integer  "sick",                 limit: 4
+    t.integer  "immune",               limit: 4
+    t.integer  "pop_age0",             limit: 4
+    t.integer  "sick_age0",            limit: 4
+    t.integer  "pop_age1",             limit: 4
+    t.integer  "sick_age1",            limit: 4
+    t.integer  "pop_age2",             limit: 4
+    t.integer  "sick_age2",            limit: 4
+    t.integer  "day",                  limit: 4
+    t.integer  "cityID",               limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", force: :cascade do |t|

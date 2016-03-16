@@ -1,0 +1,38 @@
+<%= form_for(@input) do |f| %>
+  <% if @input.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@input.errors.count, "error") %> prohibited this input from being saved:</h2>
+
+      <ul>
+        <% @input.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :group_name %><br />
+    <%= f.text_field :group_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vaccines %><br />
+    <%= f.number_field :vaccines, step: 1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :school_off %>
+    <%= f.number_field :school_off, in: 0..1, step: 1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :days %>
+    <%= f.number_field :days, in: 0..365, step: 1 %>
+  </div>
+
+  <br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

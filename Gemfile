@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use hirb for rails console DB access
 gem 'hirb'
+# cancancan used for authorization
+gem 'cancancan', '~> 1.10' 
+# haml gem for haml code
 gem 'haml', '~> 4.0', '>= 4.0.7'
 
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
