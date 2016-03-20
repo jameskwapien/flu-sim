@@ -14,7 +14,7 @@ class InputsController < ApplicationController
 
   # GET /inputs/new
   def new
-    @input = Input.new(input_params)
+    @input = Input.new
   end
 
   # GET /inputs/1/edit

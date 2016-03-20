@@ -1,3 +1,11 @@
-<h1>Welcome Student</h1>
+<h1>Welcome <%= current_user.name %>!</h1>
 
 <hr />
+
+<% if current_user.memberships.exists? %>
+  You are a member of the group: <%= current_user.memberships.first.group.name %>!
+<% else %>
+  You are not a member of any group. Please contact your instructor in order to be placed within a group.
+<% end %>
+
+

@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :group_name %><br />
-    <%= f.text_field :group_name %>
+    <%= f.text_field :group_name, disabled: true, placeholder: current_user.memberships.first.group.name %>
   </div>
 
   <div class="field">
@@ -22,12 +22,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :school_off %>
+    <%= f.label :school_off %><br />
     <%= f.number_field :school_off, in: 0..1, step: 1 %>
   </div>
 
   <div class="field">
-    <%= f.label :days %>
+    <%= f.label :days %><br />
     <%= f.number_field :days, in: 0..365, step: 1 %>
   </div>
 
