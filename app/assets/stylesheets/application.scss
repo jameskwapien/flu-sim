@@ -76,7 +76,7 @@ body{
 }
 
 #main-container{
-    background: black;
+    #background: black;
     margin-top: 75px;
     padding: 0px 0px 15px 0px;
     color: white;
@@ -85,6 +85,30 @@ body{
     }
     h1{
         color: white; 
+    }
+
+    .jumbotron{
+        background: orange;
+        color: black;
+        font-size: 2em;
+        font-weight: bold;
+    }
+    
+    .panel-default{
+        background: black;
+        padding: 0px 0px 0px 0px;
+        border-color: black;
+        .panel-heading{
+            color: black;
+            background: beige;
+            border-color: beige;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .panel-body{
+            #text-align: center;
+        }
     }
     #sidebar{
         padding: 0px 0px 15px 30px;

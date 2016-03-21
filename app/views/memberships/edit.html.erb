@@ -1,8 +1,7 @@
-<h1>Editing Membership</h1>
+<div class="panel-heading">Editing Membership</div>
 
-<hr />
+<div class="panel-border">
+  <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @membership %> |
-<%= link_to 'Back', memberships_path %>
+  <%= link_to 'Show', @membership %> | <%= link_to 'Back', memberships_path %>
+</div>

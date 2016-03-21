@@ -1,7 +1,6 @@
-%h1= "Forum"
+<div class="panel-heading">Forum</div>
 
-%hr
-
+<div class="panel-body">
 #posts
 	#buttons
 		%h1= link_to "New Post", new_post_path
@@ -14,3 +13,4 @@
 				= time_ago_in_words(post.created_at)
 				ago by
 				= post.user.email
+</div>

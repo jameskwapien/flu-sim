@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
+<div class="panel-heading">Outputs</div>
 
-<h1>Listing Outputs</h1>
-
-<table>
+<div class="panel-body">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Group name</th>
@@ -21,7 +20,6 @@
       <th>Sick age2</th>
       <th>Day</th>
       <th>Cityid</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -44,14 +42,9 @@
         <td><%= output.sick_age2 %></td>
         <td><%= output.day %></td>
         <td><%= output.cityID %></td>
-        <td><%= link_to 'Show', output %></td>
-        <td><%= link_to 'Edit', edit_output_path(output) %></td>
-        <td><%= link_to 'Destroy', output, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Output', new_output_path %>
+</div>

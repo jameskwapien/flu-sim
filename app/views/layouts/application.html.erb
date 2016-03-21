@@ -48,16 +48,20 @@
     <%-#--- BEGIN FIRST ROW ----%>
     <div class="row">
         <div id="sidebar" class="col-xs-6 col-md-3">
-            <% if !current_user.present? %>
-                <%= render "partials/welcome" %>
-            <% elsif current_user.instructor? %>
-                <%= render "partials/icontrol" %>
-            <% else %>
-                <%= render "partials/scontrol" %>
-            <% end %>
+            <div class="panel panel-default">
+                <% if !current_user.present? %>
+                    <%= render "partials/welcome" %>
+                <% elsif current_user.admin? %>
+                    <%= render "partials/acontrol" %>
+                <% elsif current_user.instructor? %>
+                    <%= render "partials/icontrol" %>
+                <% else %>
+                    <%= render "partials/scontrol" %>
+                <% end %>
+            </div>
         </div>
         <div id="main" class="col-xs-6 col-md-9">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
               <%= yield %>
             </div>
         </div>
