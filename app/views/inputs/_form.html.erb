@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :group_name %><br />
-    <%= f.text_field :group_name, disabled: true, placeholder: current_user.memberships.first.group.name %>
+    <%= f.collection_select :group_name, current_user.groups.uniq, :name, :name, prompt: true %>
   </div>
 
   <div class="field">
