@@ -31,8 +31,10 @@ gem 'hirb'
 gem 'cancancan', '~> 1.10' 
 # haml gem for haml code
 gem 'haml', '~> 4.0', '>= 4.0.7'
-
+# simple form gem
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
+# gem to allow attr_accessible and attr_protected
+gem 'protected_attributes'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

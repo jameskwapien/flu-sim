@@ -1,11 +1,27 @@
-<h2>Sign up</h2>
+<div class="panel-heading">Sign up</div>
 
+<div class="panel-body">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :invite_code %><br />
+    <%= text_field_tag "user[invite_code]" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instructor %><br />
+    <%= f.check_box :instructor %>
+  </div>
+
+  <div class="hidden_field">
+    <%= f.label :instructor_code %><br />
+    <%= text_field_tag "user[instructor_code]" %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
@@ -34,3 +50,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

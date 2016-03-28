@@ -7,6 +7,21 @@ class User < ActiveRecord::Base
   has_many :groups, through: :memberships
   has_many :posts
   has_many :comments
+  attr_accessor :invite_code
+  validate :invite_code_valid, :on => :create
+  validate :instructor_code_valid, :on => :create
+
+  def invite_code_valid
+    unless self.invite_code == "000"
+      self.errors.add(:invite_code, "invalid")
+    end
+  end 
+
+  def instructor_code_valid
+    unless self.invite_code == "111"
+      self.errors.add(:instructor_code, "invalid")
+    end
+  end  
 
   def self.admin
     User.where(admin: true)
