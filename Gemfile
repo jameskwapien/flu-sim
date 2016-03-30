@@ -19,6 +19,8 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+#fancybox for image enlargement
+gem 'fancybox2-rails', '~> 0.2.8'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -28,11 +30,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use hirb for rails console DB access
 gem 'hirb'
 # cancancan used for authorization
-gem 'cancancan', '~> 1.10' 
+gem 'cancancan', '~> 1.10'
 # haml gem for haml code
 gem 'haml', '~> 4.0', '>= 4.0.7'
 
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
+#calendar for teacher input
+gem 'jquery-ui-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,4 +55,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

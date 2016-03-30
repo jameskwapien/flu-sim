@@ -71,4 +71,8 @@ class OutputsController < ApplicationController
     def output_params
       params.require(:output).permit(:group_name, :money_left, :money_spent_vaccines, :money_spent_ads, :vaccs_left, :population, :sick, :immune, :pop_age0, :sick_age0, :pop_age1, :sick_age1, :pop_age2, :sick_age2, :day, :cityID)
     end
+
+    def dateSubmit
+         @dateChosen = params[:picker_name]
+    end
 end

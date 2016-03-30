@@ -11,6 +11,14 @@
  * file per style scope.
  */
 
+/*
+*= require_self
+*= require_tree .
+*= require jquery-ui
+*= require fancybox
+*/
+
+
 /* "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables" */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -40,6 +48,12 @@
         color: yellow;
     }
 }
+
+a{
+  color: yellow;
+}
+table{ padding: 5px;
+       margin: 5px;}
 
 /* Navbar */
 
@@ -84,11 +98,21 @@ body{
       color: yellow;
     }
     h1{
-        color: white; 
+        color: white;
+    }
+    h3>a{
+      color: white;
     }
     #sidebar{
         padding: 0px 0px 15px 30px;
     }
+    #sidebar>a{
+      color: silver;
+    }
+    #sidebar>a:hover{
+      color: yellow;
+    }
+    
     #main{
         padding: 0px 50px 15px 50px;
         .field{
