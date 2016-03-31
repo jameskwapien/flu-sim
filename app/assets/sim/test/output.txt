@@ -1,1004 +1,1004 @@
 Starting Simulation
 Success
-YES - com.mysql.jdbc.JDBC4Connection@656e1fa
-[365]Population total for City[0]: 2000
-[365]Sick total: 664
-[365]Ages: 243/674, 211/672, 210/654
--------------------------------------
-[365]Population total for City[1]: 2000
-[365]Sick total: 510
-[365]Ages: 163/635, 175/687, 172/678
--------------------------------------
-[365]Population total for City[2]: 2000
-[365]Sick total: 516
-[365]Ages: 169/637, 176/683, 171/680
--------------------------------------
-[365]Population total for City[3]: 2000
-[365]Sick total: 545
-[365]Ages: 179/679, 181/652, 185/669
--------------------------------------
-[365]Population total for City[4]: 2000
-[365]Sick total: 597
-[365]Ages: 212/661, 180/658, 205/681
--------------------------------------
-[365]Population total for City[5]: 2000
-[365]Sick total: 562
-[365]Ages: 202/689, 171/641, 189/670
--------------------------------------
-[365]Population total for City[6]: 2000
-[365]Sick total: 597
-[365]Ages: 199/679, 203/666, 195/655
--------------------------------------
-[365]Population total for City[7]: 2000
-[365]Sick total: 589
-[365]Ages: 187/670, 211/660, 191/670
--------------------------------------
-[365]Population total for City[8]: 2000
-[365]Sick total: 592
-[365]Ages: 182/628, 224/719, 186/653
--------------------------------------
-[365]Population total for City[9]: 2000
-[365]Sick total: 589
-[365]Ages: 204/643, 193/690, 192/667
--------------------------------------
-[365]Population total for City[10]: 2000
-[365]Sick total: 687
-[365]Ages: 257/696, 213/640, 217/664
--------------------------------------
-[365]Population total for City[11]: 2000
-[365]Sick total: 489
-[365]Ages: 175/656, 153/683, 161/661
--------------------------------------
-[365]Population total for City[12]: 2000
-[365]Sick total: 584
-[365]Ages: 192/634, 203/699, 189/667
--------------------------------------
-[365]Population total for City[13]: 2000
-[365]Sick total: 552
-[365]Ages: 186/672, 174/628, 192/700
--------------------------------------
-[365]Population total for City[14]: 2000
-[365]Sick total: 610
-[365]Ages: 228/666, 194/655, 188/679
--------------------------------------
-[365]Population total for City[15]: 2000
-[365]Sick total: 510
-[365]Ages: 189/689, 142/646, 179/665
--------------------------------------
-[365]Population total for City[16]: 2000
-[365]Sick total: 567
-[365]Ages: 204/682, 194/667, 169/651
--------------------------------------
-[365]Population total for City[17]: 2000
-[365]Sick total: 630
-[365]Ages: 230/705, 208/663, 192/632
--------------------------------------
-[365]Population total for City[18]: 2000
-[365]Sick total: 609
-[365]Ages: 208/661, 218/684, 183/655
--------------------------------------
-[365]Population total for City[19]: 2000
-[365]Sick total: 558
-[365]Ages: 180/654, 207/697, 171/649
--------------------------------------
-[365]Population total for City[20]: 2000
-[365]Sick total: 477
-[365]Ages: 150/670, 148/660, 179/670
--------------------------------------
-[365]Population total for City[21]: 2000
-[365]Sick total: 457
-[365]Ages: 162/644, 155/676, 140/680
--------------------------------------
-[365]Population total for City[22]: 2000
-[365]Sick total: 617
-[365]Ages: 217/691, 203/645, 197/664
--------------------------------------
-[365]Population total for City[23]: 2000
-[365]Sick total: 600
-[365]Ages: 198/687, 204/687, 198/626
--------------------------------------
-[365]Population total for City[24]: 2000
-[365]Sick total: 573
-[365]Ages: 171/663, 203/672, 199/665
--------------------------------------
-[365]Population total for City[25]: 2000
-[365]Sick total: 558
-[365]Ages: 196/662, 188/682, 174/656
+YES - com.mysql.jdbc.JDBC4Connection@61ee30d2
+[25]Population total for City[0]: 2000
+[25]Sick total: 583
+[25]Ages: 189/674, 187/672, 207/654
+-------------------------------------
+[25]Population total for City[1]: 2000
+[25]Sick total: 831
+[25]Ages: 295/658, 274/668, 262/674
+-------------------------------------
+[25]Population total for City[2]: 2000
+[25]Sick total: 800
+[25]Ages: 278/681, 271/666, 251/653
+-------------------------------------
+[25]Population total for City[3]: 2000
+[25]Sick total: 791
+[25]Ages: 282/678, 240/619, 269/703
+-------------------------------------
+[25]Population total for City[4]: 2000
+[25]Sick total: 726
+[25]Ages: 226/685, 270/668, 230/647
+-------------------------------------
+[25]Population total for City[5]: 2000
+[25]Sick total: 667
+[25]Ages: 215/667, 229/675, 223/658
+-------------------------------------
+[25]Population total for City[6]: 2000
+[25]Sick total: 751
+[25]Ages: 245/662, 268/684, 238/654
+-------------------------------------
+[25]Population total for City[7]: 2000
+[25]Sick total: 764
+[25]Ages: 278/688, 240/666, 246/646
+-------------------------------------
+[25]Population total for City[8]: 2000
+[25]Sick total: 729
+[25]Ages: 235/683, 255/657, 239/660
+-------------------------------------
+[25]Population total for City[9]: 2000
+[25]Sick total: 712
+[25]Ages: 246/707, 232/653, 234/640
+-------------------------------------
+[25]Population total for City[10]: 2000
+[25]Sick total: 752
+[25]Ages: 245/669, 269/698, 238/633
+-------------------------------------
+[25]Population total for City[11]: 2000
+[25]Sick total: 708
+[25]Ages: 256/672, 242/701, 210/627
+-------------------------------------
+[25]Population total for City[12]: 2000
+[25]Sick total: 721
+[25]Ages: 246/640, 225/672, 250/688
+-------------------------------------
+[25]Population total for City[13]: 2000
+[25]Sick total: 713
+[25]Ages: 229/644, 251/702, 233/654
+-------------------------------------
+[25]Population total for City[14]: 2000
+[25]Sick total: 665
+[25]Ages: 213/682, 228/670, 224/648
+-------------------------------------
+[25]Population total for City[15]: 2000
+[25]Sick total: 674
+[25]Ages: 195/665, 234/668, 245/667
+-------------------------------------
+[25]Population total for City[16]: 2000
+[25]Sick total: 820
+[25]Ages: 289/669, 283/684, 248/647
+-------------------------------------
+[25]Population total for City[17]: 2000
+[25]Sick total: 732
+[25]Ages: 249/660, 229/652, 254/688
+-------------------------------------
+[25]Population total for City[18]: 2000
+[25]Sick total: 704
+[25]Ages: 223/646, 243/684, 238/670
+-------------------------------------
+[25]Population total for City[19]: 2000
+[25]Sick total: 731
+[25]Ages: 264/665, 241/664, 226/671
+-------------------------------------
+[25]Population total for City[20]: 2000
+[25]Sick total: 735
+[25]Ages: 253/694, 242/652, 240/654
+-------------------------------------
+[25]Population total for City[21]: 2000
+[25]Sick total: 822
+[25]Ages: 273/668, 253/665, 296/667
+-------------------------------------
+[25]Population total for City[22]: 2000
+[25]Sick total: 711
+[25]Ages: 262/673, 218/655, 231/672
+-------------------------------------
+[25]Population total for City[23]: 2000
+[25]Sick total: 703
+[25]Ages: 239/687, 234/656, 230/657
+-------------------------------------
+[25]Population total for City[24]: 2000
+[25]Sick total: 775
+[25]Ages: 248/680, 255/628, 272/692
+-------------------------------------
+[25]Population total for City[25]: 2000
+[25]Sick total: 768
+[25]Ages: 273/676, 260/696, 235/628
 -------------------------------------
-[365]Population total for City[26]: 2000
-[365]Sick total: 514
-[365]Ages: 167/633, 169/664, 178/703
+[25]Population total for City[26]: 2000
+[25]Sick total: 716
+[25]Ages: 240/654, 256/710, 220/636
 -------------------------------------
-[365]Population total for City[27]: 2000
-[365]Sick total: 547
-[365]Ages: 198/652, 184/664, 165/684
+[25]Population total for City[27]: 2000
+[25]Sick total: 758
+[25]Ages: 245/659, 261/661, 252/680
 -------------------------------------
-[365]Population total for City[28]: 2000
-[365]Sick total: 607
-[365]Ages: 184/639, 220/694, 203/667
+[25]Population total for City[28]: 2000
+[25]Sick total: 761
+[25]Ages: 252/660, 253/671, 256/669
 -------------------------------------
-[365]Population total for City[29]: 2000
-[365]Sick total: 546
-[365]Ages: 179/659, 197/687, 170/654
+[25]Population total for City[29]: 2000
+[25]Sick total: 737
+[25]Ages: 274/672, 220/657, 243/671
 -------------------------------------
-[365]Population total for City[30]: 2000
-[365]Sick total: 566
-[365]Ages: 224/689, 178/649, 164/662
+[25]Population total for City[30]: 2000
+[25]Sick total: 787
+[25]Ages: 282/677, 264/677, 241/646
 -------------------------------------
-[365]Population total for City[31]: 2000
-[365]Sick total: 611
-[365]Ages: 234/665, 189/659, 188/676
+[25]Population total for City[31]: 2000
+[25]Sick total: 654
+[25]Ages: 220/628, 196/669, 238/703
 -------------------------------------
-[365]Population total for City[32]: 2000
-[365]Sick total: 604
-[365]Ages: 213/697, 199/642, 192/661
+[25]Population total for City[32]: 2000
+[25]Sick total: 772
+[25]Ages: 282/680, 256/672, 234/648
 -------------------------------------
-[365]Population total for City[33]: 2000
-[365]Sick total: 547
-[365]Ages: 215/653, 144/666, 188/681
+[25]Population total for City[33]: 2000
+[25]Sick total: 718
+[25]Ages: 242/654, 258/692, 218/654
 -------------------------------------
-[365]Population total for City[34]: 2000
-[365]Sick total: 627
-[365]Ages: 219/686, 203/664, 205/650
+[25]Population total for City[34]: 2000
+[25]Sick total: 688
+[25]Ages: 215/676, 223/632, 250/692
 -------------------------------------
-[365]Population total for City[35]: 2000
-[365]Sick total: 590
-[365]Ages: 194/677, 191/652, 205/671
+[25]Population total for City[35]: 2000
+[25]Sick total: 696
+[25]Ages: 211/681, 258/686, 227/633
 -------------------------------------
-[365]Population total for City[36]: 2000
-[365]Sick total: 554
-[365]Ages: 207/722, 182/649, 165/629
+[25]Population total for City[36]: 2000
+[25]Sick total: 749
+[25]Ages: 261/676, 222/642, 266/682
 -------------------------------------
-[365]Population total for City[37]: 2000
-[365]Sick total: 610
-[365]Ages: 209/656, 196/668, 205/676
+[25]Population total for City[37]: 2000
+[25]Sick total: 732
+[25]Ages: 261/661, 236/667, 235/672
 -------------------------------------
-[365]Population total for City[38]: 2000
-[365]Sick total: 516
-[365]Ages: 191/653, 169/695, 156/652
+[25]Population total for City[38]: 2000
+[25]Sick total: 735
+[25]Ages: 248/661, 234/660, 253/679
 -------------------------------------
-[365]Population total for City[39]: 2000
-[365]Sick total: 613
-[365]Ages: 241/664, 192/674, 180/662
+[25]Population total for City[39]: 2000
+[25]Sick total: 749
+[25]Ages: 258/664, 248/668, 243/668
 -------------------------------------
-[365]Population total for City[40]: 2000
-[365]Sick total: 590
-[365]Ages: 187/694, 215/668, 188/638
+[25]Population total for City[40]: 2000
+[25]Sick total: 747
+[25]Ages: 240/695, 244/635, 263/670
 -------------------------------------
-[365]Population total for City[41]: 2000
-[365]Sick total: 541
-[365]Ages: 179/669, 197/692, 165/639
+[25]Population total for City[41]: 2000
+[25]Sick total: 763
+[25]Ages: 247/696, 265/663, 251/641
 -------------------------------------
-[365]Population total for City[42]: 2000
-[365]Sick total: 586
-[365]Ages: 205/667, 181/626, 200/707
+[25]Population total for City[42]: 2000
+[25]Sick total: 643
+[25]Ages: 236/684, 206/665, 201/651
 -------------------------------------
-[365]Population total for City[43]: 2000
-[365]Sick total: 525
-[365]Ages: 156/633, 184/680, 185/687
+[25]Population total for City[43]: 2000
+[25]Sick total: 779
+[25]Ages: 244/625, 250/675, 285/700
 -------------------------------------
-[365]Population total for City[44]: 2000
-[365]Sick total: 615
-[365]Ages: 207/667, 215/685, 193/648
+[25]Population total for City[44]: 2000
+[25]Sick total: 670
+[25]Ages: 217/669, 236/692, 217/639
 -------------------------------------
-[365]Population total for City[45]: 2000
-[365]Sick total: 642
-[365]Ages: 215/669, 213/634, 214/697
+[25]Population total for City[45]: 2000
+[25]Sick total: 808
+[25]Ages: 250/684, 261/614, 297/702
 -------------------------------------
-[365]Population total for City[46]: 2000
-[365]Sick total: 543
-[365]Ages: 178/648, 189/675, 176/677
+[25]Population total for City[46]: 2000
+[25]Sick total: 691
+[25]Ages: 225/657, 217/681, 249/662
 -------------------------------------
-[365]Population total for City[47]: 2000
-[365]Sick total: 569
-[365]Ages: 208/683, 178/656, 183/661
+[25]Population total for City[47]: 2000
+[25]Sick total: 743
+[25]Ages: 268/698, 245/652, 230/650
 -------------------------------------
-[365]Population total for City[48]: 2000
-[365]Sick total: 607
-[365]Ages: 200/683, 208/661, 199/656
+[25]Population total for City[48]: 2000
+[25]Sick total: 774
+[25]Ages: 262/673, 254/651, 258/676
 -------------------------------------
-[365]Population total for City[49]: 2000
-[365]Sick total: 581
-[365]Ages: 184/680, 194/682, 203/638
+[25]Population total for City[49]: 2000
+[25]Sick total: 680
+[25]Ages: 234/682, 217/655, 229/663
 -------------------------------------
-[365]Population total for City[50]: 2000
-[365]Sick total: 487
-[365]Ages: 147/636, 162/685, 178/679
+[25]Population total for City[50]: 2000
+[25]Sick total: 739
+[25]Ages: 271/664, 247/694, 221/642
 -------------------------------------
-[365]Population total for City[51]: 2000
-[365]Sick total: 604
-[365]Ages: 218/631, 200/684, 186/685
+[25]Population total for City[51]: 2000
+[25]Sick total: 777
+[25]Ages: 252/638, 248/661, 277/701
 -------------------------------------
-[365]Population total for City[52]: 2000
-[365]Sick total: 494
-[365]Ages: 185/678, 156/682, 153/640
+[25]Population total for City[52]: 2000
+[25]Sick total: 726
+[25]Ages: 226/616, 244/692, 256/692
 -------------------------------------
-[365]Population total for City[53]: 2000
-[365]Sick total: 582
-[365]Ages: 201/683, 200/669, 181/648
+[25]Population total for City[53]: 2000
+[25]Sick total: 772
+[25]Ages: 252/699, 267/666, 253/635
 -------------------------------------
-[365]Population total for City[54]: 2000
-[365]Sick total: 582
-[365]Ages: 192/656, 194/704, 196/640
+[25]Population total for City[54]: 2000
+[25]Sick total: 730
+[25]Ages: 252/714, 236/611, 242/675
 -------------------------------------
-[365]Population total for City[55]: 2000
-[365]Sick total: 546
-[365]Ages: 220/685, 165/694, 161/621
+[25]Population total for City[55]: 2000
+[25]Sick total: 759
+[25]Ages: 251/687, 259/624, 249/689
 -------------------------------------
-[365]Population total for City[56]: 2000
-[365]Sick total: 596
-[365]Ages: 215/679, 200/671, 181/650
+[25]Population total for City[56]: 2000
+[25]Sick total: 771
+[25]Ages: 251/655, 260/682, 260/663
 -------------------------------------
-[365]Population total for City[57]: 2000
-[365]Sick total: 581
-[365]Ages: 205/689, 195/667, 181/644
+[25]Population total for City[57]: 2000
+[25]Sick total: 719
+[25]Ages: 248/667, 256/677, 215/656
 -------------------------------------
-[365]Population total for City[58]: 2000
-[365]Sick total: 572
-[365]Ages: 215/706, 173/641, 184/653
+[25]Population total for City[58]: 2000
+[25]Sick total: 662
+[25]Ages: 211/638, 221/679, 230/683
 -------------------------------------
-[365]Population total for City[59]: 2000
-[365]Sick total: 616
-[365]Ages: 224/676, 204/654, 188/670
+[25]Population total for City[59]: 2000
+[25]Sick total: 728
+[25]Ages: 249/643, 234/657, 245/700
 -------------------------------------
-[365]Population total for City[60]: 2000
-[365]Sick total: 621
-[365]Ages: 186/632, 228/691, 207/677
+[25]Population total for City[60]: 2000
+[25]Sick total: 693
+[25]Ages: 233/654, 238/697, 222/649
 -------------------------------------
-[365]Population total for City[61]: 2000
-[365]Sick total: 525
-[365]Ages: 199/667, 166/689, 160/644
+[25]Population total for City[61]: 2000
+[25]Sick total: 714
+[25]Ages: 237/668, 241/682, 236/650
 -------------------------------------
-[365]Population total for City[62]: 2000
-[365]Sick total: 571
-[365]Ages: 223/674, 167/650, 181/676
+[25]Population total for City[62]: 2000
+[25]Sick total: 779
+[25]Ages: 270/653, 261/684, 248/663
 -------------------------------------
-[365]Population total for City[63]: 2000
-[365]Sick total: 599
-[365]Ages: 209/666, 204/663, 186/671
+[25]Population total for City[63]: 2000
+[25]Sick total: 718
+[25]Ages: 248/685, 229/640, 241/675
 -------------------------------------
-[365]Population total for City[64]: 2000
-[365]Sick total: 544
-[365]Ages: 196/648, 172/679, 176/673
+[25]Population total for City[64]: 2000
+[25]Sick total: 730
+[25]Ages: 248/672, 238/671, 244/657
 -------------------------------------
-[365]Population total for City[65]: 2000
-[365]Sick total: 624
-[365]Ages: 194/661, 216/647, 214/692
+[25]Population total for City[65]: 2000
+[25]Sick total: 760
+[25]Ages: 244/678, 265/688, 251/634
 -------------------------------------
-[365]Population total for City[66]: 2000
-[365]Sick total: 573
-[365]Ages: 184/669, 199/676, 190/655
+[25]Population total for City[66]: 2000
+[25]Sick total: 790
+[25]Ages: 259/658, 265/658, 266/684
 -------------------------------------
-[365]Population total for City[67]: 2000
-[365]Sick total: 638
-[365]Ages: 225/680, 202/637, 211/683
+[25]Population total for City[67]: 2000
+[25]Sick total: 695
+[25]Ages: 235/637, 246/666, 214/697
 -------------------------------------
-[365]Population total for City[68]: 2000
-[365]Sick total: 572
-[365]Ages: 193/671, 215/692, 164/637
+[25]Population total for City[68]: 2000
+[25]Sick total: 761
+[25]Ages: 260/674, 259/658, 242/668
 -------------------------------------
-[365]Population total for City[69]: 2000
-[365]Sick total: 551
-[365]Ages: 170/680, 196/672, 185/648
+[25]Population total for City[69]: 2000
+[25]Sick total: 737
+[25]Ages: 243/669, 241/656, 253/675
 -------------------------------------
-[365]Population total for City[70]: 2000
-[365]Sick total: 585
-[365]Ages: 195/657, 181/653, 209/690
+[25]Population total for City[70]: 2000
+[25]Sick total: 623
+[25]Ages: 221/683, 196/684, 206/633
 -------------------------------------
-[365]Population total for City[71]: 2000
-[365]Sick total: 517
-[365]Ages: 168/654, 169/676, 180/670
+[25]Population total for City[71]: 2000
+[25]Sick total: 740
+[25]Ages: 252/651, 233/652, 255/697
 -------------------------------------
-[365]Population total for City[72]: 2000
-[365]Sick total: 621
-[365]Ages: 189/697, 222/660, 210/643
+[25]Population total for City[72]: 2000
+[25]Sick total: 678
+[25]Ages: 218/668, 243/669, 217/663
 -------------------------------------
-[365]Population total for City[73]: 2000
-[365]Sick total: 519
-[365]Ages: 175/696, 169/661, 175/643
+[25]Population total for City[73]: 2000
+[25]Sick total: 721
+[25]Ages: 256/689, 235/624, 230/687
 -------------------------------------
-[365]Population total for City[74]: 2000
-[365]Sick total: 536
-[365]Ages: 180/633, 176/683, 180/684
+[25]Population total for City[74]: 2000
+[25]Sick total: 647
+[25]Ages: 207/644, 233/668, 207/688
 -------------------------------------
-[365]Population total for City[75]: 2000
-[365]Sick total: 587
-[365]Ages: 199/657, 195/669, 193/674
+[25]Population total for City[75]: 2000
+[25]Sick total: 756
+[25]Ages: 261/680, 241/668, 254/652
 -------------------------------------
-[365]Population total for City[76]: 2000
-[365]Sick total: 568
-[365]Ages: 196/693, 194/645, 178/662
+[25]Population total for City[76]: 2000
+[25]Sick total: 730
+[25]Ages: 258/667, 250/644, 222/689
 -------------------------------------
-[365]Population total for City[77]: 2000
-[365]Sick total: 581
-[365]Ages: 187/662, 213/680, 181/658
+[25]Population total for City[77]: 2000
+[25]Sick total: 751
+[25]Ages: 253/664, 244/661, 254/675
 -------------------------------------
-[365]Population total for City[78]: 2000
-[365]Sick total: 604
-[365]Ages: 198/678, 208/643, 198/679
+[25]Population total for City[78]: 2000
+[25]Sick total: 670
+[25]Ages: 261/680, 207/649, 202/671
 -------------------------------------
-[365]Population total for City[79]: 2000
-[365]Sick total: 585
-[365]Ages: 203/670, 186/638, 196/692
+[25]Population total for City[79]: 2000
+[25]Sick total: 752
+[25]Ages: 251/656, 252/668, 249/676
 -------------------------------------
-[365]Population total for City[80]: 2000
-[365]Sick total: 586
-[365]Ages: 190/629, 202/675, 194/696
+[25]Population total for City[80]: 2000
+[25]Sick total: 744
+[25]Ages: 258/655, 257/724, 229/621
 -------------------------------------
-[365]Population total for City[81]: 2000
-[365]Sick total: 680
-[365]Ages: 247/678, 209/651, 224/671
+[25]Population total for City[81]: 2000
+[25]Sick total: 674
+[25]Ages: 196/663, 243/659, 235/678
 -------------------------------------
-[365]Population total for City[82]: 2000
-[365]Sick total: 531
-[365]Ages: 159/630, 177/675, 195/695
+[25]Population total for City[82]: 2000
+[25]Sick total: 747
+[25]Ages: 218/669, 259/659, 270/672
 -------------------------------------
-[365]Population total for City[83]: 2000
-[365]Sick total: 518
-[365]Ages: 175/647, 175/671, 168/682
+[25]Population total for City[83]: 2000
+[25]Sick total: 834
+[25]Ages: 294/676, 278/671, 262/653
 -------------------------------------
-[365]Population total for City[84]: 2000
-[365]Sick total: 615
-[365]Ages: 202/661, 216/695, 197/644
+[25]Population total for City[84]: 2000
+[25]Sick total: 763
+[25]Ages: 257/651, 240/644, 266/705
 -------------------------------------
-[365]Population total for City[85]: 2000
-[365]Sick total: 634
-[365]Ages: 204/643, 215/676, 215/681
+[25]Population total for City[85]: 2000
+[25]Sick total: 726
+[25]Ages: 259/677, 255/667, 212/656
 -------------------------------------
-[365]Population total for City[86]: 2000
-[365]Sick total: 618
-[365]Ages: 175/621, 212/704, 231/675
+[25]Population total for City[86]: 2000
+[25]Sick total: 698
+[25]Ages: 211/636, 228/678, 259/686
 -------------------------------------
-[365]Population total for City[87]: 2000
-[365]Sick total: 632
-[365]Ages: 219/646, 212/681, 201/673
+[25]Population total for City[87]: 2000
+[25]Sick total: 738
+[25]Ages: 249/699, 266/646, 223/655
 -------------------------------------
-[365]Population total for City[88]: 2000
-[365]Sick total: 544
-[365]Ages: 204/653, 163/646, 177/701
+[25]Population total for City[88]: 2000
+[25]Sick total: 701
+[25]Ages: 230/663, 232/639, 239/698
 -------------------------------------
-[365]Population total for City[89]: 2000
-[365]Sick total: 540
-[365]Ages: 194/666, 154/664, 192/670
+[25]Population total for City[89]: 2000
+[25]Sick total: 733
+[25]Ages: 237/672, 258/662, 238/666
 -------------------------------------
-[365]Population total for City[90]: 2000
-[365]Sick total: 606
-[365]Ages: 191/638, 217/689, 198/673
+[25]Population total for City[90]: 2000
+[25]Sick total: 680
+[25]Ages: 232/670, 233/670, 215/660
 -------------------------------------
-[365]Population total for City[91]: 2000
-[365]Sick total: 556
-[365]Ages: 185/655, 180/665, 191/680
+[25]Population total for City[91]: 2000
+[25]Sick total: 702
+[25]Ages: 255/693, 230/660, 217/647
 -------------------------------------
-[365]Population total for City[92]: 2000
-[365]Sick total: 557
-[365]Ages: 184/631, 202/679, 171/690
+[25]Population total for City[92]: 2000
+[25]Sick total: 773
+[25]Ages: 263/679, 243/645, 267/676
 -------------------------------------
-[365]Population total for City[93]: 2000
-[365]Sick total: 617
-[365]Ages: 191/655, 209/673, 217/672
+[25]Population total for City[93]: 2000
+[25]Sick total: 770
+[25]Ages: 242/655, 263/674, 265/671
 -------------------------------------
-[365]Population total for City[94]: 2000
-[365]Sick total: 561
-[365]Ages: 191/634, 192/686, 178/680
+[25]Population total for City[94]: 2000
+[25]Sick total: 710
+[25]Ages: 242/667, 230/672, 238/661
 -------------------------------------
-[365]Population total for City[95]: 2000
-[365]Sick total: 695
-[365]Ages: 244/681, 224/658, 227/661
+[25]Population total for City[95]: 2000
+[25]Sick total: 757
+[25]Ages: 254/688, 249/632, 254/680
 -------------------------------------
-[365]Population total for City[96]: 2000
-[365]Sick total: 552
-[365]Ages: 194/679, 192/657, 166/664
+[25]Population total for City[96]: 2000
+[25]Sick total: 706
+[25]Ages: 253/677, 205/644, 248/679
 -------------------------------------
-[365]Population total for City[97]: 2000
-[365]Sick total: 500
-[365]Ages: 176/680, 136/650, 188/670
+[25]Population total for City[97]: 2000
+[25]Sick total: 722
+[25]Ages: 250/683, 256/670, 216/647
 -------------------------------------
-[365]Population total for City[98]: 2000
-[365]Sick total: 497
-[365]Ages: 153/619, 174/706, 170/675
+[25]Population total for City[98]: 2000
+[25]Sick total: 725
+[25]Ages: 259/660, 235/693, 231/647
 -------------------------------------
-[365]Population total for City[99]: 2000
-[365]Sick total: 567
-[365]Ages: 163/667, 206/674, 198/659
+[25]Population total for City[99]: 2000
+[25]Sick total: 705
+[25]Ages: 227/662, 233/649, 245/689
 -------------------------------------
-[365]Population total for City[100]: 2000
-[365]Sick total: 650
-[365]Ages: 206/661, 231/677, 213/662
+[25]Population total for City[100]: 2000
+[25]Sick total: 671
+[25]Ages: 200/635, 211/680, 260/685
 -------------------------------------
-[365]Population total for City[101]: 2000
-[365]Sick total: 653
-[365]Ages: 226/679, 205/672, 222/649
+[25]Population total for City[101]: 2000
+[25]Sick total: 774
+[25]Ages: 285/700, 239/621, 250/679
 -------------------------------------
-[365]Population total for City[102]: 2000
-[365]Sick total: 563
-[365]Ages: 185/648, 190/678, 188/674
+[25]Population total for City[102]: 2000
+[25]Sick total: 764
+[25]Ages: 258/657, 254/677, 252/666
 -------------------------------------
-[365]Population total for City[103]: 2000
-[365]Sick total: 605
-[365]Ages: 200/696, 201/640, 204/664
+[25]Population total for City[103]: 2000
+[25]Sick total: 673
+[25]Ages: 227/644, 205/690, 241/666
 -------------------------------------
-[365]Population total for City[104]: 2000
-[365]Sick total: 636
-[365]Ages: 204/638, 228/701, 204/661
+[25]Population total for City[104]: 2000
+[25]Sick total: 690
+[25]Ages: 225/636, 244/704, 221/660
 -------------------------------------
-[365]Population total for City[105]: 2000
-[365]Sick total: 533
-[365]Ages: 175/626, 176/689, 182/685
+[25]Population total for City[105]: 2000
+[25]Sick total: 730
+[25]Ages: 241/657, 252/706, 237/637
 -------------------------------------
-[365]Population total for City[106]: 2000
-[365]Sick total: 604
-[365]Ages: 218/692, 181/638, 205/670
+[25]Population total for City[106]: 2000
+[25]Sick total: 757
+[25]Ages: 274/682, 249/655, 234/663
 -------------------------------------
-[365]Population total for City[107]: 2000
-[365]Sick total: 530
-[365]Ages: 187/709, 180/652, 163/639
+[25]Population total for City[107]: 2000
+[25]Sick total: 666
+[25]Ages: 237/676, 218/684, 211/640
 -------------------------------------
-[365]Population total for City[108]: 2000
-[365]Sick total: 592
-[365]Ages: 195/669, 197/660, 200/671
+[25]Population total for City[108]: 2000
+[25]Sick total: 714
+[25]Ages: 221/670, 240/649, 253/681
 -------------------------------------
-[365]Population total for City[109]: 2000
-[365]Sick total: 598
-[365]Ages: 202/672, 212/675, 184/653
+[25]Population total for City[109]: 2000
+[25]Sick total: 759
+[25]Ages: 254/651, 252/682, 253/667
 -------------------------------------
-[365]Population total for City[110]: 2000
-[365]Sick total: 555
-[365]Ages: 189/669, 195/659, 171/672
+[25]Population total for City[110]: 2000
+[25]Sick total: 637
+[25]Ages: 224/658, 200/679, 213/663
 -------------------------------------
-[365]Population total for City[111]: 2000
-[365]Sick total: 574
-[365]Ages: 208/671, 172/646, 194/683
+[25]Population total for City[111]: 2000
+[25]Sick total: 704
+[25]Ages: 234/648, 234/678, 236/674
 -------------------------------------
-[365]Population total for City[112]: 2000
-[365]Sick total: 579
-[365]Ages: 213/704, 174/649, 192/647
+[25]Population total for City[112]: 2000
+[25]Sick total: 719
+[25]Ages: 233/682, 249/677, 237/641
 -------------------------------------
-[365]Population total for City[113]: 2000
-[365]Sick total: 616
-[365]Ages: 194/663, 227/712, 195/625
+[25]Population total for City[113]: 2000
+[25]Sick total: 759
+[25]Ages: 250/702, 241/653, 268/645
 -------------------------------------
-[365]Population total for City[114]: 2000
-[365]Sick total: 560
-[365]Ages: 183/656, 187/686, 190/658
+[25]Population total for City[114]: 2000
+[25]Sick total: 671
+[25]Ages: 215/625, 218/675, 238/700
 -------------------------------------
-[365]Population total for City[115]: 2000
-[365]Sick total: 529
-[365]Ages: 169/666, 172/639, 188/695
+[25]Population total for City[115]: 2000
+[25]Sick total: 760
+[25]Ages: 262/699, 251/667, 247/634
 -------------------------------------
-[365]Population total for City[116]: 2000
-[365]Sick total: 596
-[365]Ages: 225/685, 188/649, 183/666
+[25]Population total for City[116]: 2000
+[25]Sick total: 753
+[25]Ages: 268/658, 271/685, 214/657
 -------------------------------------
-[365]Population total for City[117]: 2000
-[365]Sick total: 545
-[365]Ages: 176/683, 188/671, 181/646
+[25]Population total for City[117]: 2000
+[25]Sick total: 742
+[25]Ages: 254/708, 239/663, 249/629
 -------------------------------------
-[365]Population total for City[118]: 2000
-[365]Sick total: 561
-[365]Ages: 196/651, 183/695, 182/654
+[25]Population total for City[118]: 2000
+[25]Sick total: 706
+[25]Ages: 235/644, 224/672, 247/684
 -------------------------------------
-[365]Population total for City[119]: 2000
-[365]Sick total: 593
-[365]Ages: 231/685, 171/643, 191/672
+[25]Population total for City[119]: 2000
+[25]Sick total: 734
+[25]Ages: 239/689, 262/674, 233/637
 -------------------------------------
-[365]Population total for City[120]: 2000
-[365]Sick total: 587
-[365]Ages: 196/647, 197/692, 194/661
+[25]Population total for City[120]: 2000
+[25]Sick total: 693
+[25]Ages: 204/650, 239/695, 250/655
 -------------------------------------
-[365]Population total for City[121]: 2000
-[365]Sick total: 478
-[365]Ages: 182/652, 155/662, 141/686
+[25]Population total for City[121]: 2000
+[25]Sick total: 751
+[25]Ages: 267/685, 247/663, 237/652
 -------------------------------------
-[365]Population total for City[122]: 2000
-[365]Sick total: 624
-[365]Ages: 214/686, 201/658, 209/656
+[25]Population total for City[122]: 2000
+[25]Sick total: 756
+[25]Ages: 243/671, 258/679, 255/650
 -------------------------------------
-[365]Population total for City[123]: 2000
-[365]Sick total: 497
-[365]Ages: 174/651, 164/695, 159/654
+[25]Population total for City[123]: 2000
+[25]Sick total: 728
+[25]Ages: 253/668, 227/651, 248/681
 -------------------------------------
-[365]Population total for City[124]: 2000
-[365]Sick total: 495
-[365]Ages: 176/627, 150/664, 169/709
+[25]Population total for City[124]: 2000
+[25]Sick total: 643
+[25]Ages: 229/687, 219/656, 195/657
 -------------------------------------
-[365]Population total for City[125]: 2000
-[365]Sick total: 663
-[365]Ages: 227/680, 208/646, 228/674
+[25]Population total for City[125]: 2000
+[25]Sick total: 785
+[25]Ages: 295/683, 241/639, 249/678
 -------------------------------------
-[365]Population total for City[126]: 2000
-[365]Sick total: 519
-[365]Ages: 180/700, 182/672, 157/628
+[25]Population total for City[126]: 2000
+[25]Sick total: 758
+[25]Ages: 243/661, 252/659, 263/680
 -------------------------------------
-[365]Population total for City[127]: 2000
-[365]Sick total: 523
-[365]Ages: 152/682, 199/676, 172/642
+[25]Population total for City[127]: 2000
+[25]Sick total: 800
+[25]Ages: 255/672, 290/688, 255/640
 -------------------------------------
-[365]Population total for City[128]: 2000
-[365]Sick total: 552
-[365]Ages: 183/639, 172/678, 197/683
+[25]Population total for City[128]: 2000
+[25]Sick total: 756
+[25]Ages: 275/670, 235/676, 246/654
 -------------------------------------
-[365]Population total for City[129]: 2000
-[365]Sick total: 584
-[365]Ages: 223/654, 167/664, 194/682
+[25]Population total for City[129]: 2000
+[25]Sick total: 809
+[25]Ages: 281/659, 254/647, 274/694
 -------------------------------------
-[365]Population total for City[130]: 2000
-[365]Sick total: 566
-[365]Ages: 204/685, 173/622, 189/693
+[25]Population total for City[130]: 2000
+[25]Sick total: 738
+[25]Ages: 242/678, 241/647, 255/675
 -------------------------------------
-[365]Population total for City[131]: 2000
-[365]Sick total: 498
-[365]Ages: 145/597, 176/707, 177/696
+[25]Population total for City[131]: 2000
+[25]Sick total: 640
+[25]Ages: 196/646, 220/671, 224/683
 -------------------------------------
-[365]Population total for City[132]: 2000
-[365]Sick total: 587
-[365]Ages: 216/676, 192/654, 179/670
+[25]Population total for City[132]: 2000
+[25]Sick total: 674
+[25]Ages: 256/687, 223/669, 195/644
 -------------------------------------
-[365]Population total for City[133]: 2000
-[365]Sick total: 585
-[365]Ages: 190/657, 191/667, 204/676
+[25]Population total for City[133]: 2000
+[25]Sick total: 645
+[25]Ages: 213/631, 210/713, 222/656
 -------------------------------------
-[365]Population total for City[134]: 2000
-[365]Sick total: 541
-[365]Ages: 206/677, 177/662, 158/661
+[25]Population total for City[134]: 2000
+[25]Sick total: 750
+[25]Ages: 242/659, 246/669, 262/672
 -------------------------------------
-[365]Population total for City[135]: 2000
-[365]Sick total: 584
-[365]Ages: 195/664, 182/645, 207/691
+[25]Population total for City[135]: 2000
+[25]Sick total: 660
+[25]Ages: 235/635, 211/690, 214/675
 -------------------------------------
-[365]Population total for City[136]: 2000
-[365]Sick total: 601
-[365]Ages: 228/691, 198/657, 175/652
+[25]Population total for City[136]: 2000
+[25]Sick total: 793
+[25]Ages: 267/697, 282/681, 244/622
 -------------------------------------
-[365]Population total for City[137]: 2000
-[365]Sick total: 645
-[365]Ages: 224/625, 223/713, 198/662
+[25]Population total for City[137]: 2000
+[25]Sick total: 807
+[25]Ages: 287/710, 277/644, 243/646
 -------------------------------------
-[365]Population total for City[138]: 2000
-[365]Sick total: 605
-[365]Ages: 201/652, 202/705, 202/643
+[25]Population total for City[138]: 2000
+[25]Sick total: 657
+[25]Ages: 213/624, 218/692, 226/684
 -------------------------------------
-[365]Population total for City[139]: 2000
-[365]Sick total: 577
-[365]Ages: 204/657, 173/665, 200/678
+[25]Population total for City[139]: 2000
+[25]Sick total: 694
+[25]Ages: 221/663, 229/660, 244/677
 -------------------------------------
-[365]Population total for City[140]: 2000
-[365]Sick total: 471
-[365]Ages: 157/652, 149/667, 165/681
+[25]Population total for City[140]: 2000
+[25]Sick total: 752
+[25]Ages: 269/672, 218/661, 265/667
 -------------------------------------
-[365]Population total for City[141]: 2000
-[365]Sick total: 587
-[365]Ages: 211/706, 179/628, 197/666
+[25]Population total for City[141]: 2000
+[25]Sick total: 778
+[25]Ages: 265/675, 266/674, 247/651
 -------------------------------------
-[365]Population total for City[142]: 2000
-[365]Sick total: 496
-[365]Ages: 181/676, 150/658, 165/666
+[25]Population total for City[142]: 2000
+[25]Sick total: 700
+[25]Ages: 232/622, 243/696, 225/682
 -------------------------------------
-[365]Population total for City[143]: 2000
-[365]Sick total: 612
-[365]Ages: 204/675, 196/640, 212/685
+[25]Population total for City[143]: 2000
+[25]Sick total: 693
+[25]Ages: 258/704, 211/638, 224/658
 -------------------------------------
-[365]Population total for City[144]: 2000
-[365]Sick total: 672
-[365]Ages: 239/701, 201/631, 232/668
+[25]Population total for City[144]: 2000
+[25]Sick total: 686
+[25]Ages: 212/666, 221/658, 253/676
 -------------------------------------
-[365]Population total for City[145]: 2000
-[365]Sick total: 541
-[365]Ages: 177/642, 180/668, 184/690
+[25]Population total for City[145]: 2000
+[25]Sick total: 721
+[25]Ages: 226/638, 242/677, 253/685
 -------------------------------------
-[365]Population total for City[146]: 2000
-[365]Sick total: 512
-[365]Ages: 169/652, 168/688, 175/660
+[25]Population total for City[146]: 2000
+[25]Sick total: 751
+[25]Ages: 251/651, 269/692, 231/657
 -------------------------------------
-[365]Population total for City[147]: 2000
-[365]Sick total: 607
-[365]Ages: 216/672, 201/691, 190/637
+[25]Population total for City[147]: 2000
+[25]Sick total: 750
+[25]Ages: 263/679, 248/653, 239/668
 -------------------------------------
-[365]Population total for City[148]: 2000
-[365]Sick total: 539
-[365]Ages: 172/658, 182/649, 185/693
+[25]Population total for City[148]: 2000
+[25]Sick total: 730
+[25]Ages: 264/664, 240/693, 226/643
 -------------------------------------
-[365]Population total for City[149]: 2000
-[365]Sick total: 641
-[365]Ages: 222/702, 182/625, 237/673
+[25]Population total for City[149]: 2000
+[25]Sick total: 723
+[25]Ages: 264/662, 226/668, 233/670
 -------------------------------------
-[365]Population total for City[150]: 2000
-[365]Sick total: 509
-[365]Ages: 183/678, 152/641, 174/681
+[25]Population total for City[150]: 2000
+[25]Sick total: 759
+[25]Ages: 274/694, 239/668, 246/638
 -------------------------------------
-[365]Population total for City[151]: 2000
-[365]Sick total: 584
-[365]Ages: 203/689, 189/652, 192/659
+[25]Population total for City[151]: 2000
+[25]Sick total: 805
+[25]Ages: 244/690, 274/648, 287/662
 -------------------------------------
-[365]Population total for City[152]: 2000
-[365]Sick total: 589
-[365]Ages: 203/676, 205/665, 181/659
+[25]Population total for City[152]: 2000
+[25]Sick total: 734
+[25]Ages: 262/670, 239/676, 233/654
 -------------------------------------
-[365]Population total for City[153]: 2000
-[365]Sick total: 585
-[365]Ages: 166/638, 221/697, 198/665
+[25]Population total for City[153]: 2000
+[25]Sick total: 747
+[25]Ages: 265/676, 243/658, 239/666
 -------------------------------------
-[365]Population total for City[154]: 2000
-[365]Sick total: 546
-[365]Ages: 199/699, 172/631, 175/670
+[25]Population total for City[154]: 2000
+[25]Sick total: 724
+[25]Ages: 246/669, 244/686, 234/645
 -------------------------------------
-[365]Population total for City[155]: 2000
-[365]Sick total: 696
-[365]Ages: 232/668, 236/681, 228/651
+[25]Population total for City[155]: 2000
+[25]Sick total: 803
+[25]Ages: 260/642, 282/662, 261/696
 -------------------------------------
-[365]Population total for City[156]: 2000
-[365]Sick total: 625
-[365]Ages: 240/712, 207/670, 178/618
+[25]Population total for City[156]: 2000
+[25]Sick total: 665
+[25]Ages: 212/658, 220/677, 233/665
 -------------------------------------
-[365]Population total for City[157]: 2000
-[365]Sick total: 583
-[365]Ages: 197/679, 190/667, 196/654
+[25]Population total for City[157]: 2000
+[25]Sick total: 640
+[25]Ages: 190/622, 241/704, 209/674
 -------------------------------------
-[365]Population total for City[158]: 2000
-[365]Sick total: 605
-[365]Ages: 211/670, 206/638, 188/692
+[25]Population total for City[158]: 2000
+[25]Sick total: 727
+[25]Ages: 239/671, 234/657, 254/672
 -------------------------------------
-[365]Population total for City[159]: 2000
-[365]Sick total: 543
-[365]Ages: 197/649, 166/659, 180/692
+[25]Population total for City[159]: 2000
+[25]Sick total: 750
+[25]Ages: 240/631, 269/689, 241/680
 -------------------------------------
-[365]Population total for City[160]: 2000
-[365]Sick total: 556
-[365]Ages: 209/665, 169/674, 178/661
+[25]Population total for City[160]: 2000
+[25]Sick total: 778
+[25]Ages: 270/666, 255/678, 253/656
 -------------------------------------
-[365]Population total for City[161]: 2000
-[365]Sick total: 531
-[365]Ages: 180/642, 158/666, 193/692
+[25]Population total for City[161]: 2000
+[25]Sick total: 705
+[25]Ages: 234/643, 216/699, 255/658
 -------------------------------------
-[365]Population total for City[162]: 2000
-[365]Sick total: 628
-[365]Ages: 203/684, 215/693, 210/623
+[25]Population total for City[162]: 2000
+[25]Sick total: 810
+[25]Ages: 271/708, 277/657, 262/635
 -------------------------------------
-[365]Population total for City[163]: 2000
-[365]Sick total: 598
-[365]Ages: 211/694, 180/652, 207/654
+[25]Population total for City[163]: 2000
+[25]Sick total: 732
+[25]Ages: 238/671, 249/665, 245/664
 -------------------------------------
-[365]Population total for City[164]: 2000
-[365]Sick total: 555
-[365]Ages: 185/663, 188/654, 182/683
+[25]Population total for City[164]: 2000
+[25]Sick total: 726
+[25]Ages: 261/715, 235/636, 230/649
 -------------------------------------
-[365]Population total for City[165]: 2000
-[365]Sick total: 472
-[365]Ages: 150/640, 151/695, 171/665
+[25]Population total for City[165]: 2000
+[25]Sick total: 668
+[25]Ages: 224/651, 219/664, 225/685
 -------------------------------------
-[365]Population total for City[166]: 2000
-[365]Sick total: 661
-[365]Ages: 221/645, 211/648, 229/707
+[25]Population total for City[166]: 2000
+[25]Sick total: 698
+[25]Ages: 228/673, 229/677, 241/650
 -------------------------------------
-[365]Population total for City[167]: 2000
-[365]Sick total: 629
-[365]Ages: 224/656, 207/657, 198/687
+[25]Population total for City[167]: 2000
+[25]Sick total: 675
+[25]Ages: 225/656, 227/671, 223/673
 -------------------------------------
-[365]Population total for City[168]: 2000
-[365]Sick total: 680
-[365]Ages: 227/655, 220/645, 233/700
+[25]Population total for City[168]: 2000
+[25]Sick total: 705
+[25]Ages: 251/687, 216/638, 238/675
 -------------------------------------
-[365]Population total for City[169]: 2000
-[365]Sick total: 572
-[365]Ages: 172/651, 203/646, 197/703
+[25]Population total for City[169]: 2000
+[25]Sick total: 687
+[25]Ages: 232/691, 234/672, 221/637
 -------------------------------------
-[365]Population total for City[170]: 2000
-[365]Sick total: 443
-[365]Ages: 143/654, 154/663, 146/683
+[25]Population total for City[170]: 2000
+[25]Sick total: 681
+[25]Ages: 242/666, 217/653, 222/681
 -------------------------------------
-[365]Population total for City[171]: 2000
-[365]Sick total: 616
-[365]Ages: 197/652, 217/689, 202/659
+[25]Population total for City[171]: 2000
+[25]Sick total: 703
+[25]Ages: 247/638, 216/666, 240/696
 -------------------------------------
-[365]Population total for City[172]: 2000
-[365]Sick total: 563
-[365]Ages: 194/635, 193/705, 176/660
+[25]Population total for City[172]: 2000
+[25]Sick total: 683
+[25]Ages: 232/671, 246/676, 205/653
 -------------------------------------
-[365]Population total for City[173]: 2000
-[365]Sick total: 620
-[365]Ages: 230/667, 207/661, 183/672
+[25]Population total for City[173]: 2000
+[25]Sick total: 639
+[25]Ages: 213/665, 210/679, 216/656
 -------------------------------------
-[365]Population total for City[174]: 2000
-[365]Sick total: 527
-[365]Ages: 168/680, 192/645, 167/675
+[25]Population total for City[174]: 2000
+[25]Sick total: 697
+[25]Ages: 236/677, 219/636, 242/687
 -------------------------------------
-[365]Population total for City[175]: 2000
-[365]Sick total: 664
-[365]Ages: 216/673, 216/661, 232/666
+[25]Population total for City[175]: 2000
+[25]Sick total: 694
+[25]Ages: 219/658, 218/646, 257/696
 -------------------------------------
-[365]Population total for City[176]: 2000
-[365]Sick total: 627
-[365]Ages: 211/686, 210/657, 206/657
+[25]Population total for City[176]: 2000
+[25]Sick total: 786
+[25]Ages: 261/672, 260/675, 265/653
 -------------------------------------
-[365]Population total for City[177]: 2000
-[365]Sick total: 566
-[365]Ages: 182/678, 183/633, 201/689
+[25]Population total for City[177]: 2000
+[25]Sick total: 827
+[25]Ages: 283/711, 284/657, 260/632
 -------------------------------------
-[365]Population total for City[178]: 2000
-[365]Sick total: 584
-[365]Ages: 209/715, 187/644, 188/641
+[25]Population total for City[178]: 2000
+[25]Sick total: 713
+[25]Ages: 226/645, 240/670, 247/685
 -------------------------------------
-[365]Population total for City[179]: 2000
-[365]Sick total: 605
-[365]Ages: 244/681, 171/621, 190/698
+[25]Population total for City[179]: 2000
+[25]Sick total: 722
+[25]Ages: 231/640, 241/692, 250/668
 -------------------------------------
-[365]Population total for City[180]: 2000
-[365]Sick total: 618
-[365]Ages: 218/660, 205/662, 195/678
+[25]Population total for City[180]: 2000
+[25]Sick total: 693
+[25]Ages: 225/670, 243/671, 225/659
 -------------------------------------
-[365]Population total for City[181]: 2000
-[365]Sick total: 558
-[365]Ages: 182/637, 184/670, 192/693
+[25]Population total for City[181]: 2000
+[25]Sick total: 740
+[25]Ages: 229/651, 261/696, 250/653
 -------------------------------------
-[365]Population total for City[182]: 2000
-[365]Sick total: 672
-[365]Ages: 220/667, 231/680, 221/653
+[25]Population total for City[182]: 2000
+[25]Sick total: 720
+[25]Ages: 261/654, 233/664, 226/682
 -------------------------------------
-[365]Population total for City[183]: 2000
-[365]Sick total: 565
-[365]Ages: 183/641, 188/646, 194/713
+[25]Population total for City[183]: 2000
+[25]Sick total: 720
+[25]Ages: 266/703, 231/638, 223/659
 -------------------------------------
-[365]Population total for City[184]: 2000
-[365]Sick total: 601
-[365]Ages: 236/699, 186/640, 179/661
+[25]Population total for City[184]: 2000
+[25]Sick total: 765
+[25]Ages: 263/662, 252/661, 250/677
 -------------------------------------
-[365]Population total for City[185]: 2000
-[365]Sick total: 604
-[365]Ages: 196/669, 206/666, 202/665
+[25]Population total for City[185]: 2000
+[25]Sick total: 655
+[25]Ages: 198/642, 250/691, 207/667
 -------------------------------------
-[365]Population total for City[186]: 2000
-[365]Sick total: 539
-[365]Ages: 173/679, 186/638, 180/683
+[25]Population total for City[186]: 2000
+[25]Sick total: 697
+[25]Ages: 243/668, 249/697, 205/635
 -------------------------------------
-[365]Population total for City[187]: 2000
-[365]Sick total: 599
-[365]Ages: 207/690, 208/674, 184/636
+[25]Population total for City[187]: 2000
+[25]Sick total: 699
+[25]Ages: 257/689, 233/675, 209/636
 -------------------------------------
-[365]Population total for City[188]: 2000
-[365]Sick total: 608
-[365]Ages: 215/685, 195/640, 198/675
+[25]Population total for City[188]: 2000
+[25]Sick total: 697
+[25]Ages: 217/688, 245/681, 235/631
 -------------------------------------
-[365]Population total for City[189]: 2000
-[365]Sick total: 538
-[365]Ages: 190/685, 166/662, 182/653
+[25]Population total for City[189]: 2000
+[25]Sick total: 682
+[25]Ages: 224/681, 248/683, 210/636
 -------------------------------------
-[365]Population total for City[190]: 2000
-[365]Sick total: 475
-[365]Ages: 161/597, 156/728, 158/675
+[25]Population total for City[190]: 2000
+[25]Sick total: 769
+[25]Ages: 246/678, 254/660, 269/662
 -------------------------------------
-[365]Population total for City[191]: 2000
-[365]Sick total: 578
-[365]Ages: 188/668, 203/665, 187/667
+[25]Population total for City[191]: 2000
+[25]Sick total: 724
+[25]Ages: 235/643, 256/681, 233/676
 -------------------------------------
-[365]Population total for City[192]: 2000
-[365]Sick total: 564
-[365]Ages: 190/664, 172/638, 202/698
+[25]Population total for City[192]: 2000
+[25]Sick total: 678
+[25]Ages: 225/695, 224/642, 229/663
 -------------------------------------
-[365]Population total for City[193]: 2000
-[365]Sick total: 571
-[365]Ages: 193/675, 191/671, 187/654
+[25]Population total for City[193]: 2000
+[25]Sick total: 689
+[25]Ages: 225/673, 220/656, 244/671
 -------------------------------------
-[365]Population total for City[194]: 2000
-[365]Sick total: 518
-[365]Ages: 194/673, 144/655, 180/672
+[25]Population total for City[194]: 2000
+[25]Sick total: 674
+[25]Ages: 222/626, 228/684, 224/690
 -------------------------------------
-[365]Population total for City[195]: 2000
-[365]Sick total: 605
-[365]Ages: 222/654, 182/666, 201/680
+[25]Population total for City[195]: 2000
+[25]Sick total: 733
+[25]Ages: 229/670, 251/675, 253/655
 -------------------------------------
-[365]Population total for City[196]: 2000
-[365]Sick total: 550
-[365]Ages: 193/696, 175/645, 182/659
+[25]Population total for City[196]: 2000
+[25]Sick total: 752
+[25]Ages: 251/692, 251/642, 250/666
 -------------------------------------
-[365]Population total for City[197]: 2000
-[365]Sick total: 616
-[365]Ages: 231/699, 200/656, 185/645
+[25]Population total for City[197]: 2000
+[25]Sick total: 663
+[25]Ages: 228/675, 220/707, 215/618
 -------------------------------------
-[365]Population total for City[198]: 2000
-[365]Sick total: 511
-[365]Ages: 182/661, 163/660, 166/679
+[25]Population total for City[198]: 2000
+[25]Sick total: 717
+[25]Ages: 241/644, 234/662, 242/694
 -------------------------------------
-[365]Population total for City[199]: 2000
-[365]Sick total: 575
-[365]Ages: 190/624, 198/693, 187/683
+[25]Population total for City[199]: 2000
+[25]Sick total: 725
+[25]Ages: 236/664, 239/676, 250/660
 -------------------------------------
-[365]Population total for City[200]: 2000
-[365]Sick total: 564
-[365]Ages: 199/659, 205/687, 160/654
+[25]Population total for City[200]: 2000
+[25]Sick total: 656
+[25]Ages: 216/668, 226/686, 214/646
 -------------------------------------
-[365]Population total for City[201]: 2000
-[365]Sick total: 539
-[365]Ages: 165/664, 183/657, 191/679
+[25]Population total for City[201]: 2000
+[25]Sick total: 705
+[25]Ages: 219/645, 256/698, 230/657
 -------------------------------------
-[365]Population total for City[202]: 2000
-[365]Sick total: 578
-[365]Ages: 228/645, 175/691, 175/664
+[25]Population total for City[202]: 2000
+[25]Sick total: 773
+[25]Ages: 232/654, 292/690, 249/656
 -------------------------------------
-[365]Population total for City[203]: 2000
-[365]Sick total: 477
-[365]Ages: 176/679, 140/624, 161/697
+[25]Population total for City[203]: 2000
+[25]Sick total: 709
+[25]Ages: 260/706, 207/628, 242/666
 -------------------------------------
-[365]Population total for City[204]: 2000
-[365]Sick total: 522
-[365]Ages: 175/668, 190/684, 157/648
+[25]Population total for City[204]: 2000
+[25]Sick total: 769
+[25]Ages: 269/673, 261/671, 239/656
 -------------------------------------
-[365]Population total for City[205]: 2000
-[365]Sick total: 625
-[365]Ages: 224/661, 225/683, 176/656
+[25]Population total for City[205]: 2000
+[25]Sick total: 772
+[25]Ages: 260/671, 246/646, 266/683
 -------------------------------------
-[365]Population total for City[206]: 2000
-[365]Sick total: 495
-[365]Ages: 164/670, 174/690, 157/640
+[25]Population total for City[206]: 2000
+[25]Sick total: 800
+[25]Ages: 256/650, 248/659, 296/691
 -------------------------------------
-[365]Population total for City[207]: 2000
-[365]Sick total: 556
-[365]Ages: 191/662, 200/705, 165/633
+[25]Population total for City[207]: 2000
+[25]Sick total: 719
+[25]Ages: 253/658, 228/656, 238/686
 -------------------------------------
-[365]Population total for City[208]: 2000
-[365]Sick total: 601
-[365]Ages: 206/667, 181/668, 214/665
+[25]Population total for City[208]: 2000
+[25]Sick total: 732
+[25]Ages: 252/674, 231/702, 249/624
 -------------------------------------
-[365]Population total for City[209]: 2000
-[365]Sick total: 529
-[365]Ages: 215/719, 142/612, 172/669
+[25]Population total for City[209]: 2000
+[25]Sick total: 719
+[25]Ages: 249/673, 236/655, 234/672
 -------------------------------------
-[365]Population total for City[210]: 2000
-[365]Sick total: 504
-[365]Ages: 201/687, 135/629, 168/684
+[25]Population total for City[210]: 2000
+[25]Sick total: 647
+[25]Ages: 205/644, 221/676, 221/680
 -------------------------------------
-[365]Population total for City[211]: 2000
-[365]Sick total: 615
-[365]Ages: 222/668, 206/659, 187/673
+[25]Population total for City[211]: 2000
+[25]Sick total: 761
+[25]Ages: 267/668, 245/683, 249/649
 -------------------------------------
-[365]Population total for City[212]: 2000
-[365]Sick total: 590
-[365]Ages: 189/663, 196/676, 205/661
+[25]Population total for City[212]: 2000
+[25]Sick total: 715
+[25]Ages: 211/676, 247/635, 257/689
 -------------------------------------
-[365]Population total for City[213]: 2000
-[365]Sick total: 656
-[365]Ages: 216/655, 221/690, 219/655
+[25]Population total for City[213]: 2000
+[25]Sick total: 746
+[25]Ages: 247/682, 257/662, 242/656
 -------------------------------------
-[365]Population total for City[214]: 2000
-[365]Sick total: 574
-[365]Ages: 205/658, 199/702, 170/640
+[25]Population total for City[214]: 2000
+[25]Sick total: 697
+[25]Ages: 224/664, 247/691, 226/645
 -------------------------------------
-[365]Population total for City[215]: 2000
-[365]Sick total: 576
-[365]Ages: 182/655, 200/669, 194/676
+[25]Population total for City[215]: 2000
+[25]Sick total: 699
+[25]Ages: 243/665, 241/674, 215/661
 -------------------------------------
-[365]Population total for City[216]: 2000
-[365]Sick total: 569
-[365]Ages: 190/666, 188/682, 191/652
+[25]Population total for City[216]: 2000
+[25]Sick total: 693
+[25]Ages: 223/637, 235/687, 235/676
 -------------------------------------
-[365]Population total for City[217]: 2000
-[365]Sick total: 588
-[365]Ages: 191/647, 205/691, 192/662
+[25]Population total for City[217]: 2000
+[25]Sick total: 734
+[25]Ages: 239/617, 246/715, 249/668
 -------------------------------------
-[365]Population total for City[218]: 2000
-[365]Sick total: 532
-[365]Ages: 186/686, 166/642, 180/672
+[25]Population total for City[218]: 2000
+[25]Sick total: 686
+[25]Ages: 226/664, 226/638, 234/698
 -------------------------------------
-[365]Population total for City[219]: 2000
-[365]Sick total: 559
-[365]Ages: 205/663, 162/642, 192/695
+[25]Population total for City[219]: 2000
+[25]Sick total: 749
+[25]Ages: 260/676, 256/684, 233/640
 -------------------------------------
-[365]Population total for City[220]: 2000
-[365]Sick total: 664
-[365]Ages: 237/658, 213/683, 214/659
+[25]Population total for City[220]: 2000
+[25]Sick total: 805
+[25]Ages: 295/662, 259/697, 251/641
 -------------------------------------
-[365]Population total for City[221]: 2000
-[365]Sick total: 605
-[365]Ages: 227/683, 191/649, 187/668
+[25]Population total for City[221]: 2000
+[25]Sick total: 686
+[25]Ages: 237/709, 225/608, 224/683
 -------------------------------------
-[365]Population total for City[222]: 2000
-[365]Sick total: 563
-[365]Ages: 195/681, 191/675, 177/644
+[25]Population total for City[222]: 2000
+[25]Sick total: 740
+[25]Ages: 229/684, 253/657, 258/659
 -------------------------------------
-[365]Population total for City[223]: 2000
-[365]Sick total: 570
-[365]Ages: 211/651, 173/677, 186/672
+[25]Population total for City[223]: 2000
+[25]Sick total: 676
+[25]Ages: 243/661, 208/633, 225/706
 -------------------------------------
-[365]Population total for City[224]: 2000
-[365]Sick total: 524
-[365]Ages: 160/632, 177/702, 187/666
+[25]Population total for City[224]: 2000
+[25]Sick total: 694
+[25]Ages: 236/670, 214/668, 244/662
 -------------------------------------
-[365]Population total for City[225]: 2000
-[365]Sick total: 521
-[365]Ages: 185/682, 173/678, 163/640
+[25]Population total for City[225]: 2000
+[25]Sick total: 710
+[25]Ages: 246/647, 224/656, 240/697
 -------------------------------------
-[365]Population total for City[226]: 2000
-[365]Sick total: 570
-[365]Ages: 190/668, 204/684, 176/648
+[25]Population total for City[226]: 2000
+[25]Sick total: 798
+[25]Ages: 272/682, 264/653, 262/665
 -------------------------------------
-[365]Population total for City[227]: 2000
-[365]Sick total: 591
-[365]Ages: 180/657, 195/671, 216/672
+[25]Population total for City[227]: 2000
+[25]Sick total: 706
+[25]Ages: 242/656, 245/677, 219/667
 -------------------------------------
-[365]Population total for City[228]: 2000
-[365]Sick total: 567
-[365]Ages: 175/654, 185/678, 207/668
+[25]Population total for City[228]: 2000
+[25]Sick total: 713
+[25]Ages: 251/695, 225/653, 237/652
 -------------------------------------
-[365]Population total for City[229]: 2000
-[365]Sick total: 567
-[365]Ages: 201/693, 189/654, 177/653
+[25]Population total for City[229]: 2000
+[25]Sick total: 687
+[25]Ages: 240/650, 211/675, 236/675
 -------------------------------------
-[365]Population total for City[230]: 2000
-[365]Sick total: 541
-[365]Ages: 177/681, 175/643, 189/676
+[25]Population total for City[230]: 2000
+[25]Sick total: 783
+[25]Ages: 276/690, 266/669, 241/641
 -------------------------------------
-[365]Population total for City[231]: 2000
-[365]Sick total: 621
-[365]Ages: 203/623, 189/686, 229/691
+[25]Population total for City[231]: 2000
+[25]Sick total: 687
+[25]Ages: 212/622, 235/672, 240/706
 -------------------------------------
-[365]Population total for City[232]: 2000
-[365]Sick total: 618
-[365]Ages: 213/669, 201/667, 204/664
+[25]Population total for City[232]: 2000
+[25]Sick total: 694
+[25]Ages: 208/618, 236/699, 250/683
 -------------------------------------
-[365]Population total for City[233]: 2000
-[365]Sick total: 577
-[365]Ages: 200/668, 188/654, 189/678
+[25]Population total for City[233]: 2000
+[25]Sick total: 802
+[25]Ages: 248/631, 262/674, 292/695
 -------------------------------------
-[365]Population total for City[234]: 2000
-[365]Sick total: 526
-[365]Ages: 192/749, 170/622, 164/629
+[25]Population total for City[234]: 2000
+[25]Sick total: 774
+[25]Ages: 242/669, 263/700, 269/631
 -------------------------------------
-[365]Population total for City[235]: 2000
-[365]Sick total: 554
-[365]Ages: 201/670, 172/667, 181/663
+[25]Population total for City[235]: 2000
+[25]Sick total: 762
+[25]Ages: 239/669, 269/685, 254/646
 -------------------------------------
-[365]Population total for City[236]: 2000
-[365]Sick total: 487
-[365]Ages: 160/661, 170/685, 157/654
+[25]Population total for City[236]: 2000
+[25]Sick total: 788
+[25]Ages: 251/639, 269/676, 268/685
 -------------------------------------
-[365]Population total for City[237]: 2000
-[365]Sick total: 449
-[365]Ages: 158/652, 162/677, 129/671
+[25]Population total for City[237]: 2000
+[25]Sick total: 726
+[25]Ages: 238/642, 232/669, 256/689
 -------------------------------------
-[365]Population total for City[238]: 2000
-[365]Sick total: 594
-[365]Ages: 175/670, 244/703, 175/627
+[25]Population total for City[238]: 2000
+[25]Sick total: 759
+[25]Ages: 282/661, 244/656, 233/683
 -------------------------------------
-[365]Population total for City[239]: 2000
-[365]Sick total: 638
-[365]Ages: 200/673, 221/653, 217/674
+[25]Population total for City[239]: 2000
+[25]Sick total: 762
+[25]Ages: 257/678, 243/659, 262/663
 -------------------------------------
-[365]Population total for City[240]: 2000
-[365]Sick total: 599
-[365]Ages: 209/660, 194/687, 196/653
+[25]Population total for City[240]: 2000
+[25]Sick total: 737
+[25]Ages: 243/612, 240/655, 254/733
 -------------------------------------
-[365]Population total for City[241]: 2000
-[365]Sick total: 574
-[365]Ages: 186/647, 199/674, 189/679
+[25]Population total for City[241]: 2000
+[25]Sick total: 730
+[25]Ages: 242/643, 252/698, 236/659
 -------------------------------------
-[365]Population total for City[242]: 2000
-[365]Sick total: 486
-[365]Ages: 178/657, 162/681, 146/662
+[25]Population total for City[242]: 2000
+[25]Sick total: 718
+[25]Ages: 247/678, 232/668, 239/654
 -------------------------------------
-[365]Population total for City[243]: 2000
-[365]Sick total: 539
-[365]Ages: 193/667, 163/675, 183/658
+[25]Population total for City[243]: 2000
+[25]Sick total: 656
+[25]Ages: 210/639, 227/680, 219/681
 -------------------------------------
-[365]Population total for City[244]: 2000
-[365]Sick total: 572
-[365]Ages: 201/696, 192/684, 179/620
+[25]Population total for City[244]: 2000
+[25]Sick total: 694
+[25]Ages: 250/664, 218/697, 226/639
 -------------------------------------
-[365]Population total for City[245]: 2000
-[365]Sick total: 565
-[365]Ages: 160/649, 215/694, 190/657
+[25]Population total for City[245]: 2000
+[25]Sick total: 728
+[25]Ages: 241/662, 234/643, 253/695
 -------------------------------------
-[365]Population total for City[246]: 2000
-[365]Sick total: 608
-[365]Ages: 208/664, 201/673, 199/663
+[25]Population total for City[246]: 2000
+[25]Sick total: 742
+[25]Ages: 249/673, 257/688, 236/639
 -------------------------------------
-[365]Population total for City[247]: 2000
-[365]Sick total: 466
-[365]Ages: 174/692, 136/615, 156/693
+[25]Population total for City[247]: 2000
+[25]Sick total: 724
+[25]Ages: 268/724, 231/639, 225/637
 -------------------------------------
-[365]Population total for City[248]: 2000
-[365]Sick total: 540
-[365]Ages: 170/633, 186/684, 184/683
+[25]Population total for City[248]: 2000
+[25]Sick total: 653
+[25]Ages: 217/672, 215/673, 221/655
 -------------------------------------
-[365]Population total for City[249]: 2000
-[365]Sick total: 612
-[365]Ages: 218/655, 196/694, 198/651
+[25]Population total for City[249]: 2000
+[25]Sick total: 711
+[25]Ages: 239/658, 252/699, 220/643
 -------------------------------------
-Time to run: 46.96 seconds
+Time to run: 275.58 seconds
