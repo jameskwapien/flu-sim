@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
     #before_filter :redirect_if_unauthorized
-    before_action :permit_invite_code, :permit_instructor_code
+    before_action :permit_invite_code
 
     private
   
@@ -20,7 +20,7 @@ class RegistrationsController < Devise::RegistrationsController
     end
   
     def sign_up_params
-        params.require(:user).permit(:invite_code, :instructor_code, :name, :email, :password, :password_confirmation)
+        params.require(:user).permit(:invite_code, :name, :email, :password, :password_confirmation)
     end
 
     def account_update_params
