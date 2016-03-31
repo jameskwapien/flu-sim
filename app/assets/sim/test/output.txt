@@ -1001,4 +1001,4 @@ YES - com.mysql.jdbc.JDBC4Connection@61ee30d2
 [25]Sick total: 711
 [25]Ages: 239/658, 252/699, 220/643
 -------------------------------------
-Time to run: 275.58 seconds
+Time to run: 256.43 seconds
