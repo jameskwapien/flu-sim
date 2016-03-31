@@ -5,6 +5,7 @@
   <thead>
     <tr>
       <th>Group Name</th>
+      <th>Remaining Budget</th>
       <th>Vaccines</th>
       <th>Advertising</th>
       <th>Schools closed?</th>
@@ -15,21 +16,24 @@
 
   <tbody>
     <% @inputs.each do |input| %>
+      <% if current_user.groups.first.name == input.group_name %>
       <tr>
         <td><%= input.group_name %></td>
+        <td><%= input.money_left %></td>
         <td><%= input.vaccines %></td>
-        <td></td>
+        <td><%= input.ads %></td>
         <td><%= input.school_off %></td>
         <td><%= input.days %></td>
         <td><%= link_to 'Show', input %></td>
         <td><%= link_to 'Edit', edit_input_path(input) %></td>
         <td><%= link_to 'Destroy', input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Input', new_input_path %>
+<%= button_to 'New Input', new_input_path %>
 </div>

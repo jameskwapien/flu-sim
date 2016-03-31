@@ -5,7 +5,9 @@
     <thead>
       <tr>
         <th>Group Name</th>
+        <th>Remaining Budget</th>
         <th>Vaccines</th>
+        <th>Advertising</th>
         <th>Schools closed?</th>
         <th>Simulation Days</th>
         <th colspan="1">Controls</th>
@@ -14,7 +16,9 @@
     <tbody>
       <tr>
         <td><%= @input.group_name %></td>
+        <td><%= @input.money_left %></td>
         <td><%= @input.vaccines %></td>
+        <td><%= @input.ads %></td>
         <td><%= @input.school_off %></td>
         <td><%= @input.days %></td>
         <td><%= link_to 'Edit', edit_input_path(@input) %></td>

@@ -69,6 +69,6 @@ class InputsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def input_params
-      params.require(:input).permit(:group_name, :vaccines, :school_off, :days)
+      params.require(:input).permit(:group_name, :vaccines, :school_off, :days, :seed, :ads, :money_left)
     end
 end
