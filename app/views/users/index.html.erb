@@ -1,4 +1,4 @@
-<div class="panel-heading">Classlist</div>
+<div class="panel-heading">Students</div>
 
 <div class="panel-body">
 <table class="table table-striped table-hover">
@@ -6,15 +6,21 @@
     <tr>
         <th>Name</th>
         <th>Email</th>
+        <th>Registered</th>
+        <th>Last Signed In</th>
+        <th>Currently Signed In</th>
         <th colspan="2">Controls</th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
-      <% if !user.instructor? %>
+      <% if !user.instructor? && !user.admin? %>
         <tr>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
+          <td><%= user.created_at %></td>
+          <td><%= user.last_sign_in_at %></td>
+          <td><%= user.current_sign_in_at %></td>
           <td><%= link_to 'Show', user %></td>
           <% if false %>
             <td><%= link_to 'Edit', edit_user_path(user) %></td>
