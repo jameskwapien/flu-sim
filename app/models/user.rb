@@ -18,8 +18,14 @@ class User < ActiveRecord::Base
 
   # Invite code validation
   def invite_code_valid
-    unless self.invite_code == "000"
-      self.errors.add(:invite_code, "invalid")
+    if self.instructor?
+      unless self.invite_code == "999"
+        self.errors.add(:invite_code, "invalid for instructors.")
+      end
+    else
+      unless self.invite_code == "000"
+        self.errors.add(:invite_code, "invalid for students.")
+      end
     end
   end  
 
@@ -45,9 +51,9 @@ class User < ActiveRecord::Base
     User.includes(:memberships).where(:memberships => {:user_id => !nil})
   end
 
-  def membership?(group)
-    memberships.find_by(group: group).present?
-  end
+  #def membership?(group)
+  #  memberships.find_by(group: group).present?
+  #end
 
   # COURSE queries
 

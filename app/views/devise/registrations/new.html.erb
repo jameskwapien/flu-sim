@@ -9,17 +9,11 @@
     <%= text_field_tag "user[invite_code]" %>
   </div>
 
-<% if false %>
   <div class="field">
     <%= f.label :instructor %><br />
     <%= f.check_box :instructor %>
   </div>
 
-  <div class="hidden_field">
-    <%= f.label :instructor_code %><br />
-    <%= text_field_tag "user[instructor_code]" %>
-  </div>
-<% end %> 
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
