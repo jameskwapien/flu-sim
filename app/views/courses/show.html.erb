@@ -18,7 +18,10 @@
 	      <td><%= @course.instructor %></td>
 	      <td><%= @course.email %></td>
 	      <td><%= link_to 'Edit', edit_course_path(@course) %></td>
-	      <td><%= link_to 'Delete', @course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      <td>
+	      	<% unless User.in_a_course(@course.id).exists? %>
+	      		<%= link_to 'Delete', @course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      	<% end %>
 	    </tr>
 	  </tbody>
 	</table>
@@ -49,7 +52,7 @@
 						<%= user.groups.first.name %>
               		<% end %>
               	<% else %>
-              		<%= link_to 'Add to Group',new_membership_path %>
+              		<%= link_to 'Add to Group',new_membership_path(course_id: @course.id, user_id: user.id) %>
               	<% end %>
               </td>
               <td><%= user.created_at %></td>

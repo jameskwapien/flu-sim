@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :course_id %><br />
-    <%= f.collection_select :course_id, Course.all, :id, "name_crn", prompt: true %>
+    <%= f.collection_select :course_id, Course.by_teacher(current_user.email), :id, "name_crn", prompt: true %>
   </div>
   
   <br />

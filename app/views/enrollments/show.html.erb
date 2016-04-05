@@ -19,9 +19,11 @@
 	        <td><%= @enrollment.course.crn %></td>
 	        <td><%= @enrollment.created_at %></td>
 	        <td><%= link_to 'Edit', edit_enrollment_path(@enrollment) %></td>
-	        <td><%= link_to 'Back', enrollments_path %></td>
-	        <td><%= link_to 'Destroy', @enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	        <td><%= link_to 'Delete', @enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	      </tr>
 	  </tbody>
 	</table>
+
+	<hr />
+	<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
 </div>

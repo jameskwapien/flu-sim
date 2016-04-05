@@ -14,6 +14,8 @@ class MembershipsController < ApplicationController
 
   # GET /memberships/new
   def new
+    @user_id = User.find(params[:user_id])
+    @course_id = Course.find(params[:course_id])
     @membership = Membership.new
   end
 
@@ -28,7 +30,7 @@ class MembershipsController < ApplicationController
 
     respond_to do |format|
       if @membership.save
-        format.html { redirect_to courses_path, notice: 'Membership was successfully created.' }
+        format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
         format.json { render :show, status: :created, location: @membership }
       else
         format.html { render :new }
@@ -69,6 +71,6 @@ class MembershipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def membership_params
-      params.require(:membership).permit(:user_id, :group_id, groups_attributes: [:course_id])
+      params.require(:membership).permit(:user_id, :group_id)
     end
 end

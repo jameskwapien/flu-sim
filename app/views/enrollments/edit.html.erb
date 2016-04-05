@@ -2,6 +2,7 @@
 
 <div class="panel-body">
 	<%= render 'form' %>
-	<%= link_to 'Show', @enrollment %> |
-	<%= link_to 'Back', enrollments_path %>
+	<hr />
+	<%= button_to 'Show', @enrollment, method: :get, class: 'btn btn-sm' %>
+	<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
 </div>

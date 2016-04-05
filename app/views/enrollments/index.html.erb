@@ -12,6 +12,9 @@
     </tr>
   </thead>
 
+  <% if current_user.instructor? %>
+    <% @enrollments = @enrollments.with_this_instructor(current_user.email) %>
+  <% end %>
   <tbody>
     <% @enrollments.each do |enrollment| %>
       <tr>
@@ -21,14 +24,12 @@
         <td><%= enrollment.created_at %></td>
         <td><%= link_to 'Show', enrollment %></td>
         <td><%= link_to 'Edit', edit_enrollment_path(enrollment) %></td>
-        <td><%= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Enrollment', new_enrollment_path %>
+<hr />
+<%= button_to 'New Enrollment', new_enrollment_path, method: :get, class: 'btn btn-sm' %>
 
 </div>
