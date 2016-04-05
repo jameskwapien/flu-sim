@@ -64,7 +64,7 @@ class GroupsController < ApplicationController
   def destroy
     @group.destroy
     respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,6 +77,6 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:id, :name, users_attributes: [:id, :name])
+      params.require(:group).permit(:id, :name, :course_id, users_attributes: [:id, :name])
     end
 end

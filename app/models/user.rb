@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
   end  
 
   # Self queries
+  def self.match(userID)
+    User.where(:id => userID)
+  end
+
   def self.admin
     User.where(admin: true)
   end
@@ -51,10 +55,22 @@ class User < ActiveRecord::Base
     User.includes(:memberships).where(:memberships => {:user_id => !nil})
   end
 
-  #def membership?(group)
-  #  memberships.find_by(group: group).present?
-  #end
+  def self.in_this_group(groupID)
+    User.includes(:memberships).where(:memberships => {:group_id => goupID})
+  end
 
   # COURSE queries
 
+  def self.in_a_course(courseID)
+    User.includes(:enrollments).where(:enrollments => {:course_id => courseID})
+  end
+
+  def self.in_a_course_group(courseID)
+    #User.includes(:enrollments).includes(:memberships).includes(:groups).where(:enrollments => {:course_id => courseID}, :groups => {:course_id => courseID})
+    User.includes(:memberships).includes(:groups).where(:groups => {:course_id => courseID})
+  end
+
+  def self.not_in_a_course_group(courseID)
+    User.includes(:memberships).includes(:groups).where.not(:groups => {:course_id => courseID})
+  end
 end

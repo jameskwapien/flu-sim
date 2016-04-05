@@ -15,9 +15,14 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    <%= f.label :course_id %><br />
+    <%= f.collection_select :course_id, Course.by_teacher(current_user.email), :id, :name %>
+  </div>
   
   <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create Group', class: 'btn btn-sm' %><br />
   </div>
 <% end %>

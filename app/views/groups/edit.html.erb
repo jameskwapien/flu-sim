@@ -2,5 +2,6 @@
 
 <div class="panel-body">
   <%= render 'form' %>
-  <%= link_to 'Show', @group %> | <%= link_to 'Back', groups_path %>
+  <hr />
+  <%= button_to 'Back', @group, method: :get, class: 'btn btn-sm' %>
 </div>

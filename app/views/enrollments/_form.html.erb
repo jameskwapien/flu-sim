@@ -14,15 +14,15 @@
   <div class="field">
     <%= f.label :user_id %><br />
     <%= f.collection_select :user_id, User.student, :id, :name, prompt: true %>
-  </div>
+  </div><br />
 
   <div class="field">
     <%= f.label :course_id %><br />
-    <%= f.collection_select :course_id, Course.all, :id, :crn, prompt: true %>
+    <%= f.collection_select :course_id, Course.all, :id, "name_crn", prompt: true %>
   </div>
   
   <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create Enrollment', class: 'btn btn-sm' %><br />
   </div>
 <% end %>

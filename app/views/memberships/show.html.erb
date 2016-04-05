@@ -6,7 +6,7 @@
     <tr>
       <th>User</th>
       <th>Group</th>
-      <th colspan="2">Controls</th>
+      <th colspan="1">Controls</th>
     </td>
   </thead>
   <tbody>
@@ -14,8 +14,10 @@
       <td><%= @membership.user.name %></td>
       <td><%= @membership.group.name %></td>
       <td><%= link_to 'Edit', edit_membership_path(@membership) %></td>
-      <td><%= link_to 'Back', memberships_path %></td>
     </tr>
   </tbody>
 </table>
+
+<hr />
+<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
 </div>

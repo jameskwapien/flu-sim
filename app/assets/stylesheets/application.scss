@@ -56,6 +56,7 @@
 .navbar-inverse .navbar-nav > li > a{
     font-family: "Futura", "Cocon", Serif;
     font-size: x-large;
+    font-weight: bold;
     color: #4682B4;
 }
 
@@ -73,6 +74,12 @@
 }
 
 /* body */
+
+.btn{
+    float: left;
+    margin-right: 10px;
+    font-weight: bold;
+}
 
 body{
     height: 100vh;
@@ -119,6 +126,10 @@ body{
     }
     #sidebar{
         padding: 0px 0px 15px 30px;
+        .btn{
+            float: none;
+            font-weight: bold;
+        }
     }
     #main{
         padding: 0px 50px 15px 50px;
