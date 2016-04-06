@@ -27,10 +27,14 @@ class MembershipsController < ApplicationController
   # POST /memberships.json
   def create
     @membership = Membership.new(membership_params)
-
+    get_session_course
     respond_to do |format|
       if @membership.save
-        format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
+        if @session_course
+          format.html { redirect_to @session_course, notice: 'Membership was successfully created.' }
+        else
+          format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
+        end
         format.json { render :show, status: :created, location: @membership }
       else
         format.html { render :new }
@@ -57,8 +61,13 @@ class MembershipsController < ApplicationController
   # DELETE /memberships/1.json
   def destroy
     @membership.destroy
+    get_session_course
     respond_to do |format|
-      format.html { redirect_to memberships_url, notice: 'Membership was successfully destroyed.' }
+      if @session_course
+        format.html { redirect_to @session_course, notice: 'Membership was successfully destroyed.' }
+      else
+        format.html { redirect_to memberships_url, notice: 'Membership was successfully destroyed.' }
+      end
       format.json { head :no_content }
     end
   end

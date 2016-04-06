@@ -13,4 +13,8 @@ class Enrollment < ActiveRecord::Base
 	def self.with_this_instructor(userEmail)
 		Enrollment.includes(:course).where(:courses => {:email => userEmail})
 	end
+
+	def self.in_this_course(courseID, userID)
+		Enrollment.includes(:course).includes(:user).where(:courses => {:id => courseID}).where(:users => {:id => userID})
+	end
 end

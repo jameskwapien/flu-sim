@@ -25,10 +25,14 @@ class EnrollmentsController < ApplicationController
   # POST /enrollments.json
   def create
     @enrollment = Enrollment.new(enrollment_params)
-
+    get_session_course
     respond_to do |format|
       if @enrollment.save
-        format.html { redirect_to @enrollment, notice: 'Enrollment was successfully created.' }
+        if @session_course
+          format.html { redirect_to @session_course, notice: 'Enrollment was successfully created.' }
+        else
+          format.html { redirect_to @enrollment, notice: 'Enrollment was successfully created.' }
+        end
         format.json { render :show, status: :created, location: @enrollment }
       else
         format.html { render :new }
@@ -55,8 +59,13 @@ class EnrollmentsController < ApplicationController
   # DELETE /enrollments/1.json
   def destroy
     @enrollment.destroy
+    get_session_course
     respond_to do |format|
-      format.html { redirect_to enrollments_url, notice: 'Enrollment was successfully destroyed.' }
+      if @session_course
+        format.html { redirect_to @session_course, notice: 'Enrollment was successfully destroyed.' }
+      else
+        format.html { redirect_to enrollments_url, notice: 'Enrollment was successfully destroyed.' }
+      end
       format.json { head :no_content }
     end
   end

@@ -31,10 +31,14 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-
+    get_session_course
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        if @session_course
+          format.html { redirect_to @session_course, notice: 'Group was successfully created.' }
+        else
+          format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        end
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }
@@ -63,8 +67,13 @@ class GroupsController < ApplicationController
   # DELETE /groups/1.json
   def destroy
     @group.destroy
+    get_session_course
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Group was successfully destroyed.' }
+      if @session_course
+        format.html { redirect_to @session_course, notice: 'Group was successfully destroyed.' }
+      else
+        format.html { redirect_to :back, notice: 'Group was successfully destroyed.' }
+      end
       format.json { head :no_content }
     end
   end

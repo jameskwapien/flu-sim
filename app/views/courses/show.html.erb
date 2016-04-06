@@ -1,3 +1,5 @@
+<% session[:course_id] = @course.id %>
+
 <div class="panel-heading">Class Details</div>
 
 <div class="panel-body">
@@ -35,9 +37,9 @@
             <th>Name</th>
             <th>Email</th>
             <th>Group</th>
-            <th>Registered</th>
             <th>Last Signed In</th>
             <th>Login Count</th>
+            <th>Controls</th>
         </tr>
       </thead>
       <tbody>
@@ -55,9 +57,13 @@
               		<%= link_to 'Add to Group',new_membership_path(course_id: @course.id, user_id: user.id) %>
               	<% end %>
               </td>
-              <td><%= user.created_at %></td>
               <td><%= user.last_sign_in_at %></td>
               <td><%= user.sign_in_count %></td>
+              <td>
+              	<% Enrollment.in_this_course(@course.id, user.id).each do |e| %>
+              		<%= link_to 'Remove', e, method: :delete, data: { confirm: 'Are you sure?' } %> 
+              	<% end %>
+              </td>
             </tr>
           <% end %>
         <% end %>
@@ -74,7 +80,7 @@
 		    <tr>
 		      <th>Group Name</th>
 		      <th># of Members</th>
-		      <th>Controls</th>
+		      <th colspan="2">Controls</th>
 		    </tr>
 		  </thead>
 
@@ -83,6 +89,7 @@
 		      <tr>
 		        <td><%= group.name %></td>
 		        <td><%= group.memberships.count %></td>
+		        <td><%= link_to 'Edit', edit_group_path(group) %></td>
 		        <td>
 		        	<% unless group.memberships.count > 0 %>
 		        		<%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' } %>

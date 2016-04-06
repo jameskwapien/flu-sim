@@ -66,7 +66,6 @@ class User < ActiveRecord::Base
   end
 
   def self.in_a_course_group(courseID)
-    #User.includes(:enrollments).includes(:memberships).includes(:groups).where(:enrollments => {:course_id => courseID}, :groups => {:course_id => courseID})
     User.includes(:memberships).includes(:groups).where(:groups => {:course_id => courseID})
   end
 

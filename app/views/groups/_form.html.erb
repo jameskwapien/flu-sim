@@ -1,3 +1,5 @@
+<% get_session_course %>
+
 <%= form_for(@group) do |f| %>
   <% if @group.errors.any? %>
     <div id="error_explanation">
@@ -16,10 +18,17 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :course_id %><br />
-    <%= f.collection_select :course_id, Course.by_teacher(current_user.email), :id, :name %>
-  </div>
+  <% if @session_course %>
+    <div class="field">
+      <%= f.label :course_id %><br />
+      <%= f.collection_select :course_id, Course.find(@session_course.id), :id, :name %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= f.label :course_id %><br />
+      <%= f.collection_select :course_id, Course.by_teacher(current_user.email), :id, :name %>
+    </div>
+  <% end %>
   
   <br />
   <div class="actions">
