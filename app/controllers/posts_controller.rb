@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	load_and_authorize_resource :except => [:index, :show]
+
 	def index	
 		@posts = Post.all.order("created_at DESC")
 	end
@@ -12,6 +14,14 @@ class PostsController < ApplicationController
 		@post = current_user.posts.build
 	end
 
+	def update
+		if @post.update(post_params)
+			redirect_to @post
+		else
+			render 'edit'
+		end
+	end
+
 	def create
 		@post = current_user.posts.build(post_params)
 
@@ -22,9 +32,17 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@post.destroy
+		redirect_to :action => 'index'
+	end
+
 	private
 	def find_post
 		@post = Post.find(params[:id])
+	rescue ActiveRecord::RecordNotFound => e
+  		flash[:error] = "Oops, it seems this object doesn't exit."
+  		redirect_to action: :index
 	end
 
 	def post_params

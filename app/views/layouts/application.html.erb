@@ -70,6 +70,7 @@
 <% if notice || alert %>
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="alertnotice">
+            <p><%= flash[:alert] %></p>
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
         </div>
