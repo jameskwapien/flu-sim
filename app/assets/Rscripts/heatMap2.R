@@ -124,7 +124,9 @@ turnM<-function(m)
 
 #requires DBI to be loaded and RMySQl
 library(DBI)
-groupName<-"Lions"
+args = commandArgs(trailingOnly=TRUE)
+groupName<-args[1]
+
 path<-paste("../../../public/assets/images/",groupName,sep="")
 
 con<-dbConnect(RMySQL::MySQL(),user="root",password="beltforgetflewdarkness",dbname="flusim_development")
