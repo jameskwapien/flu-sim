@@ -4,7 +4,7 @@ class SimulationsController < ApplicationController
 
   def run_sim(url)
     group_name = current_user.memberships.first.group.name
-    @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java-5.1.28.jar Main '#{group_name}' > output.txt &"
+    @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java-5.1.32.jar Main '#{group_name}' > output.txt &"
     url
   end
 

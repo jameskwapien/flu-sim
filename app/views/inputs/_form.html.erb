@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :ads %><br />
+    <%= f.number_field :ads, step: 1 %>
+  </div>
+
+  <div class="field">
     <%= f.label :school_off %><br />
     <%= f.number_field :school_off, in: 0..1, step: 1 %>
   </div>
@@ -33,6 +38,6 @@
 
   <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'New Input', class: 'btn btn-sm' %><br />
   </div>
 <% end %>

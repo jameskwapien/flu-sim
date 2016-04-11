@@ -2,6 +2,7 @@
 
 <div class="panel-body">
   <%= render 'form' %>
-
-  <%= link_to 'Show', @input %> | <%= link_to 'Back', inputs_path %>
+  <hr />
+  <%= link_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
+  <%= button_to 'Show', @input, method: :get, class: 'btn btn-sm' %>
 </div>

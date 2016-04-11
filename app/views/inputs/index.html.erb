@@ -1,35 +1,42 @@
 <div class="panel-heading">Inputs</div>
 
 <div class="panel-body">
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Group Name</th>
-      <th>Vaccines</th>
-      <th>Advertising</th>
-      <th>Schools closed?</th>
-      <th>Simulation Days</th>
-      <th colspan="3">Controls</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @inputs.each do |input| %>
+  <table class="table table-striped table-hover">
+    <thead>
       <tr>
-        <td><%= input.group_name %></td>
-        <td><%= input.vaccines %></td>
-        <td></td>
-        <td><%= input.school_off %></td>
-        <td><%= input.days %></td>
-        <td><%= link_to 'Show', input %></td>
-        <td><%= link_to 'Edit', edit_input_path(input) %></td>
-        <td><%= link_to 'Destroy', input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Group Name</th>
+        <th>Vaccines</th>
+        <th>Advertising</th>
+        <th>Schools closed?</th>
+        <th>Simulation Days</th>
+        <th>Remaining Budget</th>
+        <th colspan="3">Controls</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @inputs.each do |input| %>
+        <tr>
+          <td><%= input.group_name %></td>
+          <td><%= input.vaccines %></td>
+          <td><%= input.ads %></td>
+          <td><%= input.school_off %></td>
+          <td><%= input.days %></td>
+          <td><%= input.money_left %></td>
+          <td><%= link_to 'Show', input %></td>
+          <% if Output.belongs_to_input(input.id).empty? %>
+            <td><%= link_to 'Edit', edit_input_path(input) %></td>
+            <td><%= link_to 'Destroy', input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+            <td></td>
+            <td></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Input', new_input_path %>
+  <hr />
+  <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
+  <%= button_to 'New Input', new_input_path, method: :get, class: 'btn btn-sm' %>
 </div>
