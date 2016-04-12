@@ -6,6 +6,8 @@
       <tr>
         <th>Group Name</th>
         <th>Vaccines</th>
+        <th>Advertising</th>
+        <th>Remaining Budget</th>
         <th>Schools closed?</th>
         <th>Simulation Days</th>
         <th colspan="1">Controls</th>
@@ -15,11 +17,18 @@
       <tr>
         <td><%= @input.group_name %></td>
         <td><%= @input.vaccines %></td>
+        <td><%= @input.ads %></td>
+        <td><%= @input.money_left %></td>
         <td><%= @input.school_off %></td>
         <td><%= @input.days %></td>
-        <td><%= link_to 'Edit', edit_input_path(@input) %></td>
+        <% if Output.belongs_to_input(@input.id).empty? %>
+          <td><%= link_to 'Edit', edit_input_path(@input) %></td>
+        <% else %>
+          <td></td>
+        <% end %>
       </tr>
     </tbody>
   </table>
-  <%= link_to 'Back', inputs_path %>
+  <hr />
+  <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
 </div>

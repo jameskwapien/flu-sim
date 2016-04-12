@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.collection_select :user_id, User.student.not_in_any_group, :id, :name, prompt: true %>
+    <%= f.collection_select :user_id, User.match(@user_id), :id, :name, prompt: true %>
   </div>
 
   <div class="field">
     <%= f.label :group_id %><br />
-    <%= f.collection_select :group_id, Group.all, :id, :name, prompt: true %>    
+    <%= f.collection_select :group_id, Group.belongs_to_course(@course_id), :id, :name, prompt: true %>    
   </div>
 
   <br />  
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create Membership', class: 'btn btn-sm' %><br />
   </div>
 <% end %>

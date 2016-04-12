@@ -1,0 +1,39 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :crn %><br />
+    <%= f.number_field :crn, min: 1, max: 99999, step: 1 %>    
+  </div>
+
+  <div class="field">
+    <%= f.label :instructor %><br />
+    <%= f.select :instructor, [current_user.name] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.select :email, [current_user.email] %>
+  </div>
+
+  <br />
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

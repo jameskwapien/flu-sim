@@ -1,30 +1,102 @@
-<div class="panel-heading">Classlist</div>
+<div class="panel-heading">
+  <% if current_user.admin? %>
+    Instructors & Students
+  <% else %>
+    Students
+  <% end %>
+</div>
 
 <div class="panel-body">
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th colspan="2">Controls</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <% if !user.instructor? %>
+  <% if current_user.admin? %>
+    <h1>Instructors</h1>
+    <table class="table table-striped table-hover">
+      <thead>
         <tr>
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td><%= link_to 'Show', user %></td>
-          <% if false %>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Registered</th>
+            <th>Last Signed In</th>
+            <th>Login Count</th>
+            <th colspan="3">Controls</th>
         </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% if user.instructor? %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.created_at %></td>
+              <td><%= user.last_sign_in_at %></td>
+              <td><%= user.sign_in_count %></td>
+              <td><%= link_to 'Show', user %></td>
+              <td><%= link_to 'Edit', edit_user_path(user) %></td>
+              <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <br />
+    <h1>Students</h1>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Registered</th>
+            <th>Last Signed In</th>
+            <th>Login Count</th>
+            <th colspan="3">Controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% if !user.instructor? && !user.admin? %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.created_at %></td>
+              <td><%= user.last_sign_in_at %></td>
+              <td><%= user.sign_in_count %></td>
+              <td><%= link_to 'Show', user %></td>
+              <td><%= link_to 'Edit', edit_user_path(user) %></td>
+              <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+  <% else %>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Registered</th>
+            <th>Last Signed In</th>
+            <th>Login Count</th>
+            <th colspan="3">Controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% if !user.instructor? && !user.admin? %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.created_at %></td>
+              <td><%= user.last_sign_in_at %></td>
+              <td><%= user.sign_in_count %></td>
+              <td><%= link_to 'Show', user %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>  
 
 <br>
 

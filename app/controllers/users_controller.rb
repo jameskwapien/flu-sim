@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
+  # Admins only
   def create
     #@user = User.new(user_params)
     @user = User.new sign_up_params
@@ -72,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password, :invite_code)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password, :invite_code, :instructor)
     end
 end
