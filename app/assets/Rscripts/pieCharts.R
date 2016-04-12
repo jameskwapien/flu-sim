@@ -124,7 +124,9 @@ turnM<-function(m)
 
 #requires DBI to be loaded and RMySQl
 library(DBI)
-groupName<-"Lions"
+args = commandArgs(trailingOnly=TRUE)
+groupName<-args[1]
+
 path<-paste("../../../public/assets/images/",groupName,sep="")
 
 con<-dbConnect(RMySQL::MySQL(),user="root",password="beltforgetflewdarkness",dbname="flusim_development")
@@ -274,11 +276,11 @@ dev.off()
 
 
 #FIX IMAGES UP FOR SMALL AND BIG DISPLAY
-system("convert -delay 100 -loop 0 ../../../public/assets/images/Lions/percentage*.jpg ../../../public/assets/images/Lions/percentage.gif")
-system("convert -delay 100 -loop 0 ../../../public/assets/images/Lions/sick*.jpg ../../../public/assets/images/Lions/sick.gif")
-system("cp ../../../public/assets/images/Lions/*.jpg ../../../public/assets/images/Lions/small")
-system("cp ../../../public/assets/images/Lions/*.gif ../../../public/assets/images/Lions/small")
-system("mogrify ../../../public/assets/images/Lions/*.jpg -resize 230x230 ../../../public/assets/images/Lions/small/*")
-system("mogrify ../../../public/assets/images/Lions/*.gif -resize 230x230 ../../../public/assets/images/Lions/small/*")
+system(paste("convert -delay 100 -loop 0 ../../../public/assets/images/",groupName,"/percentage*.jpg ../../../public/assets/images/",groupName,"/percentage.gif",sep=""))
+system(paste("convert -delay 100 -loop 0 ../../../public/assets/images/",groupName,"/sick*.jpg ../../../public/assets/images/",groupName,"/sick.gif",sep=""))
+system(paste("cp ../../../public/assets/images/",groupName,"/*.jpg ../../../public/assets/images/",groupName,"/small",sep=""))
+system(paste("cp ../../../public/assets/images/",groupName,"/*.gif ../../../public/assets/images/",groupName,"/small",sep=""))
+system(paste("mogrify ../../../public/assets/images/",groupName,"/*.jpg -resize 230x230 ../../../public/assets/images/",groupName,"/small/*",sep=""))
+system(paste("mogrify ../../../public/assets/images/",groupName,"/*.gif -resize 230x230 ../../../public/assets/images/",groupName,"/small/*",sep=""))
 
 closeAllConnections()
