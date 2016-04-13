@@ -65,11 +65,11 @@
 
 
 .navbar-inverse .navbar-nav > li > p{
-    color: white;
+    color: orange;
 }
 
-#signout-button{
-    margin-top: 13px;
+#navbtn{
+    margin-top: 10px;
 }
 
 /* body */
@@ -123,17 +123,19 @@ body{
             #text-align: center;
         }
     }
-    #sidebar{
+    /*#sidebar{
+        float: left;
         padding: 0px 0px 15px 30px;
         .btn{
-            float: none;
+            float: left;
             font-weight: bold;
         }
         .sub{
             margin-left: 10px;
         }
-    }
+    }*/
     #main{
+        width: 100%;
         padding: 0px 50px 15px 50px;
         .field{
             color: black;

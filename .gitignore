@@ -22,6 +22,7 @@
 /log/development.log
 !/log/.keep
 /tmp
+/app/assets/sim/output.txt
 
 # vim artifacts
 **.swp
