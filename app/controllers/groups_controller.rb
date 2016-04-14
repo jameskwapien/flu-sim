@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   # Create group specific directories
   def group_directory(group)
-    system "cd app/assets && mkdir '#{group}'"
+    system "cd public/assets/images && mkdir '#{group}'"
   end
     
 
