@@ -14,6 +14,8 @@ class InputsController < ApplicationController
 
   # GET /inputs/new
   def new
+    get_session_group
+    @group_id = @session_group
     @input = Input.new
   end
 
@@ -69,6 +71,6 @@ class InputsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def input_params
-      params.require(:input).permit(:group_name, :vaccines, :school_off, :days)
+      params.require(:input).permit(:group_name, :vaccines, :school_off, :days, :ads, :money_left)
     end
 end

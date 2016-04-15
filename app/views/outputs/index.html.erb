@@ -1,4 +1,5 @@
-<% groupName = current_user.memberships.first.group.name %>
+<% get_session_group %>
+<% groupName = @session_group.name %>
 <% count = Output.num_uniq_days(groupName).size / 250 %>
 
 <div class="panel-heading">Output for <%=groupName%>, Day <%= Output.max_day(groupName) %></div>

@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   end
 
   def self.in_this_group(groupID)
-    User.includes(:memberships).where(:memberships => {:group_id => goupID})
+    User.includes(:memberships).where(:memberships => {:group_id => groupID})
   end
 
   # COURSE queries

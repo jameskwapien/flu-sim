@@ -63,7 +63,6 @@
     color: yellow;
 }
 
-
 .navbar-inverse .navbar-nav > li > p{
     color: orange;
 }
@@ -102,14 +101,20 @@ body{
     a:hover{
       color: yellow;
     }
-    h1{
-        color: white; 
+    h1, h2, h3{
+        color: orange;
+        text-align: center; 
+    }
+    
+    #main{
+        width: 100%;
+        padding: 0px 50px 15px 50px;
     }
 
     .jumbotron{
         background: orange;
         color: black;
-        font-size: 2em;
+        font-size: 1em;
         font-weight: bold;
     }
     
@@ -127,41 +132,25 @@ body{
             font-weight: bold;
         }
         .panel-body{
-            #text-align: center;
-        }
-    }
-    /*#sidebar{
-        float: left;
-        padding: 0px 0px 15px 30px;
-        .btn{
-            float: left;
-            font-weight: bold;
-        }
-        .sub{
-            margin-left: 10px;
-        }
-    }*/
-    #main{
-        width: 100%;
-        padding: 0px 50px 15px 50px;
-        .field{
-            color: black;
-            label{
-                color: white;
+            font-size: large;
+            p{
+                text-align: center;
             }
-        }
-        .hidden_field{
-            display: none;
-            color: black;
-            label{
-                color: white;
+            i{
+                color: orange;
             }
-        }
-        .actions{
-            color: black;
-        }
-        input{
-            color: black;
+            .field{
+                color: black;
+                label{
+                    color: white;
+                }
+            }
+            .actions{
+                color: black;
+            }
+            input{
+                color: black;
+            }
         }
     }
 }

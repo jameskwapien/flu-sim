@@ -1,9 +1,16 @@
 class OutputsController < ApplicationController
   before_action :set_output, only: [:show, :edit, :update, :destroy]
 
+  def run_sim
+    get_session_group
+    group_name = @session_group.name
+    @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java.jar Main '#{group_name}'"
+  end
+
   # GET /outputs
   # GET /outputs.json
   def index
+    run_sim
     @outputs = Output.all
   end
 

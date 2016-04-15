@@ -1,5 +1,12 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
+  helper_method :group_directory
+
+  # def run_sim(url, groupName)
+  #   group_name = groupName
+  #   @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java.jar Main '#{group_name}' &"
+  #   url
+  # end
 
   # Create group specific directories
   def group_directory(group)
