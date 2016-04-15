@@ -3,14 +3,14 @@
 	%h3= @post.title
 	%p= @post.content
 
-	/ #comments
-	/ 	%h2
-	/ 		= @post.comments.count
-	/ 		Comments
-	/ 	= render @post.comments
+	#comments
+		%h3
+			= @post.comments.count
+			Comments
+		= render @post.comments
 
-	/ 	%h3 Reply to thread
-	/ 	= render "comments/form"
+		%h4 Reply to thread
+		= render "comments/form"
 
 	%br/
 	%br/

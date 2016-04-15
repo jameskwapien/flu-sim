@@ -1,16 +1,16 @@
-<div class="panel-heading">Forum</div>
+.panel-heading Forum
 
-<div class="panel-body">
-#posts
-	#buttons
-		%h1= link_to "New Post", new_post_path
+.panel-body
+	#posts
+		#buttons
+			%h1= link_to "New Post", new_post_path
 
-	- @posts.each do |post|
-		.post
-			%h3.title= link_to post.title, post
-			%p.date
-				Published 
-				= time_ago_in_words(post.created_at)
-				ago by
-				= post.user.email
-</div>
+		- @posts.each do |post|
+			.post
+				%h3.title= link_to post.title, post
+				%p.date
+					Published 
+					= time_ago_in_words(post.created_at)
+					ago by
+					= post.user.email
+

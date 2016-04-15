@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end 
 	
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to posts_path, :alert => exception.message    
+    redirect_to posts_path, :notice => exception.message    
   end
 
 end

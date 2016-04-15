@@ -1,13 +1,9 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
-	load_and_authorize_resource :except => [:index, :show]
+	load_and_authorize_resource
 
 	def index	
 		@posts = Post.all.order("created_at DESC")
-	end
-
-	def show
-
 	end
 
 	def new
@@ -41,7 +37,7 @@ class PostsController < ApplicationController
 	def find_post
 		@post = Post.find(params[:id])
 	rescue ActiveRecord::RecordNotFound => e
-  		flash[:error] = "Oops, it seems this object doesn't exit."
+  		flash[:notice] = "Oops, it seems this object doesn't exit."
   		redirect_to action: :index
 	end
 

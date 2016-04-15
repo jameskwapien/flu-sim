@@ -1,4 +1,8 @@
 = simple_form_for @post do |f|
 	= f.input :title, required: true
-	= f.input :content, required: true, :input_html => { cols: 50, rows: 10, style: 'color:black; resize:none;'}
-	= f.submit
+	
+	.black-text
+		= f.input :content, required: true, :input_html => { cols: 50, rows: 10, class: 'black-text'}
+
+	.form-actions
+		= f.button :submit

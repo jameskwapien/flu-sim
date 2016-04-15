@@ -4,20 +4,18 @@ class Ability
   def initialize(user)
 
     if user.admin? 
-
         can :manage, :all 
 
     else
-
-        can :update, Post do |post|
+        can [:edit, :update, :destroy], [Post] do |post|
             post.user == user
         end
 
-        can :destroy, Post do |post|
-            post.user == user
+        can [:edit, :update, :destroy], [Comment] do |comment|
+            comment.user == user
         end
 
-        can :create, Post
+        can [:index, :show, :new, :create], [Post, Comment]
 
         
     end

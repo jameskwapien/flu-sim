@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :memberships
   has_many :groups, through: :memberships
-  has_many :posts
+
   has_many :comments
+  has_many :posts
   attr_accessor :invite_code
   validate :invite_code_valid, :on => :create
 
