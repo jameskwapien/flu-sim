@@ -126,6 +126,18 @@ public class Main {
       vacc_chance_percent = 0.05f;
     }
     //currently all cities have the same populations then it is cleaned up in post
+    /* R needs this */
+    try {
+      System.out.printf("wtf");
+      Runtime rt = Runtime.getRuntime();
+      Process pr = rt.exec("Rscript ../Rscripts/pieCharts.R " + GROUP);
+      System.out.printf("wtf");
+    }
+    catch (Exception e){
+      System.out.printf("Command line call is not working: " + e);
+      System.out.printf("WTF");
+    }
+    /* end of R call */
     final long finish = System.currentTimeMillis();
     System.out.printf("Time to run: %02.2f seconds\n",(float)(finish-start)/1000);
   }

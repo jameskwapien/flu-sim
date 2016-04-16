@@ -1,85 +1,102 @@
-<!DOCTYPE html>
-<html>
-<% groupName = current_user.memberships.first.group.name %>
+<% get_session_group %>
+<% groupName = @session_group.name %>
+<% count = Output.num_uniq_days(groupName).size / 250 %>
+
+<div class="panel-heading">Output for <%=groupName%>, Day <%= Output.max_day(groupName) %></div>
+
 <div class="container">
-<h1 class="page-header col-md-9 col-xs-6">Output for: <%=groupName%></h1>
+  <div class="panel-body">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Total Population</th>
+          <th>Sick</th>
+          <th>Immune</th>
+          <th>Budget Remaining</th>
+          <th>Vaccines Remaining</th>
+          <th>Budget Spent on Vaccines</th>
+          <th>Budget Spent on Advertising</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @population %></td>
+          <td><%= @sick %></td>
+          <td><%= @immune %></td>
+          <td><%= @budget_rem %></td>
+          <td><%= @vaccines_rem %></td>
+          <td><%= @budget_vaccs %></td>
+          <td><%= @budget_ads %></td> 
+        </tr>
+      </tbody>
+    </table>  
 
+        <hr />
 
-  <div class="row">
-    <div class="col-lg-6 col-md-4 text-center">
-      <h3>Population</h3>
-      <%= link_to image_tag("/assets/images/"+groupName+"/small/population.jpg"),"#population", class: "fancybox" %>
-      <div style="display:none">
-        <div id="population">
-          <%=image_tag("/assets/images/"+groupName+"/population.jpg", class:"img-responsive img-center population")%>
-          <%="this here"%>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-md-4 text-center">
-      <h3><%=link_to "Percentage Sick","#curPercentage",class: "fancybox"%></h3>
-        <div style="display:none;">
-          <div id="curPercentage">
-            <%=image_tag("/assets/images/"+groupName+"/percentage2.jpg")%>
-            <%="Current Breakdown"%>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 text-center">
+        <h3>Population</h3>
+        <%= link_to image_tag("/assets/images/"+groupName+"/population.jpg"),"#population", class: "fancybox" %>
+        <div style="display:none">
+          <div id="population">
+            <%=image_tag("/assets/images/"+groupName+"/population.jpg", class:"img-responsive img-center population")%>
           </div>
         </div>
-       <%= link_to image_tag("/assets/images/"+groupName+"/small/percentage.gif"),"#percentage", class: "fancybox" %>
-         <div style="display:none">
-           <div id="percentage">
-             <%=image_tag("/assets/images/"+groupName+"/percentage.gif")%>
-           </div>
-         </div>
-     </div>
-  </div>
-</div>
-
-<table>
-  <tr>
-
-  </tr>
-  <tr>
-    <td><h3>Actual Sick</h3>
-    <%= link_to image_tag("/assets/images/"+groupName+"/small/sick.gif"),"#sick", class: "fancybox" %>
-      <div style="display:none;">
-        <div id="sick">
-          <%=image_tag("/assets/images/"+groupName+"/sick.gif")%>
-        </div>
       </div>
-    </td>
-    <td><h3>Sick & Immune</h3>
-     <%= link_to image_tag("/assets/images/"+groupName+"/small/siChart.jpg"),"#sickChart", class: "fancybox" %>
-       <div style="display:none;">
-         <div id="sickChart">
-           <%=image_tag("/assets/images/"+groupName+"/siChart.jpg")%>
-         </div>
+      <div class="col-md-6 col-lg-4 text-center">
+        <h3><%=link_to "Percentage Sick","#curPercentage",class: "fancybox"%></h3>
+          <div style="display:none;">
+            <div id="curPercentage">
+              <%=image_tag("/assets/images/"+groupName+"/percentage" + count.to_s + ".jpg")%>
+            </div>
+          </div>
+         <%= link_to image_tag("/assets/images/"+groupName+"/percentage.gif"),"#percentage", class: "fancybox" %>
+           <div style="display:none">
+             <div id="percentage">
+               <%=image_tag("/assets/images/"+groupName+"/percentage.gif")%>
+             </div>
+           </div>
        </div>
-    </td>
-   </tr>
-   <tr>
-     <td><h3>Population Pie</h3>
-     <%= link_to image_tag("/assets/images/"+groupName+"/small/PopPieChart.jpg"),"#PPC", class: "fancybox" %>
-       <div style="display:none;">
-         <div id="PPC">
-           <%=image_tag("/assets/images/"+groupName+"/PopPieChart.jpg")%>
-         </div>
+       <div class="col-md-6 col-lg-4 text-center">
+          <h3>Actual Sick</h3>
+          <%= link_to image_tag("/assets/images/"+groupName+"/sick.gif"),"#sick", class: "fancybox" %>
+          <div style="display:none;">
+              <div id="sick">
+                <%=image_tag("/assets/images/"+groupName+"/sick.gif")%>
+              </div>
+          </div>
        </div>
-     </td>
-     <td><h3>Sick Pie</h3>
-      <%= link_to image_tag("/assets/images/"+groupName+"/small/SicPieChart.jpg"),"#SPC", class: "fancybox" %>
+       <div class="col-md-6 col-lg-4 text-center">
+        <h3>Sick & Immune</h3>
+          <%= link_to image_tag("/assets/images/"+groupName+"/siChart.jpg"),"#sickChart", class: "fancybox" %>
+          <div style="display:none;">
+            <div id="sickChart">
+              <%=image_tag("/assets/images/"+groupName+"/siChart.jpg")%>
+            </div>
+          </div>
+       </div>
+       <div class="col-md-6 col-lg-4 text-center">
+        <h3>Population Pie</h3>
+        <%= link_to image_tag("/assets/images/"+groupName+"/PopPieChart.jpg"),"#PPC", class: "fancybox" %>
+        <div style="display:none;">
+          <div id="PPC">
+            <%=image_tag("/assets/images/"+groupName+"/PopPieChart.jpg")%>
+          </div>
+        </div>
+       </div>
+       <div class="col-md-6 col-lg-4 text-center">
+        <h3>Sick Pie</h3>
+        <%= link_to image_tag("/assets/images/"+groupName+"/SicPieChart.jpg"),"#SPC", class: "fancybox" %>
         <div style="display:none;">
           <div id="SPC">
             <%=image_tag("/assets/images/"+groupName+"/SicPieChart.jpg")%>
           </div>
         </div>
-     </td>
-    </tr>
+      </div>
+    </div>
 
-</table>
+    <hr />
 
-
-<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
-<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
-
-
-</html>
+    <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
+  </div>
+</div>

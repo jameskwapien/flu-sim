@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  post 'groups/run_sim'
+
   # devise
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users

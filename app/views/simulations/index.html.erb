@@ -8,6 +8,6 @@
   <br />
 
   <div class="field">
-    <%= button_to 'Run', run_sim(simulations_path), method: :get %>
+    <%= button_to 'Run', run_sim(simulations_path, current_user.memberships.first.group.name), method: :get %>
   </div>
 </div>

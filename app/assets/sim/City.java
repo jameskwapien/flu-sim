@@ -96,12 +96,12 @@ City(int id, Randomize random, int CITYPOP, int CITYFAM){
     // synchronize when printing to console so it doesn't get all messed up
     // City object needed for this static method to print instance variables
     static synchronized void print(int day, City thisCity){
-        System.out.printf("[%d]Population total for City[%d]: %d\n", day, thisCity.cityId, thisCity.population);
-        System.out.printf("[%d]Sick: %d, Immnune: %d\n", day, thisCity.sick, thisCity.immune);
-        System.out.printf("[%d]Ages: %d/%d, %d/%d, %d/%d\n", day,   thisCity.agesSick[0],thisCity.ages[0],
-                                                                    thisCity.agesSick[1],thisCity.ages[1],
-                                                                    thisCity.agesSick[2],thisCity.ages[2]);
-        System.out.println("-------------------------------------");
+        // System.out.printf("[%d]Population total for City[%d]: %d\n", day, thisCity.cityId, thisCity.population);
+        // System.out.printf("[%d]Sick: %d, Immnune: %d\n", day, thisCity.sick, thisCity.immune);
+        // System.out.printf("[%d]Ages: %d/%d, %d/%d, %d/%d\n", day,   thisCity.agesSick[0],thisCity.ages[0],
+        //                                                             thisCity.agesSick[1],thisCity.ages[1],
+        //                                                             thisCity.agesSick[2],thisCity.ages[2]);
+        // System.out.println("-------------------------------------");
     }
 
     void setParams(int vaccines, int ads, int schoolsOff, int vacc_chance, int money_left){

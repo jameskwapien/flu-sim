@@ -5,4 +5,8 @@ class Membership < ActiveRecord::Base
   def self.belongs_to_course(courseID)
   	Membership.includes(:group).where(:groups => {:course_id => courseID})
   end
+
+  def self.belongs_to_group(groupID)
+  	Membership.includes(:group).where(:groups => {:id => groupID})
+  end
 end

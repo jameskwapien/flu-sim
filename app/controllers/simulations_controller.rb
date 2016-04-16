@@ -2,9 +2,9 @@ class SimulationsController < ApplicationController
   before_action :set_simulation, only: [:show, :edit, :update, :destroy]
   helper_method :run_sim
 
-  def run_sim(url)
-    group_name = current_user.memberships.first.group.name
-    @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java-5.1.32.jar Main '#{group_name}' > output.txt &"
+  def run_sim(url, groupName)
+    group_name = groupName
+    @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java.jar Main '#{group_name}' &"
     url
   end
 

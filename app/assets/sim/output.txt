@@ -1,3 +1,0 @@
-Starting Simulation
-Success - com.mysql.jdbc.JDBC4Connection@53330681
-input_id existent in output

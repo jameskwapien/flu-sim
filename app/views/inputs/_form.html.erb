@@ -11,10 +11,16 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= f.label :group_name %><br />
-    <%= f.collection_select :group_name, current_user.groups.uniq, :name, :name, prompt: true %>
+    <%= f.collection_select :group_name, Group.where(:id => @group_id), :name, :name, prompt: true %>
   </div>
+
+  <div class="field">
+    <%= f.label :money_left %><br />
+    <%= f.number_field :money_left, value: 5000000, readonly: true %>
+  </div> 
 
   <div class="field">
     <%= f.label :vaccines %><br />

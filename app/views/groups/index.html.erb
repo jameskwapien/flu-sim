@@ -6,31 +6,32 @@
     <tr>
       <th>Name</th>
       <th>Course</th>
-      <th colspan="3">Controls</th>
+      <th>Controls</th>
     </tr>
   </thead>
 
   <tbody>
     <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td>
-          <% Course.all.each do |course| %>
-            <% if course.id == group.course_id %>
-              <%= course.name %>
+      <% if current_user.groups.exists?(:id => group.id) %>
+        <tr>
+          <td><%= group.name %></td>
+          <td>
+            <% Course.all.each do |course| %>
+              <% if course.id == group.course_id %>
+                <%= course.name %>
+              <% end %>
             <% end %>
-          <% end %>
-        </td> 
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+          </td> 
+          <td><%= link_to 'Show', group %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
-<hr />
-
-<%= button_to 'New Group', new_group_path, method: :get, class: 'btn btn-sm' %>
+<% if current_user.instructor? %>
+  <hr />
+  <%= button_to 'New Group', new_group_path, method: :get, class: 'btn btn-sm' %>
+<% end %>
 
 </div>

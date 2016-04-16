@@ -278,9 +278,9 @@ dev.off()
 #FIX IMAGES UP FOR SMALL AND BIG DISPLAY
 system(paste("convert -delay 100 -loop 0 ../../../public/assets/images/",groupName,"/percentage*.jpg ../../../public/assets/images/",groupName,"/percentage.gif",sep=""))
 system(paste("convert -delay 100 -loop 0 ../../../public/assets/images/",groupName,"/sick*.jpg ../../../public/assets/images/",groupName,"/sick.gif",sep=""))
-system(paste("cp ../../../public/assets/images/",groupName,"/*.jpg ../../../public/assets/images/",groupName,"/small",sep=""))
-system(paste("cp ../../../public/assets/images/",groupName,"/*.gif ../../../public/assets/images/",groupName,"/small",sep=""))
-system(paste("mogrify ../../../public/assets/images/",groupName,"/*.jpg -resize 230x230 ../../../public/assets/images/",groupName,"/small/*",sep=""))
-system(paste("mogrify ../../../public/assets/images/",groupName,"/*.gif -resize 230x230 ../../../public/assets/images/",groupName,"/small/*",sep=""))
+# system(paste("cp ../../../public/assets/images/",groupName,"/*.jpg ../../../public/assets/images/",groupName,"/small",sep=""))
+# system(paste("cp ../../../public/assets/images/",groupName,"/*.gif ../../../public/assets/images/",groupName,"/small",sep=""))
+# system(paste("mogrify ../../../public/assets/images/",groupName,"/*.jpg -resize 230x230 ../../../public/assets/images/",groupName,"/small/*",sep=""))
+# system(paste("mogrify ../../../public/assets/images/",groupName,"/*.gif -resize 230x230 ../../../public/assets/images/",groupName,"/small/*",sep=""))
 
 closeAllConnections()

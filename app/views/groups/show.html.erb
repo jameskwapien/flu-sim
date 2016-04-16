@@ -1,12 +1,15 @@
-<div class="panel-heading">Showing Group</div>
+<% session[:group_id] = @group.id %>
+
+<div class="panel-heading">Group Details</div>
  
 <div class="panel-body"> 
+
   <table class="table table-striped table-hover">
     <thead>
       <tr>
         <th>Name</th>
         <th>Course</th>
-        <th colspan="1">Controls</th>
+        <th># of Members</th>
       </td>
     </thead>
     <tbody>
@@ -18,12 +21,75 @@
               <%= course.name %>
             <% end %>
           <% end %>
-        </td> 
-        <td><%= link_to 'Edit', edit_group_path(@group) %></td>
+        </td>
+        <td><%= Membership.belongs_to_group(@group.id).count %></td> 
       </tr>
+    </tbody>
+  </table>  
+
+  <hr />
+  <h2>Members</h2>
+  <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% User.in_this_group(@group.id).each do |user| %>
+          <% if !user.instructor? && !user.admin? %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+  <hr />
+  <h2>Inputs</h2>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Vaccines</th>
+        <th>Advertising</th>
+        <th>Schools closed?</th>
+        <th>Simulation Days</th>
+        <th>Remaining Budget</th>
+        <th colspan="3">Controls</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% Input.belongs_to_group(@group.name).each do |input| %>
+        <tr>
+          <td><%= input.vaccines %></td>
+          <td><%= input.ads %></td>
+          <td><%= input.school_off %></td>
+          <td><%= input.days %></td>
+          <td><%= input.money_left %></td>
+          <% if Output.belongs_to_input(input.id).empty? %>
+            <td><%= link_to 'Edit', edit_input_path(input) %></td>
+            <td><%= link_to 'Destroy', input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+          <% unless Output.belongs_to_input(input.id).present? %>
+            <% session[:input_id] = input.id %>
+            <td><%= link_to 'Run', outputs_path %></td>
+          <% else %>
+            <td></td>
+            <td></td>
+            <td></td>
+          <% end %>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 
+  <%= button_to 'New Input', new_input_path(group_id: @group.id), method: :get, class: 'btn btn-sm' %><br />
+
+
   <hr />
-  <%= button_to 'Back', courses_path, method: :get, class: 'btn btn-sm' %>
+  <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
 </div>
