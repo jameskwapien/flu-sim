@@ -1,7 +1,5 @@
-<div class="panel-heading">Control Panel</div>
-
-<div class="panel-body">
-  <%= link_to 'Forum', posts_path, class: 'btn btn-lg' %><br />
-  <%= link_to 'Classes', courses_path, class: 'btn btn-lg' %><br />
-  <%= link_to 'Calendar', root_path, class: 'btn btn-lg' %>
-</div>
+<ul class="nav navbar-nav">
+  <li><%= link_to 'Forum', posts_path %></li>
+  <li><%= link_to 'Classes', courses_path %></li>
+  <li><%= link_to 'Calendar', root_path %></li>
+</ul>

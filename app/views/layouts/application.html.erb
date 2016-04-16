@@ -12,29 +12,24 @@
 <% if current_user.present? %>
     <%-#--- BEGIN NAVIGATION BAR ----%>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav navbar-nav navbar-left">
-                    <li><%= link_to "FluSim", root_path %></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right navbar-collapse">
-                    <% if current_user.admin? %>
-                        <li><%= button_to 'Access', root_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Users', users_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                    <% elsif current_user.instructor? %>
-                        <li><%= button_to 'Classes', courses_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Forum', posts_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Calendar', root_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                    <% else %>
-                        <li><%= button_to 'Forum', posts_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Input', inputs_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Simulate', simulations_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Output', outputs_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Calendar', root_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Feedback', root_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to "FluSim", root_path, class: "navbar-brand" %>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <%= render whatAmI[1] %>
+                <div class = "navbar-right">
+                    <% if current_user.present? %>
+                        <p class="navbar-text"><%= current_user.name%> (<%=whatAmI[0] %>)</p>
+                        <%= link_to "Sign Out", destroy_user_session_path, id: "navbtn", class: "btn btn-success", method: :delete %>
                     <% end %>
-                    <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-sm', id: 'navbtn' %></li>
-                </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -44,11 +39,9 @@
 <%-#--- BEGIN MAIN CONTAINER ----%>
 <div id="main-container" class="container">
     <%-#--- BEGIN FIRST ROW ----%>
-    <div class="row">
-        <div id="main" class="col-xs-6 col-md-9">
-            <div class="panel panel-default">
-                <%= yield %>
-            </div>
+    <div id="main">
+        <div class="panel panel-default">
+          <%= yield %>
         </div>
     </div>
     <%-#--- END FIRST ROW ----%>
