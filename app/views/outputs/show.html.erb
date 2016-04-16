@@ -1,8 +1,25 @@
-<% get_output_count(@output.group_name, @output.input_id) %> 
+<% groupName = @output.group_name %>
 
 <div class="panel-heading">Results for <%= @output.group_name %> Input</div>
  
 <div class="panel-body"> 
+
+<%
+  count = 0
+  final_count = 0
+  @output.input_id
+  test_input_id = -1
+  Output.belongs_to_group(@output.group_name).each do |o|
+    if test_input_id != o.input_id
+      test_input_id = o.input_id
+      count += 1
+    end
+    if o.input_id == @output.input_id
+      final_count = count
+    end
+end %>
+
+<%= final_count %>
 
 <% 
   input = Input.find(@output.input_id)
@@ -63,6 +80,35 @@ end %>
       </tr>
     </tbody>
   </table>
+
+  <hr />
+
+  <div class="row">
+      <div class="col-md-6 col-lg-4 text-center">
+        <h3><%=link_to "Percentage Sick","#curPercentage",class: "fancybox"%></h3>
+          <div style="display:none;">
+            <div id="curPercentage">
+              <%=image_tag("/assets/images/"+groupName+"/percentage" + final_count.to_s + ".jpg")%>
+            </div>
+          </div>
+         <%= link_to image_tag("/assets/images/"+groupName+"/percentage" + final_count.to_s + ".jpg"),"#percentage", class: "fancybox" %>
+           <div style="display:none">
+             <div id="percentage">
+               <%=image_tag("/assets/images/"+groupName+"/percentage" + final_count.to_s + ".jpg")%>
+             </div>
+           </div>
+       </div>
+       <div class="col-md-6 col-lg-4 text-center">
+          <h3>Actual Sick</h3>
+          <%= link_to image_tag("/assets/images/"+groupName+"/sick" + final_count.to_s + ".jpg"),"#sick", class: "fancybox" %>
+          <div style="display:none;">
+              <div id="sick">
+                <%=image_tag("/assets/images/"+groupName+"/sick" + final_count.to_s + ".jpg")%>
+              </div>
+          </div>
+       </div>
+    </div>
+
 
   <hr />
   <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>

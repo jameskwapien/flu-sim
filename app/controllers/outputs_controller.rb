@@ -59,14 +59,7 @@ class OutputsController < ApplicationController
   # GET /outputs/1
   # GET /outputs/1.json
   def show
-    # @population = 0
-    # @sick = 0
-    # @immune = 0
-    # Output.belongs_to_input(input_id).each do |output|
-    #   @population += output.population
-    #   @sick += output.sick
-    #   @immune += output.immune
-    # end
+    @count
   end
 
   # GET /outputs/new
