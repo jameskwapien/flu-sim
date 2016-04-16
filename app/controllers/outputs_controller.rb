@@ -1,10 +1,36 @@
 class OutputsController < ApplicationController
   before_action :set_output, only: [:show, :edit, :update, :destroy]
+  helper_method :compile_data
 
   def run_sim
     get_session_group
     group_name = @session_group.name
     @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java.jar Main '#{group_name}'"
+  end
+
+  def compile_data
+    get_session_input
+    inputID = @session_input.id
+    @population = 0
+    @sick = 0
+    @immune = 0
+    @budget_rem = 0
+    @vaccines_rem = 0
+    @budget_vaccs = 0
+    @budget_ads = 0
+    Output.belongs_to_input(inputID).all.each do |output|
+      @population += output.population
+      @sick += output.sick
+      @immune += output.immune
+      unless @budget_rem
+        @budget_rem = output.money_left
+      end
+      @vaccines_rem += output.vaccs_left
+      @budget_vaccs += output.money_spent_vaccines
+      unless @budget_ads
+        @budget_ads += output.money_spent_ads  
+      end
+    end
   end
 
   # GET /outputs

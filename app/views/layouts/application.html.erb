@@ -12,23 +12,30 @@
 <% if current_user.present? %>
     <%-#--- BEGIN NAVIGATION BAR ----%>
     <nav class="navbar navbar-inverse">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav navbar-nav navbar-left">
-                    <li><%= link_to "FluSim", root_path %></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right navbar-collapse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <%= link_to "FluSim", root_path %>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
                     <% if current_user.admin? %>
-                        <li><%= button_to 'Access', root_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Users', users_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
+                        <li><%= link_to 'Access', root_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
+                        <li><%= link_to 'Users', users_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
                     <% elsif current_user.instructor? %>
-                        <li><%= button_to 'Classes', courses_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Forum', posts_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Calendar', root_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
+                        <li><%= link_to 'Classes', courses_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
+                        <li><%= link_to 'Forum', posts_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
+                        <li><%= link_to 'Calendar', root_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
                     <% else %>
-                        <li><%= button_to 'Groups', groups_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
-                        <li><%= button_to 'Forum', posts_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
+                        <li><%= link_to 'Groups', groups_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
+                        <li><%= link_to 'Forum', posts_path, method: :get, class: 'btn btn-sm', id: 'navbtn' %></li>
                     <% end %>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-sm', id: 'navbtn' %></li>
                 </ul>
             </div>

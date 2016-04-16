@@ -127,7 +127,7 @@ library(DBI)
 args = commandArgs(trailingOnly=TRUE)
 groupName<-args[1]
 
-path<-paste("~/Dropbox/CS4900/flu-sim/public/assets/images/",groupName,sep="")
+path<-paste("../../../public/assets/images/",groupName,sep="")
 
 con<-dbConnect(RMySQL::MySQL(),user="root",password="beltforgetflewdarkness",dbname="flusim_development")
 #connect to database
@@ -276,8 +276,8 @@ dev.off()
 
 
 #FIX IMAGES UP FOR SMALL AND BIG DISPLAY
-system(paste("convert -delay 100 -loop 0 ~/Dropbox/CS4900/flu-sim/public/assets/images/",groupName,"/percentage*.jpg ~/Dropbox/CS4900/flu-sim/public/assets/images/",groupName,"/percentage.gif",sep=""))
-system(paste("convert -delay 100 -loop 0 ~/Dropbox/CS4900/flu-sim/public/assets/images/",groupName,"/sick*.jpg ~/Dropbox/CS4900/flu-sim/public/assets/images/",groupName,"/sick.gif",sep=""))
+system(paste("convert -delay 100 -loop 0 ../../../public/assets/images/",groupName,"/percentage*.jpg ../../../public/assets/images/",groupName,"/percentage.gif",sep=""))
+system(paste("convert -delay 100 -loop 0 ../../../public/assets/images/",groupName,"/sick*.jpg ../../../public/assets/images/",groupName,"/sick.gif",sep=""))
 # system(paste("cp ../../../public/assets/images/",groupName,"/*.jpg ../../../public/assets/images/",groupName,"/small",sep=""))
 # system(paste("cp ../../../public/assets/images/",groupName,"/*.gif ../../../public/assets/images/",groupName,"/small",sep=""))
 # system(paste("mogrify ../../../public/assets/images/",groupName,"/*.jpg -resize 230x230 ../../../public/assets/images/",groupName,"/small/*",sep=""))
