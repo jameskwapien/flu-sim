@@ -1,10 +1,20 @@
 class OutputsController < ApplicationController
   before_action :set_output, only: [:show, :edit, :update, :destroy]
-  
+  helper_method :get_output_count
+
   def run_sim
     get_session_group
     group_name = @session_group.name
     @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java.jar Main '#{group_name}'"
+  end
+
+  def get_output_count(group_name, input_id)
+    @count = 0
+    Output.belongs_to_group(group_name).each do |o|
+      unless o.input_id == input_id
+        @count += 1
+      end
+    end
   end
 
   # GET /outputs
@@ -49,6 +59,14 @@ class OutputsController < ApplicationController
   # GET /outputs/1
   # GET /outputs/1.json
   def show
+    # @population = 0
+    # @sick = 0
+    # @immune = 0
+    # Output.belongs_to_input(input_id).each do |output|
+    #   @population += output.population
+    #   @sick += output.sick
+    #   @immune += output.immune
+    # end
   end
 
   # GET /outputs/new

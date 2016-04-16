@@ -28,7 +28,7 @@ class InputsController < ApplicationController
   def create
     @input = Input.new(input_params)
     # if @input.vaccines * 13 > @input.money_left
-      
+
 
     get_session_group
     respond_to do |format|
@@ -50,10 +50,16 @@ class InputsController < ApplicationController
   # PATCH/PUT /inputs/1
   # PATCH/PUT /inputs/1.json
   def update
+    get_session_group 
     respond_to do |format|
       if @input.update(input_params)
-        format.html { redirect_to @input, notice: 'Input was successfully updated.' }
-        format.json { render :show, status: :ok, location: @input }
+        if @session_group
+          format.html { redirect_to @session_group, notice: 'Input was successfully updated.' }
+          format.json { render :show, status: :ok, location: @input }
+        else
+          format.html { redirect_to @input, notice: 'Input was successfully updated.' }
+          format.json { render :show, status: :ok, location: @input }
+        end
       else
         format.html { render :edit }
         format.json { render json: @input.errors, status: :unprocessable_entity }
