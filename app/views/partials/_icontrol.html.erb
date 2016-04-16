@@ -1,11 +1,9 @@
-<div class="panel-heading">Control Panel</div>
-
-<div class="panel-body">
-  <%= link_to 'Forum', posts_path, class: 'btn btn-lg' %><br />
-  <%= link_to 'Classlist', users_path, class: 'btn btn-lg' %><br />
-  <%= link_to 'Groups', groups_path, class: 'btn btn-lg' %><br />
-  <%= link_to 'Memberships', memberships_path, class: 'btn btn-lg' %><br />
-  <%= link_to 'Gradebook', root_path, class: 'btn btn-lg' %><br />
-  <%= link_to 'Library', root_path, class: 'btn btn-lg' %><br />
-  <%= link_to 'Calendar', root_path, class: 'btn btn-lg' %>
-</div>
+<ul class="nav navbar-nav">
+  <li><%= link_to 'Forum', posts_path %></li>
+  <li><%= link_to 'Classlist', users_path %></li>
+  <li><%= link_to 'Groups', groups_path %></li>
+  <li><%= link_to 'Memberships', memberships_path %></li>
+  <li><%= link_to 'Gradebook', root_path %></li>
+  <li><%= link_to 'Library', root_path %></li>
+  <li><%= link_to 'Calendar', root_path %></li>
+</ul>

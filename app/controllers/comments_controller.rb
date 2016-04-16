@@ -8,15 +8,21 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      redirect_to @post, notice: 'Comment was successfully created.' 
+      redirect_to @post, notice: 'Comment created.' 
     else
       render :new 
     end
   end
 
+  def show
+    redirect_to post_path(@post)
+    flash[:alert] = "Comments cannot be shown"
+
+  end
+
   def update
     if @comment.update(comment_params)
-      redirect_to @post, notice: 'Comment was successfully updated.' 
+      redirect_to @post, notice: 'Comment edited.' 
     else
       render :edit 
     end
@@ -24,7 +30,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @post, notice: 'Comment was successfully destroyed.' 
+    redirect_to @post, notice: 'Comment deleted.' 
   end
 
   private
@@ -35,7 +41,7 @@ class CommentsController < ApplicationController
     def set_comment
       @comment = @post.comments.find(params[:id])
     rescue ActiveRecord::RecordNotFound => e
-      flash[:notice] = "Oops, it seems this object doesn't exit."
+      flash[:alert] = "Oops, it seems this comment doesn't exit."
       redirect_to posts_path
     end
 

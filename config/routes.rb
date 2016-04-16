@@ -2,7 +2,6 @@ Rails.application.routes.draw do
  
   # for java simulation call
   get 'simulation/show'
-  get 'welcome/index'
   resources :outputs
   resources :inputs
   resources :simulations
@@ -18,7 +17,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users, :groups
   devise_scope :user do
-    root "devise/sessions#new"
+      authenticated :user do
+        root 'welcome#index', as: :root
+      end
+      unauthenticated do
+        root 'devise/sessions#new', as: :unauthenticated_root
+      end
   end 
 
 end

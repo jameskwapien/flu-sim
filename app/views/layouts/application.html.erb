@@ -13,26 +13,23 @@
     <%-#--- BEGIN NAVIGATION BAR ----%>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div>
-                <ul class="nav navbar-nav navbar-left">
-                    <li><%= link_to "FluSim", root_path, method: :get %></li>
-                </ul>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to "FluSim", root_path, class: "navbar-brand" %>
             </div>
-            <div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><% if current_user.present? && current_user.admin? %>
-                            <p class="navbar-text"><%= current_user.name %> (Admin)</p>
-                        <% elsif current_user.present? && current_user.instructor? %>
-                            <p class="navbar-text"><%= current_user.name %> (Instructor)</p>
-                        <% elsif current_user.present? && (!current_user.instructor? && !current_user.admin?) %>
-                            <p class="navbar-text"><%= current_user.name %> (Student)</p>
-                        <% end %>
-                    </li>
-                    <li><% if current_user.present? %>
-                            <%= button_to "Sign Out", destroy_user_session_path, :id => "signout-button", method: :delete %>
-                        <% end %>
-                    </li>
-                </ul>
+            <div id="navbar" class="navbar-collapse collapse">
+                <%= render whatAmI[1] %>
+                <div class = "navbar-right">
+                    <% if current_user.present? %>
+                        <p class="navbar-text"><%= current_user.name%> (<%=whatAmI[0] %>)</p>
+                        <%= link_to "Sign Out", destroy_user_session_path, id: "signout-button", class: "btn btn-success", method: :delete %>
+                    <% end %>
+                </div>
             </div>
         </div>
     </nav>
@@ -42,24 +39,9 @@
 <%-#--- BEGIN MAIN CONTAINER ----%>
 <div id="main-container" class="container">
     <%-#--- BEGIN FIRST ROW ----%>
-    <div class="row">
-        <div id="sidebar" class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-                <% if !current_user.present? %>
-                    <%= render "partials/welcome" %>
-                <% elsif current_user.admin? %>
-                    <%= render "partials/acontrol" %>
-                <% elsif current_user.instructor? %>
-                    <%= render "partials/icontrol" %>
-                <% else %>
-                    <%= render "partials/scontrol" %>
-                <% end %>
-            </div>
-        </div>
-        <div id="main" class="col-xs-6 col-md-9">
-            <div class="panel panel-default">
-              <%= yield %>
-            </div>
+    <div id="main">
+        <div class="panel panel-default">
+          <%= yield %>
         </div>
     </div>
     <%-#--- END FIRST ROW ----%>
@@ -70,7 +52,6 @@
 <% if notice || alert %>
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="alertnotice">
-            <p><%= flash[:alert] %></p>
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
         </div>

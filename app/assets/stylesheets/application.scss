@@ -49,45 +49,32 @@
 
 /* Navbar */
 
-.navbar{
-    background: black;
-}
-
-.navbar-inverse .navbar-nav > li > a{
-    font-family: "Futura", "Cocon", Serif;
-    font-size: x-large;
-    color: #4682B4;
-}
-
 .navbar-inverse .navbar-nav > li > a:hover{
     color: yellow;
 }
 
 
-.navbar-inverse .navbar-nav > li > p{
-    color: white;
-}
-
 #signout-button{
-    margin-top: 13px;
+    margin-top: 10px;
 }
 
 /* body */
 
 body{
     height: 100vh;
-    background-image: linear-gradient(180deg, #4682B4, black);
+    background-image: radial-gradient(#999, #000);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #main-container{
-    #background: black;
-    margin-top: 75px;
-    padding: 0px 0px 15px 0px;
-    color: white;
+    // #background: black;
+    // margin-top: 75px;
+    // padding: 0px 0px 15px 0px;
+
+    color: black;
     a:hover{
-      color: yellow;
+      color: red;
     }
     h1{
         color: white; 
@@ -101,45 +88,14 @@ body{
     }
     
     .panel-default{
-        background: black;
+        background: white;
         padding: 0px 0px 0px 0px;
         border-color: black;
-        .panel-heading{
-            color: black;
-            background: beige;
-            border-color: beige;
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: bold;
-        }
-        .panel-body{
-            #text-align: center;
-        }
     }
-    #sidebar{
-        padding: 0px 0px 15px 30px;
-    }
+
     #main{
-        padding: 0px 50px 15px 50px;
-        .field{
-            color: black;
-            label{
-                color: white;
-            }
-        }
-        .hidden_field{
-            display: none;
-            color: black;
-            label{
-                color: white;
-            }
-        }
-        .actions{
-            color: black;
-        }
-        input{
-            color: black;
-        }
+        padding: 75px 50px 15px 50px;
+
     }
 }
 
