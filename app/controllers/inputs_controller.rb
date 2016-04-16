@@ -27,11 +27,16 @@ class InputsController < ApplicationController
   # POST /inputs.json
   def create
     @input = Input.new(input_params)
-
+    get_session_group
     respond_to do |format|
       if @input.save
-        format.html { redirect_to @input, notice: 'Input was successfully created.' }
-        format.json { render :show, status: :created, location: @input }
+        if @session_group
+          format.html { redirect_to @session_group, notice: 'Input was successfully created.' }
+          format.json { render :show, status: :created, location: @input }
+        else
+          format.html { redirect_to @input, notice: 'Input was successfully created.' }
+          format.json { render :show, status: :created, location: @input }
+        end
       else
         format.html { render :new }
         format.json { render json: @input.errors, status: :unprocessable_entity }

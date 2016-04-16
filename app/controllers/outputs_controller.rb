@@ -1,6 +1,6 @@
 class OutputsController < ApplicationController
   before_action :set_output, only: [:show, :edit, :update, :destroy]
-
+  
   def run_sim
     get_session_group
     group_name = @session_group.name
