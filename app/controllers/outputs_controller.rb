@@ -1,6 +1,5 @@
 class OutputsController < ApplicationController
   before_action :set_output, only: [:show, :edit, :update, :destroy]
-  helper_method :compile_data
 
   def run_sim
     get_session_group
@@ -8,8 +7,15 @@ class OutputsController < ApplicationController
     @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java.jar Main '#{group_name}'"
   end
 
-  def compile_data
+  # GET /outputs
+  # GET /outputs.json
+  def index
+    # begin simulation
+    run_sim
+    # Start of data compilation
     get_session_input
+    get_session_group
+    group_name = @session_group.name
     inputID = @session_input.id
     @population = 0
     @sick = 0
@@ -18,25 +24,23 @@ class OutputsController < ApplicationController
     @vaccines_rem = 0
     @budget_vaccs = 0
     @budget_ads = 0
-    Output.belongs_to_input(inputID).all.each do |output|
+    Output.belongs_to_input(inputID).each do |output|
       @population += output.population
       @sick += output.sick
       @immune += output.immune
-      unless @budget_rem
-        @budget_rem = output.money_left
-      end
       @vaccines_rem += output.vaccs_left
       @budget_vaccs += output.money_spent_vaccines
-      unless @budget_ads
-        @budget_ads += output.money_spent_ads  
+    end
+    output = Output.belongs_to_input(inputID).last
+    @budget_rem = output.money_left
+    Input.belongs_to_group(group_name).each do |input|
+      if Output.belongs_to_input(input.id).first.present?
+        output = Output.belongs_to_input(input.id).first
+        @budget_ads += output.money_spent_ads
       end
     end
-  end
+    # end of data compilation
 
-  # GET /outputs
-  # GET /outputs.json
-  def index
-    run_sim
     @outputs = Output.all
   end
 

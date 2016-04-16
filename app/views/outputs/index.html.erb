@@ -16,10 +16,9 @@
           <th>Vaccines Remaining</th>
           <th>Budget Spent on Vaccines</th>
           <th>Budget Spent on Advertising</th>
-        </td>
+        </tr>
       </thead>
       <tbody>
-        <% compile_data %>
         <tr>
           <td><%= @population %></td>
           <td><%= @sick %></td>
@@ -33,6 +32,7 @@
     </table>  
 
         <hr />
+
     <div class="row">
       <div class="col-md-6 col-lg-4 text-center">
         <h3>Population</h3>
@@ -100,8 +100,3 @@
     <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
   </div>
 </div>
-
-
-<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
-<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
-
