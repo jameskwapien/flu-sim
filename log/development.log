@@ -64354,3 +64354,355 @@ Processing by GroupsController#show as HTML
   Rendered groups/show.html.erb within layouts/application (110.3ms)
   Rendered partials/_scontrol.html.erb (0.1ms)
 Completed 200 OK in 156ms (Views: 100.6ms | ActiveRecord: 54.1ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2016-04-16 13:18:33 -0400
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT `courses`.* FROM `courses`
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(DISTINCT `memberships`.`id`) FROM `memberships` LEFT OUTER JOIN `groups` ON `groups`.`id` = `memberships`.`group_id` WHERE `groups`.`id` = 1[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`encrypted_password` AS t0_r2, `users`.`reset_password_token` AS t0_r3, `users`.`reset_password_sent_at` AS t0_r4, `users`.`remember_created_at` AS t0_r5, `users`.`sign_in_count` AS t0_r6, `users`.`current_sign_in_at` AS t0_r7, `users`.`last_sign_in_at` AS t0_r8, `users`.`current_sign_in_ip` AS t0_r9, `users`.`last_sign_in_ip` AS t0_r10, `users`.`created_at` AS t0_r11, `users`.`updated_at` AS t0_r12, `users`.`instructor` AS t0_r13, `users`.`name` AS t0_r14, `users`.`admin` AS t0_r15, `memberships`.`id` AS t1_r0, `memberships`.`user_id` AS t1_r1, `memberships`.`group_id` AS t1_r2, `memberships`.`created_at` AS t1_r3, `memberships`.`updated_at` AS t1_r4 FROM `users` LEFT OUTER JOIN `memberships` ON `memberships`.`user_id` = `users`.`id` WHERE `memberships`.`group_id` = 1
+  [1m[36mInput Load (0.2ms)[0m  [1mSELECT `inputs`.* FROM `inputs` WHERE `inputs`.`group_name` = 'Kiwis'[0m
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 1
+  [1m[36mOutput Load (9.3ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 1[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 7
+  [1m[36mOutput Load (8.4ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 7[0m
+  [1m[35m (3.2ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 9
+  [1m[36mOutput Load (8.1ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 9[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 10
+  [1m[36mOutput Load (5.5ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 10[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 21
+  [1m[36mOutput Load (6.7ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 21[0m
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 22
+  [1m[36mOutput Load (6.3ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 22[0m
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 23
+  [1m[36mOutput Load (5.5ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 23[0m
+  [1m[35m (2.6ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 25
+  [1m[36mOutput Load (6.2ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 25[0m
+  Rendered groups/show.html.erb within layouts/application (139.4ms)
+  Rendered partials/_scontrol.html.erb (0.2ms)
+Completed 200 OK in 197ms (Views: 121.2ms | ActiveRecord: 73.4ms)
+
+
+Started GET "/assets/application-09f89c8579f350df71e1bc9a2e5112459dcc5c544f03a05f9ccbb12ac747658d.css" for 127.0.0.1 at 2016-04-16 13:18:33 -0400
+
+
+Started GET "/assets/application-1838dc92adfe35b1e00dc994e40c1a12d55eab328242deaa5e2deeb182b5f433.js" for 127.0.0.1 at 2016-04-16 13:18:33 -0400
+
+
+Started GET "/outputs" for 127.0.0.1 at 2016-04-16 13:18:36 -0400
+Processing by OutputsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m
+  [1m[35mInput Load (0.2ms)[0m  SELECT  `inputs`.* FROM `inputs` WHERE `inputs`.`id` = 25 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOutput Load (5.8ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 25
+  [1m[36mOutput Load (0.3ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 25  ORDER BY `outputs`.`id` DESC LIMIT 1[0m
+  [1m[35mInput Load (0.4ms)[0m  SELECT `inputs`.* FROM `inputs` WHERE `inputs`.`group_name` = 'Kiwis'
+  [1m[36mOutput Load (0.3ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 1  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 1  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 1]]
+  [1m[36mOutput Load (1.2ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 7  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 7  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 7]]
+  [1m[36mOutput Load (2.2ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 9  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 9  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 9]]
+  [1m[36mOutput Load (1.6ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 10  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 10  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 10]]
+  [1m[36mOutput Load (4.9ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 21  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 21  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 21]]
+  [1m[36mOutput Load (12.5ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 22  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 22  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 22]]
+  [1m[36mOutput Load (8.5ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 23  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 23  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 23]]
+  [1m[36mOutput Load (6.4ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 25  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 25  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 25]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (4.8ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`group_name` = 'Kiwis'
+  [1m[36m (3.8ms)[0m  [1mSELECT MAX(`outputs`.`day`) FROM `outputs` WHERE `outputs`.`group_name` = 'Kiwis'[0m
+  Rendered outputs/index.html.erb within layouts/application (16.9ms)
+  Rendered partials/_scontrol.html.erb (0.2ms)
+Completed 200 OK in 7727ms (Views: 101.4ms | ActiveRecord: 53.9ms)
+
+
+Started GET "/assets/images/Kiwis/percentage8.jpg" for 127.0.0.1 at 2016-04-16 13:18:44 -0400
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/Kiwis/percentage8.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (54.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (47.0ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2016-04-16 13:18:49 -0400
+Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+  [1m[35mGroup Exists (0.2ms)[0m  SELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT `courses`.* FROM `courses`[0m
+  [1m[35mGroup Exists (0.2ms)[0m  SELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 2 LIMIT 1
+  [1m[36mGroup Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `courses`.* FROM `courses`
+  [1m[36mGroup Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 12 LIMIT 1[0m
+  [1m[35mGroup Exists (0.2ms)[0m  SELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 13 LIMIT 1
+  [1m[36mGroup Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 14 LIMIT 1[0m
+  Rendered groups/index.html.erb within layouts/application (7.4ms)
+  Rendered partials/_scontrol.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 61.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/groups/10" for 127.0.0.1 at 2016-04-16 13:18:50 -0400
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 10 LIMIT 1[0m
+  [1m[35mCourse Load (0.2ms)[0m  SELECT `courses`.* FROM `courses`
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(DISTINCT `memberships`.`id`) FROM `memberships` LEFT OUTER JOIN `groups` ON `groups`.`id` = `memberships`.`group_id` WHERE `groups`.`id` = 10[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`encrypted_password` AS t0_r2, `users`.`reset_password_token` AS t0_r3, `users`.`reset_password_sent_at` AS t0_r4, `users`.`remember_created_at` AS t0_r5, `users`.`sign_in_count` AS t0_r6, `users`.`current_sign_in_at` AS t0_r7, `users`.`last_sign_in_at` AS t0_r8, `users`.`current_sign_in_ip` AS t0_r9, `users`.`last_sign_in_ip` AS t0_r10, `users`.`created_at` AS t0_r11, `users`.`updated_at` AS t0_r12, `users`.`instructor` AS t0_r13, `users`.`name` AS t0_r14, `users`.`admin` AS t0_r15, `memberships`.`id` AS t1_r0, `memberships`.`user_id` AS t1_r1, `memberships`.`group_id` AS t1_r2, `memberships`.`created_at` AS t1_r3, `memberships`.`updated_at` AS t1_r4 FROM `users` LEFT OUTER JOIN `memberships` ON `memberships`.`user_id` = `users`.`id` WHERE `memberships`.`group_id` = 10
+  [1m[36mInput Load (0.6ms)[0m  [1mSELECT `inputs`.* FROM `inputs` WHERE `inputs`.`group_name` = 'Butterflies'[0m
+  [1m[35m (2.8ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 2
+  [1m[36mOutput Load (5.3ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 2[0m
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 11
+  [1m[36mOutput Load (5.1ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 11[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 12
+  [1m[36mOutput Load (4.1ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 12[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 13
+  [1m[36mOutput Load (6.9ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 13[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 14
+  [1m[36mOutput Load (4.9ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 14[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 15
+  [1m[36mOutput Load (4.9ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 15[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 16
+  [1m[36mOutput Load (4.7ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 16[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 24
+  [1m[36mOutput Load (3.9ms)[0m  [1mSELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 24[0m
+  Rendered groups/show.html.erb within layouts/application (112.7ms)
+  Rendered partials/_scontrol.html.erb (0.1ms)
+Completed 200 OK in 154ms (Views: 97.9ms | ActiveRecord: 54.9ms)
+
+
+Started GET "/outputs" for 127.0.0.1 at 2016-04-16 13:18:53 -0400
+Processing by OutputsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 10 LIMIT 1[0m
+  [1m[35mInput Load (0.3ms)[0m  SELECT  `inputs`.* FROM `inputs` WHERE `inputs`.`id` = 24 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 10 LIMIT 1[0m  [["id", 10]]
+  [1m[35mOutput Load (7.5ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 24
+  [1m[36mOutput Load (0.4ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 24  ORDER BY `outputs`.`id` DESC LIMIT 1[0m
+  [1m[35mInput Load (2.0ms)[0m  SELECT `inputs`.* FROM `inputs` WHERE `inputs`.`group_name` = 'Butterflies'
+  [1m[36mOutput Load (0.9ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 2  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 2  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 2]]
+  [1m[36mOutput Load (1.8ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 11  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 11  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 11]]
+  [1m[36mOutput Load (3.2ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 12  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 12  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 12]]
+  [1m[36mOutput Load (2.5ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 13  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 13  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 13]]
+  [1m[36mOutput Load (4.9ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 14  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 14  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 14]]
+  [1m[36mOutput Load (4.9ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 15  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 15  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 15]]
+  [1m[36mOutput Load (5.2ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 16  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 16  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 16]]
+  [1m[36mOutput Load (8.7ms)[0m  [1mSELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 24  ORDER BY `outputs`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 24  ORDER BY `outputs`.`id` ASC LIMIT 1  [["input_id", 24]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 10 LIMIT 1[0m  [["id", 10]]
+  [1m[35m (3.0ms)[0m  SELECT COUNT(*) FROM `outputs` WHERE `outputs`.`group_name` = 'Butterflies'
+  [1m[36m (4.7ms)[0m  [1mSELECT MAX(`outputs`.`day`) FROM `outputs` WHERE `outputs`.`group_name` = 'Butterflies'[0m
+  Rendered outputs/index.html.erb within layouts/application (13.2ms)
+  Rendered partials/_scontrol.html.erb (0.6ms)
+Completed 200 OK in 7382ms (Views: 76.5ms | ActiveRecord: 51.3ms)
+
+
+Started GET "/assets/images/Butterflies/percentage8.jpg" for 127.0.0.1 at 2016-04-16 13:19:01 -0400
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/Butterflies/percentage8.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-16 13:19:12 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dZzhQ07MOIYBOiMRFSImgOCPB/cMjOKow82b3+xz/uv8+hPtx0YqlGELbYXYEBiM8iBX7DZDyyK2VYT8J3SyMg=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-16 13:19:12 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 64ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-16 13:20:40 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1PBdgcJGOD/D1HOg1XQsPLj5Xf2dYzDANxhsYALUHxA6jNOuu/ZYVGpMtSEzIN8OjXshk4NSlYPOCL9Oxw5adA==", "user"=>{"email"=>"a@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@email.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2016-04-16 15:05:27', `current_sign_in_at` = '2016-04-16 17:20:40', `sign_in_count` = 22, `updated_at` = '2016-04-16 17:20:40' WHERE `users`.`id` = 2[0m
+  [1m[35m (147.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 238ms (ActiveRecord: 149.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-16 13:20:41 -0400
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mMembership Exists (0.2ms)[0m  SELECT  1 AS one FROM `memberships` WHERE `memberships`.`user_id` = 2 LIMIT 1
+  Rendered partials/_student_welcome.html.erb (1.0ms)
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+  Rendered partials/_scontrol.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 41.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2016-04-16 13:20:43 -0400
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT `groups`.* FROM `groups`
+  [1m[36mGroup Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.1ms)[0m  SELECT `courses`.* FROM `courses`
+  [1m[36mGroup Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 2 LIMIT 1[0m
+  [1m[35mGroup Exists (0.2ms)[0m  SELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `courses`.* FROM `courses`[0m
+  [1m[35mGroup Exists (0.3ms)[0m  SELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 12 LIMIT 1
+  [1m[36mGroup Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 13 LIMIT 1[0m
+  [1m[35mGroup Exists (0.2ms)[0m  SELECT  1 AS one FROM `groups` INNER JOIN `memberships` ON `groups`.`id` = `memberships`.`group_id` WHERE `memberships`.`user_id` = 2 AND `groups`.`id` = 14 LIMIT 1
+  Rendered groups/index.html.erb within layouts/application (10.9ms)
+  Rendered partials/_scontrol.html.erb (0.2ms)
+Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/groups/10" for 127.0.0.1 at 2016-04-16 13:20:45 -0400
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 10 LIMIT 1
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT `courses`.* FROM `courses`[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(DISTINCT `memberships`.`id`) FROM `memberships` LEFT OUTER JOIN `groups` ON `groups`.`id` = `memberships`.`group_id` WHERE `groups`.`id` = 10
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`encrypted_password` AS t0_r2, `users`.`reset_password_token` AS t0_r3, `users`.`reset_password_sent_at` AS t0_r4, `users`.`remember_created_at` AS t0_r5, `users`.`sign_in_count` AS t0_r6, `users`.`current_sign_in_at` AS t0_r7, `users`.`last_sign_in_at` AS t0_r8, `users`.`current_sign_in_ip` AS t0_r9, `users`.`last_sign_in_ip` AS t0_r10, `users`.`created_at` AS t0_r11, `users`.`updated_at` AS t0_r12, `users`.`instructor` AS t0_r13, `users`.`name` AS t0_r14, `users`.`admin` AS t0_r15, `memberships`.`id` AS t1_r0, `memberships`.`user_id` AS t1_r1, `memberships`.`group_id` AS t1_r2, `memberships`.`created_at` AS t1_r3, `memberships`.`updated_at` AS t1_r4 FROM `users` LEFT OUTER JOIN `memberships` ON `memberships`.`user_id` = `users`.`id` WHERE `memberships`.`group_id` = 10[0m
+  [1m[35mInput Load (0.5ms)[0m  SELECT `inputs`.* FROM `inputs` WHERE `inputs`.`group_name` = 'Butterflies'
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 2[0m
+  [1m[35mOutput Load (6.1ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 2
+  [1m[36m (2.4ms)[0m  [1mSELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 11[0m
+  [1m[35mOutput Load (5.1ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 11
+  [1m[36m (2.5ms)[0m  [1mSELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 12[0m
+  [1m[35mOutput Load (5.1ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 12
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 13[0m
+  [1m[35mOutput Load (6.0ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 13
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 14[0m
+  [1m[35mOutput Load (5.8ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 14
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 15[0m
+  [1m[35mOutput Load (6.9ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 15
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 16[0m
+  [1m[35mOutput Load (4.2ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 16
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM `outputs` WHERE `outputs`.`input_id` = 24[0m
+  [1m[35mOutput Load (4.2ms)[0m  SELECT `outputs`.* FROM `outputs` WHERE `outputs`.`input_id` = 24
+  Rendered groups/show.html.erb within layouts/application (120.6ms)
+  Rendered partials/_scontrol.html.erb (0.1ms)
+Completed 200 OK in 169ms (Views: 107.0ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/outputs" for 127.0.0.1 at 2016-04-16 13:22:31 -0400
+Processing by OutputsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 10 LIMIT 1
+  [1m[36mInput Load (0.2ms)[0m  [1mSELECT  `inputs`.* FROM `inputs` WHERE `inputs`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 455ms (ActiveRecord: 1.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Input with 'id'=):
+  app/controllers/application_controller.rb:43:in `get_session_input'
+  app/controllers/outputs_controller.rb:16:in `index'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.5ms)
