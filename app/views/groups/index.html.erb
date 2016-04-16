@@ -1,36 +1,36 @@
-<div class="panel-heading">Groups</div>
 
-<div class="panel-body">
+<div class="main-body">
 
 <% if current_user.memberships.present? %>
+  <div class = "table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Controls</th>
+        </tr>
+      </thead>
 
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Course</th>
-        <th>Controls</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @groups.each do |group| %>
-        <% if current_user.groups.exists?(:id => group.id) %>
-          <tr>
-            <td><%= group.name %></td>
-            <td>
-              <% Course.all.each do |course| %>
-                <% if course.id == group.course_id %>
-                  <%= course.name %>
+      <tbody>
+        <% @groups.each do |group| %>
+          <% if current_user.groups.exists?(:id => group.id) %>
+            <tr>
+              <td><%= group.name %></td>
+              <td>
+                <% Course.all.each do |course| %>
+                  <% if course.id == group.course_id %>
+                    <%= course.name %>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </td> 
-            <td><%= link_to 'Show', group %></td>
-          </tr>
+              </td> 
+              <td><%= link_to 'Show', group %></td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 
 <% else %>
 

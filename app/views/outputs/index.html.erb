@@ -2,10 +2,10 @@
 <% groupName = @session_group.name %>
 <% count = Output.num_uniq_days(groupName).size / 250 %>
 
-<div class="panel-heading">Output for <%=groupName%>, Day <%= Output.max_day(groupName) %></div>
+<h2 class="main-heading">Output for <%=groupName%>, Day <%= Output.max_day(groupName) %></h2>
 
 <div class="container">
-  <div class="panel-body">
+  <div class="main-body">
     <table class="table table-striped table-hover">
       <thead>
         <tr>

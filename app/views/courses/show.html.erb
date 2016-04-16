@@ -1,105 +1,110 @@
 <% session[:course_id] = @course.id %>
 
-<div class="panel-heading">Class Details</div>
 
-<div class="panel-body">
+<h2 class = "main-heading">Class Details</h2>
 
-	<table class="table table-striped table-hover">
-	  <thead>
-	    <tr>
-	      <th>Name</th>
-	      <th>CRN</th>
-	      <th>Instructor</th>
-	      <th>Email</th>
-	      <th colspan="2">Controls</th>
-	    </td>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td><%= @course.name %></td>
-	      <td><%= @course.crn %></td>
-	      <td><%= @course.instructor %></td>
-	      <td><%= @course.email %></td>
-	      <td><%= link_to 'Edit', edit_course_path(@course) %></td>
-	      <td>
-	      	<% unless User.in_a_course(@course.id).exists? %>
-	      		<%= link_to 'Delete', @course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	      	<% end %>
-	    </tr>
-	  </tbody>
-	</table>
-
-	<hr />
-	<h2>Enrolled Students</h2>
-
-	<table class="table table-striped table-hover">
-      <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Group</th>
-            <th>Last Signed In</th>
-            <th>Login Count</th>
-            <th>Controls</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% User.in_a_course(@course.id).each do |user| %>
-          <% if !user.instructor? && !user.admin? %>
-            <tr>
-              <td><%= user.name %></td>
-              <td><%= user.email %></td>
-              <td>
-              	<% if User.in_a_course_group(@course.id).match(user.id).exists? %> 
-              		<% User.in_a_course_group(@course.id).match(user.id).each do |user| %>
-						<%= user.groups.first.name %>
-              		<% end %>
-              	<% else %>
-              		<%= link_to 'Add to Group',new_membership_path(course_id: @course.id, user_id: user.id) %>
-              	<% end %>
-              </td>
-              <td><%= user.last_sign_in_at %></td>
-              <td><%= user.sign_in_count %></td>
-              <td>
-              	<% Enrollment.in_this_course(@course.id, user.id).each do |e| %>
-              		<%= link_to 'Remove', e, method: :delete, data: { confirm: 'Are you sure?' } %> 
-              	<% end %>
-              </td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
-    <%= button_to 'New Enrollment', new_enrollment_path, method: :get, class: 'btn btn-sm' %><br />
-
-    <hr />
-    <h2>Groups</h2>
-
-	<% unless Group.belongs_to_course(@course.id).blank? %>
-	    <table class="table table-striped table-hover">
+<div class="main-body">
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
 		  <thead>
 		    <tr>
-		      <th>Group Name</th>
-		      <th># of Members</th>
+		      <th>Name</th>
+		      <th>CRN</th>
+		      <th>Instructor</th>
+		      <th>Email</th>
 		      <th colspan="2">Controls</th>
 		    </tr>
 		  </thead>
-
 		  <tbody>
-		    <% Group.belongs_to_course(@course.id).each do |group| %>
-		      <tr>
-		        <td><%= group.name %></td>
-		        <td><%= group.memberships.count %></td>
-		        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-		        <td>
-		        	<% unless group.memberships.count > 0 %>
-		        		<%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' } %>
-		        	<% end %>
-		        </td>
-		      </tr>
-		    <% end %>
+		    <tr>
+		      <td><%= @course.name %></td>
+		      <td><%= @course.crn %></td>
+		      <td><%= @course.instructor %></td>
+		      <td><%= @course.email %></td>
+		      <td><%= link_to 'Edit', edit_course_path(@course) %></td>
+		      <td>
+		      	<% unless User.in_a_course(@course.id).exists? %>
+		      		<%= link_to 'Delete', @course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      	<% end %>
+		    </tr>
 		  </tbody>
 		</table>
+	</div>	
+	<hr />
+	<h2 class = "main-heading">Enrolled Students</h2>
+
+	<div class = "table-responsive">
+		<table class="table table-striped table-hover">
+	      <thead>
+	        <tr>
+	            <th>Name</th>
+	            <th>Email</th>
+	            <th>Group</th>
+	            <th>Last Signed In</th>
+	            <th>Login Count</th>
+	            <th>Controls</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <% User.in_a_course(@course.id).each do |user| %>
+	          <% if !user.instructor? && !user.admin? %>
+	            <tr>
+	              <td><%= user.name %></td>
+	              <td><%= user.email %></td>
+	              <td>
+	              	<% if User.in_a_course_group(@course.id).match(user.id).exists? %> 
+	              		<% User.in_a_course_group(@course.id).match(user.id).each do |user| %>
+							<%= user.groups.first.name %>
+	              		<% end %>
+	              	<% else %>
+	              		<%= link_to 'Add to Group',new_membership_path(course_id: @course.id, user_id: user.id) %>
+	              	<% end %>
+	              </td>
+	              <td><%= user.last_sign_in_at %></td>
+	              <td><%= user.sign_in_count %></td>
+	              <td>
+	              	<% Enrollment.in_this_course(@course.id, user.id).each do |e| %>
+	              		<%= link_to 'Remove', e, method: :delete, data: { confirm: 'Are you sure?' } %> 
+	              	<% end %>
+	              </td>
+	            </tr>
+	          <% end %>
+	        <% end %>
+	      </tbody>
+	    </table>
+    </div>
+    <%= button_to 'New Enrollment', new_enrollment_path, method: :get, class: 'btn btn-sm' %><br />
+
+    <hr />
+    <h2  class = "main-heading" >Groups</h2>
+
+	<% unless Group.belongs_to_course(@course.id).blank? %>
+		<div class="table-responsive">
+		    <table class="table table-striped table-hover">
+			  <thead>
+			    <tr>
+			      <th>Group Name</th>
+			      <th># of Members</th>
+			      <th colspan="2">Controls</th>
+			    </tr>
+			  </thead>
+
+			  <tbody>
+			    <% Group.belongs_to_course(@course.id).each do |group| %>
+			      <tr>
+			        <td><%= group.name %></td>
+			        <td><%= group.memberships.count %></td>
+			        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+			        <td>
+			        	<% unless group.memberships.count > 0 %>
+			        		<%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+			        	<% end %>
+			        </td>
+			      </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+		</div>
 	<% else %>
 		<p>There are no group memberships for this class yet. You can change this by clicking the 'New Group' button below.</p>
 	<% end %>

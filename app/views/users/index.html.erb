@@ -1,12 +1,12 @@
-<div class="panel-heading">
+<h2 class="main-heading">
   <% if current_user.admin? %>
     Instructors & Students
   <% else %>
     Students
   <% end %>
-</div>
+</h2>
 
-<div class="panel-body">
+<div class="main-body">
   <% if current_user.admin? %>
     <h1>Instructors</h1>
     <table class="table table-striped table-hover">
