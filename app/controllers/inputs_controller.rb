@@ -27,6 +27,9 @@ class InputsController < ApplicationController
   # POST /inputs.json
   def create
     @input = Input.new(input_params)
+    # if @input.vaccines * 13 > @input.money_left
+      
+
     get_session_group
     respond_to do |format|
       if @input.save

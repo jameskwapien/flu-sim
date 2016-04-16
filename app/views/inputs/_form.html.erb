@@ -14,12 +14,16 @@
 
   <div class="field">
     <%= f.label :group_name %><br />
-    <%= f.collection_select :group_name, Group.where(:id => @group_id), :name, :name, prompt: true %>
+    <%= f.text_field :group_name, value: Group.find(@session_group).name, readonly: true  %>
   </div>
 
   <div class="field">
     <%= f.label :money_left %><br />
-    <%= f.number_field :money_left, value: 5000000, readonly: true %>
+    <% if Output.belongs_to_group(@session_group.name).exists? %>
+      <%= f.number_field :money_left, value: Output.belongs_to_group(@session_group.name).last.money_left, readonly: true %>
+    <% else %>
+      <%= f.number_field :money_left, value: 1000000, readonly: true %>
+    <% end %>
   </div> 
 
   <div class="field">

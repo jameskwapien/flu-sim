@@ -37,7 +37,7 @@
 /* Tables */
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{
-    background-color: #333333;
+    background-color: #999999;
 }
 
 .table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th{
@@ -80,29 +80,18 @@ body{
 }
 
 #main-container{
-    // #background: black;
-    // margin-top: 75px;
-    // padding: 0px 0px 15px 0px;
-
     color: black;
     a:hover{
       color: red;
     }
     h1, h2, h3{
-        color: orange;
+        color: #4682B4;
         text-align: center; 
     }
     
     #main{
         width: 100%;
-        padding: 0px 50px 15px 50px;
-    }
-
-    .jumbotron{
-        background: orange;
-        color: black;
-        font-size: 1em;
-        font-weight: bold;
+        padding: 75px 50px 15px 50px;
     }
     
     .panel-default{
@@ -119,12 +108,7 @@ body{
             font-weight: bold;
         }
         .panel-body{
-            #text-align: center;
         }
-    }
-
-    #main{
-        padding: 75px 50px 15px 50px;
     }
 }
 

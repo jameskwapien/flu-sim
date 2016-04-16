@@ -32,7 +32,9 @@ class OutputsController < ApplicationController
       @budget_vaccs += output.money_spent_vaccines
     end
     output = Output.belongs_to_input(inputID).last
-    @budget_rem = output.money_left
+    if output.present?
+        @budget_rem = output.money_left
+    end
     Input.belongs_to_group(group_name).each do |input|
       if Output.belongs_to_input(input.id).first.present?
         output = Output.belongs_to_input(input.id).first

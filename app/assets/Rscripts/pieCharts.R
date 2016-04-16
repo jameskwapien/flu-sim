@@ -267,12 +267,14 @@ jpeg(path1)
 pie(popAge,labels=lbls,col=rainbow(length(lbls)),main="Population of Each Age")
 dev.off()
 
-lbls<-c("0-18","19-65","65 and Older")
-lbls<-paste(lbls," (",sickAge,")",sep="")
-path1<-paste(path,"/SicPieChart.jpg",sep="")
-jpeg(path1)
-pie(sickAge,labels=lbls,col=rainbow(length(lbls)),main="Sick at Each Age")
-dev.off()
+if(sum(sickAge)>0){
+    lbls<-c("0-18","19-65","65 and Older")
+    lbls<-paste(lbls," (",sickAge,")",sep="")
+    path1<-paste(path,"/SicPieChart.jpg",sep="")
+    jpeg(path1)
+    pie(sickAge,labels=lbls,col=rainbow(length(lbls)),main="Sick at Each Age")
+    dev.off()
+}
 
 
 #FIX IMAGES UP FOR SMALL AND BIG DISPLAY
