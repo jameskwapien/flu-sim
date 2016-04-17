@@ -11,6 +11,7 @@
 	      <th>CRN</th>
 	      <th>Instructor</th>
 	      <th>Email</th>
+	      <th>Calendar Days</th>
 	      <th colspan="2">Controls</th>
 	    </td>
 	  </thead>
@@ -20,11 +21,19 @@
 	      <td><%= @course.crn %></td>
 	      <td><%= @course.instructor %></td>
 	      <td><%= @course.email %></td>
-	      <td><%= link_to 'Edit', edit_course_path(@course) %></td>
+	      <td><%= @course.days %></td>
+	      <td>
+	      	<% if Enrollment.in_course(@course.id).present? %>
+	      		<%= link_to 'Update Calendar', edit_course_path(@course) %>
+	      	<% else %>
+	      		<%= link_to 'Edit', edit_course_path(@course) %>
+	      	<% end %>
+	      </td>
 	      <td>
 	      	<% unless User.in_a_course(@course.id).exists? %>
-	      		<%= link_to 'Delete', @course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      		<%= link_to 'Delete', @course, method: :delete, data: { confirm: 'Are you sure?' } %>
 	      	<% end %>
+	      </td>
 	    </tr>
 	  </tbody>
 	</table>
