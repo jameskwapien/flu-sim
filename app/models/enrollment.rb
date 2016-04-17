@@ -10,15 +10,11 @@ class Enrollment < ActiveRecord::Base
 		end
 	end	
 
-	def self.with_this_instructor(user_email)
-		Enrollment.includes(:course).where(:courses => {:email => user_email})
+	def self.with_this_instructor(userEmail)
+		Enrollment.includes(:course).where(:courses => {:email => userEmail})
 	end
 
-	def self.in_this_course(course_id, user_id)
-		Enrollment.includes(:course).includes(:user).where(:courses => {:id => course_id}).where(:users => {:id => user_id})
-	end
-
-	def self.in_course(course_id)
-		Enrollment.where(:course_id => course_id)
+	def self.in_this_course(courseID, userID)
+		Enrollment.includes(:course).includes(:user).where(:courses => {:id => courseID}).where(:users => {:id => userID})
 	end
 end

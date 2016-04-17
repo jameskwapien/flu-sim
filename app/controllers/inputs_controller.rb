@@ -1,16 +1,6 @@
 class InputsController < ApplicationController
   before_action :set_input, only: [:show, :edit, :update, :destroy]
 
-  def get_simulation_limit
-    get_session_group
-    days = 0
-    Input.belongs_to_group(@session_group.name).each do |i|
-      days += i.days
-    end
-    available = Course.find(@session_group.course_id).days
-    @limit = available - days
-  end
-
   # GET /inputs
   # GET /inputs.json
   def index
@@ -24,7 +14,6 @@ class InputsController < ApplicationController
 
   # GET /inputs/new
   def new
-    get_simulation_limit
     get_session_group
     @group_id = @session_group
     @input = Input.new
@@ -32,7 +21,6 @@ class InputsController < ApplicationController
 
   # GET /inputs/1/edit
   def edit
-    get_simulation_limit
     get_session_group
   end
 

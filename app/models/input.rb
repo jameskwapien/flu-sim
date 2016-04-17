@@ -2,8 +2,8 @@ class Input < ActiveRecord::Base
 	has_many :outputs
 	validate :pay_for_vaccines_and_ads, :on => :create, :on => :update
 
-	def self.belongs_to_group(group_name)
-		Input.where(:group_name => group_name)
+	def self.belongs_to_group(groupName)
+		Input.where(:group_name => groupName)
 	end
 
 	def pay_for_vaccines_and_ads

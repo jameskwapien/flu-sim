@@ -6,7 +6,7 @@ class Course < ActiveRecord::Base
 		"#{self.name}, #{self.crn}"
 	end
 
-	def self.by_teacher(instructor_email)
-		Course.where(:email => instructor_email)
+	def self.by_teacher(instructorEmail)
+		Course.where(:email => instructorEmail)
 	end
 end
