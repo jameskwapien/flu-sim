@@ -1,0 +1,34 @@
+<% Course.by_teacher(current_user.email).each do |course| %>
+	<% if course.days %>
+		<h2><%= course.name %></h2>
+		<table class="table table-striped table-hover">
+			<thead>
+		    	<tr>
+		      		<th>Day</th>
+		      		<th>Group</th>
+		    	</tr>
+		  	</thead>
+		  	<tbody>
+		  		<% (1..course.days).each do |i| %>
+		    		<tr>
+		    			<td><%= i %></td>
+		    			<td>
+		    				<% Group.belongs_to_course(course.id).each do |g| %>
+		    					<% day = 0 %>
+		    					<% Input.belongs_to_group(g.name).each do |input| %>
+		    						<% day += input.days %>
+		    						<% if input == Input.belongs_to_group(g.name).last %>
+		    							<% if day == i  %>
+		    								<h7><%= link_to g.name, '#' %></h7>
+		    								<% day = 0 %>
+		    							<% end %>
+		    						<% end %>	
+		    					<% end %>
+		    				<% end %>
+		    			</td>
+		    		</tr>
+		    	<% end %>
+		  	</tbody>
+		</table>
+	<% end %>
+<% end %>
