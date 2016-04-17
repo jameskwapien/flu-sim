@@ -1,32 +1,34 @@
 <div class="main-body">
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Group Name</th>
-        <th>Vaccines</th>
-        <th>Advertising</th>
-        <th>Remaining Budget</th>
-        <th>Schools closed?</th>
-        <th>Simulation Days</th>
-        <th colspan="1">Controls</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @input.group_name %></td>
-        <td><%= @input.vaccines %></td>
-        <td><%= @input.ads %></td>
-        <td><%= @input.money_left %></td>
-        <td><%= @input.school_off %></td>
-        <td><%= @input.days %></td>
-        <% if Output.belongs_to_input(@input.id).empty? %>
-          <td><%= link_to 'Edit', edit_input_path(@input) %></td>
-        <% else %>
-          <td></td>
-        <% end %>
-      </tr>
-    </tbody>
-  </table>
+  <div class = "table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Group Name</th>
+          <th>Vaccines</th>
+          <th>Advertising</th>
+          <th>Remaining Budget</th>
+          <th>Schools closed?</th>
+          <th>Simulation Days</th>
+          <th colspan="1">Controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @input.group_name %></td>
+          <td><%= @input.vaccines %></td>
+          <td><%= @input.ads %></td>
+          <td><%= @input.money_left %></td>
+          <td><%= @input.school_off %></td>
+          <td><%= @input.days %></td>
+          <% if Output.belongs_to_input(@input.id).empty? %>
+            <td><%= link_to 'Edit', edit_input_path(@input) %></td>
+          <% else %>
+            <td></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <hr />
   <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
 </div>

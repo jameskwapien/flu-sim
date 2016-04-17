@@ -1,23 +1,24 @@
 
 <h2 class="main-heading">Showing Membership</h2>
 <div class="main-body">  
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Group</th>
-        <th colspan="1">Controls</th>
-      </td>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @membership.user.name %></td>
-        <td><%= @membership.group.name %></td>
-        <td><%= link_to 'Edit', edit_membership_path(@membership) %></td>
-      </tr>
-    </tbody>
-  </table>
-
+  <div class = "table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Group</th>
+          <th colspan="1">Controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @membership.user.name %></td>
+          <td><%= @membership.group.name %></td>
+          <td><%= link_to 'Edit', edit_membership_path(@membership) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <hr />
   <%= button_to 'Back', memberships_path, method: :get, class: 'btn btn-sm' %>
 </div>
