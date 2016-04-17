@@ -10,24 +10,26 @@
 		  	</thead>
 		  	<tbody>
 		  		<% (1..course.days).each do |i| %>
-		    		<tr>
-		    			<td><%= i %></td>
-		    			<td>
-		    				<% Group.belongs_to_course(course.id).each do |g| %>
-		    					<% day = 0 %>
-		    					<% Input.belongs_to_group(g.name).each do |input| %>
-		    						<% day += input.days %>
-		    						<% if input == Input.belongs_to_group(g.name).last %>
-		    							<% if day == i  %>
-		    								<h7><%= link_to g.name, '#' %></h7>
-		    								<% day = 0 %>
-		    							<% end %>
-		    						<% end %>	
-		    					<% end %>
-		    				<% end %>
-		    			</td>
-		    		</tr>
-		    	<% end %>
+			  		<% Group.belongs_to_course(course.id).each do |g| %>
+						<% day = 0 %>
+						<% Input.belongs_to_group(g.name).each do |input| %>
+							<% day += input.days %>
+							<% if input == Input.belongs_to_group(g.name).last %>
+								<% if day == i  %>
+									<tr>
+										<td><%= i %></td>
+										<td><h7><%= link_to g.name, '#' %></h7></td>
+									</tr>
+									<% day = 0 %>
+								<% end %>
+							<% end %>	
+						<% end %>
+					<% end %>
+				<% end %>
+				<tr>
+					<td><%= course.days %></td>
+					<td>Current Open Period Ends</td>
+				</tr>
 		  	</tbody>
 		</table>
 	<% end %>
