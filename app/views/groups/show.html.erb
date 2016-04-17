@@ -10,6 +10,9 @@
         <th>Name</th>
         <th>Course</th>
         <th># of Members</th>
+        <th>Current Sim Period</th>
+        <th>Available Sim Period</th>
+        <th>Calendar</th> 
       </td>
     </thead>
     <tbody>
@@ -22,7 +25,10 @@
             <% end %>
           <% end %>
         </td>
-        <td><%= Membership.belongs_to_group(@group.id).count %></td> 
+        <td><%= Membership.belongs_to_group(@group.id).count %></td>
+        <td><%= @count %></td>
+        <td><%= Course.find(@group.course_id).days %></td>
+        <td><%= link_to 'Calendar', calendar_index_path %></td>
       </tr>
     </tbody>
   </table>  
