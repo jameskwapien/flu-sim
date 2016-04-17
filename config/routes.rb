@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'leaderboard/index'
+
   get 'calendar/index'
   # for java simulation call
   # get 'simulation/show'
