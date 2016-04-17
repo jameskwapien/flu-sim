@@ -21,15 +21,13 @@ class InputsController < ApplicationController
 
   # GET /inputs/1/edit
   def edit
+    get_session_group
   end
 
   # POST /inputs
   # POST /inputs.json
   def create
     @input = Input.new(input_params)
-    # if @input.vaccines * 13 > @input.money_left
-
-
     get_session_group
     respond_to do |format|
       if @input.save

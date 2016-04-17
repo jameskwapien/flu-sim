@@ -1,39 +1,6 @@
-<% groupName = @output.group_name %>
-
-<div class="panel-heading">Results for <%= @output.group_name %> Input</div>
+<div class="panel-heading">Results for <%= @output.group_name %>: Input #<%= @count %></div>
  
 <div class="panel-body"> 
-
-<%
-  count = 0
-  final_count = 0
-  @output.input_id
-  test_input_id = -1
-  Output.belongs_to_group(@output.group_name).each do |o|
-    if test_input_id != o.input_id
-      test_input_id = o.input_id
-      count += 1
-    end
-    if o.input_id == @output.input_id
-      final_count = count
-    end
-end %>
-
-<%= final_count %>
-
-<% 
-  input = Input.find(@output.input_id)
-  vaccs_money = input.vaccines
-  vaccs_left = 0
-  population = 0
-  sick = 0
-  immune = 0
-  Output.belongs_to_input(@output.input_id). each do |o| 
-    vaccs_left += o.vaccs_left
-    population += o.population
-    sick += o.sick
-    immune += o.immune
-end %>
 
   <table class="table table-striped table-hover">
     <thead>
@@ -42,16 +9,18 @@ end %>
         <th>Advertising</th>
         <th>Schools closed?</th>
         <th>Simulation Days</th>
+        <th>Day Span</th>
         <th>Remaining Budget</th>
       </td>
     </thead>
     <tbody>
       <tr>
-        <td><%= input.vaccines %></td>
-        <td><%= input.ads %></td>
-        <td><%= input.school_off %></td>
-        <td><%= input.days %></td>
-        <td><%= input.money_left %></td>
+        <td><%= @input.vaccines %></td>
+        <td><%= @input.ads %></td>
+        <td><%= @input.school_off %></td>
+        <td><%= @input.days %></td>
+        <td><%= @day_span %></td>
+        <td><%= @input.money_left %></td>
       </tr>
     </tbody>
   </table>  
@@ -71,12 +40,12 @@ end %>
     <tbody>
       <tr>
         <td><%= @output.money_left %></td>
-        <td><%= vaccs_money %></td>
+        <td><%= @vaccs_money %></td>
         <td><%= @output.money_spent_ads %></td>
-        <td><%= vaccs_left %></td>
-        <td><%= population %></td>
-        <td><%= sick %></td>
-        <td><%= immune %></td>
+        <td><%= @vaccs_left %></td>
+        <td><%= @population %></td>
+        <td><%= @sick %></td>
+        <td><%= @immune %></td>
       </tr>
     </tbody>
   </table>
@@ -88,22 +57,22 @@ end %>
         <h3><%=link_to "Percentage Sick","#curPercentage",class: "fancybox"%></h3>
           <div style="display:none;">
             <div id="curPercentage">
-              <%=image_tag("/assets/images/"+groupName+"/percentage" + final_count.to_s + ".jpg")%>
+              <%=image_tag("/assets/images/"+@output.group_name+"/percentage" + @count.to_s + ".jpg")%>
             </div>
           </div>
-         <%= link_to image_tag("/assets/images/"+groupName+"/percentage" + final_count.to_s + ".jpg"),"#percentage", class: "fancybox" %>
+         <%= link_to image_tag("/assets/images/"+@output.group_name+"/percentage" + @count.to_s + ".jpg"),"#percentage", class: "fancybox" %>
            <div style="display:none">
              <div id="percentage">
-               <%=image_tag("/assets/images/"+groupName+"/percentage" + final_count.to_s + ".jpg")%>
+               <%=image_tag("/assets/images/"+@output.group_name+"/percentage" + @count.to_s + ".jpg")%>
              </div>
            </div>
        </div>
        <div class="col-md-6 col-lg-4 text-center">
           <h3>Actual Sick</h3>
-          <%= link_to image_tag("/assets/images/"+groupName+"/sick" + final_count.to_s + ".jpg"),"#sick", class: "fancybox" %>
+          <%= link_to image_tag("/assets/images/"+@output.group_name+"/sick" + @count.to_s + ".jpg"),"#sick", class: "fancybox" %>
           <div style="display:none;">
               <div id="sick">
-                <%=image_tag("/assets/images/"+groupName+"/sick" + final_count.to_s + ".jpg")%>
+                <%=image_tag("/assets/images/"+@output.group_name+"/sick" + @count.to_s + ".jpg")%>
               </div>
           </div>
        </div>

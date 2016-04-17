@@ -28,12 +28,14 @@
 
   <div class="field">
     <%= f.label :vaccines %><br />
-    <%= f.number_field :vaccines, step: 1 %>
+    <%= f.number_field :vaccines, min: 0, step: 1, :onblur=>"document.getElementById('vacCost').innerHTML = ('Total Cost for vaccines= $').concat(document.getElementById('input_vaccines').value * 13);" %>
+    <label id="vacCost">No vaccines purchased</label>
   </div>
 
   <div class="field">
     <%= f.label :ads %><br />
-    <%= f.number_field :ads, step: 1 %>
+    <%= f.number_field :ads, min: 0, step: 1, :onblur=>"document.getElementById('adCost').innerHTML = ('Total Cost for ads= $').concat(document.getElementById('input_ads').value);" %>
+    <label id="adCost">No ads purchased</label>
   </div>
 
   <div class="field">
@@ -47,7 +49,10 @@
   </div>
 
   <br />
+
+  <label id="totalCost" onmouseover="document.getElementById('totalCost').innerHTML = ('Money Spent: $').concat(+(document.getElementById('input_ads').value) + +(document.getElementById('input_vaccines').value * 13));">Total Cost</label>
   <div class="actions">
-    <%= f.submit 'New Input', class: 'btn btn-sm' %><br />
+    <%= f.submit 'New Input', class: 'btn btn-sm', :onmouseover=> "document.getElementById('totalCost').innerHTML = ('Money Spent: $').concat(+(document.getElementById('input_ads').value) + +(document.getElementById('input_vaccines').value * 13));"%><br />
   </div>
+
 <% end %>

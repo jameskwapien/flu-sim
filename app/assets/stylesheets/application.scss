@@ -67,9 +67,11 @@
 
 body{
     height: 100vh;
-    background-image: radial-gradient(#999, #000);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background: radial-gradient(#999, #000) no-repeat center center fixed;    
+    --webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .fancybox > img{

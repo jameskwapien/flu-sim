@@ -1,6 +1,5 @@
 class OutputsController < ApplicationController
   before_action :set_output, only: [:show, :edit, :update, :destroy]
-  helper_method :get_output_count
 
   def run_sim
     get_session_group
@@ -8,14 +7,45 @@ class OutputsController < ApplicationController
     @result = system "cd app/assets/sim && java -cp .:/usr/share/java/mysql-connector-java.jar Main '#{group_name}'"
   end
 
-  def get_output_count(group_name, input_id)
+  def get_output_count
+    temp_count = 0
     @count = 0
-    Output.belongs_to_group(group_name).each do |o|
-      unless o.input_id == input_id
-        @count += 1
+    test_input_id = -1
+    Output.belongs_to_group(@output.group_name).each do |o|
+      if test_input_id != o.input_id
+        test_input_id = o.input_id
+        temp_count += 1
+      end
+      if o.input_id == @output.input_id
+        @count = temp_count
       end
     end
   end
+
+  def get_summary_data
+    @input = Input.find(@output.input_id)
+    @vaccs_money = @input.vaccines
+    @vaccs_left = 0
+    @population = 0
+    @sick = 0
+    @immune = 0
+    Output.belongs_to_input(@output.input_id).each do |o| 
+      @vaccs_left += o.vaccs_left
+      @population += o.population
+      @sick += o.sick
+      @immune += o.immune
+    end
+  end
+
+  def get_day_span
+    @day_span = 0
+    Input.belongs_to_group(@output.group_name).each do |i|
+      if @output.input_id < i.id
+        @day_span += i.days
+      end
+    end
+  end
+      
 
   # GET /outputs
   # GET /outputs.json
@@ -59,7 +89,9 @@ class OutputsController < ApplicationController
   # GET /outputs/1
   # GET /outputs/1.json
   def show
-    @count
+    get_output_count
+    get_summary_data
+    get_day_span
   end
 
   # GET /outputs/new
