@@ -1,29 +1,30 @@
-<div class="panel-heading">Showing Enrollment</div>
+<h2 class="main-heading">Showing Enrollment</h2>
 
-<div class="panel-body">
-	<table class="table table-striped table-hover">
-	  <thead>
-	    <tr>
-	      <th>User</th>
-	      <th>Course</th>
-	      <th>CRN</th>
-	      <th>Created at</th>
-	      <th colspan="3"></th>
-	    </tr>
-	  </thead>
+<div class="main-body">
+	<div class = "table-responsive">
+		<table class="table table-striped table-hover">
+		  <thead>
+		    <tr>
+		      <th>User</th>
+		      <th>Course</th>
+		      <th>CRN</th>
+		      <th>Created at</th>
+		      <th colspan="3"></th>
+		    </tr>
+		  </thead>
 
-	  <tbody>
-	      <tr>
-	        <td><%= @enrollment.user.name %></td>
-	        <td><%= @enrollment.course.name %></td>
-	        <td><%= @enrollment.course.crn %></td>
-	        <td><%= @enrollment.created_at %></td>
-	        <td><%= link_to 'Edit', edit_enrollment_path(@enrollment) %></td>
-	        <td><%= link_to 'Delete', @enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	      </tr>
-	  </tbody>
-	</table>
-
+		  <tbody>
+		      <tr>
+		        <td><%= @enrollment.user.name %></td>
+		        <td><%= @enrollment.course.name %></td>
+		        <td><%= @enrollment.course.crn %></td>
+		        <td><%= @enrollment.created_at %></td>
+		        <td><%= link_to 'Edit', edit_enrollment_path(@enrollment) %></td>
+		        <td><%= link_to 'Delete', @enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      </tr>
+		  </tbody>
+		</table>
+	</div>
 	<hr />
 	<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
 </div>

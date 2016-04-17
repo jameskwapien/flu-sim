@@ -81,36 +81,34 @@ body{
     max-width: 230px;
 }
 
-#main-container{
+#main{
     color: black;
+    padding: 75px 50px 15px 50px;
+    background: white;
+    border-color: black;
+    border-width: 5px;
+
     a:hover{
       color: red;
+      text-decoration: none;
     }
-    h1, h2, h3{
+
+    .center_header{
         color: #4682B4;
         text-align: center; 
     }
     
-    #main{
-        width: 100%;
-        padding: 75px 50px 15px 50px;
+    .main-heading{
+        // color: black;
+        // background: beige;
+        // border-color: beige;
+        // text-align: center;
+        // font-size: 2.5em;
+        // font-weight: bold;
     }
-    
-    .panel-default{
-        background: white;
-        padding: 0px 0px 0px 0px;
-        border-color: black;
-        border-width: 5px;
-        .panel-heading{
-            color: black;
-            background: beige;
-            border-color: beige;
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: bold;
-        }
-        .panel-body{
-        }
+
+    .main-body{
+
     }
 }
 

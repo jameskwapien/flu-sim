@@ -10,8 +10,10 @@ default: &default
   pool: 5
   username: root
   password: beltforgetflewdarkness
-  socket: /var/run/mysqld/mysqld.sock  
-
+  # socket: /var/run/mysqld/mysqld.sock  
+  host: 120.0.0.1
+  port: 3306
+	
 development:
   <<: *default
   database: flusim_development
