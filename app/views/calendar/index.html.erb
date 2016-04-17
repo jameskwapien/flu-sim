@@ -1,9 +1,0 @@
-<div class="panel-heading">Calendar</div>
-
-<div class="panel-body">
-	<% if current_user.instructor? %>
-		<%= render 'icalendar' %>
-	<% else %>
-		<%= render 'scalendar' %>
-	<% end %>
-</div>

@@ -7,12 +7,6 @@ class GroupsController < ApplicationController
     system "cd public/assets/images && mkdir '#{group}'"
   end
     
-  def get_input_count
-    @count = 0
-    Input.belongs_to_group(@group.name).each do |g|
-      @count += g.days
-    end
-  end
 
   # GET /groups
   # GET /groups.json
@@ -23,7 +17,6 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-    get_input_count
   end
 
   # GET /groups/new
@@ -42,7 +35,6 @@ class GroupsController < ApplicationController
     get_session_course
     respond_to do |format|
       if @group.save
-        group_directory(@group.name)
         if @session_course
           format.html { redirect_to @session_course, notice: 'Group was successfully created.' }
         else
