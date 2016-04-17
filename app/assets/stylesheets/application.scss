@@ -25,10 +25,17 @@
 
 @font-face {
     font-family: 'track';
-    src:url('track.ttf') format('truetype');
+    src: url('track.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }   
+
+@font-face {
+   font-family: 'zwodrei';
+   src: url('zwodrei.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
 
 
 
@@ -92,6 +99,7 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: track;
 }
 
 .fancybox > img{
