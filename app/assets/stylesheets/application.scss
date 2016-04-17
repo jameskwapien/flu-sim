@@ -23,16 +23,6 @@
 
 /* Alerts & Notices */
 
-@font-face {
-    font-family: 'track';
-    src:url('track.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}   
-
-
-
-
 .alertnotice{
     height: 10px;
     margin: 5px 5px 5px 30px;
@@ -57,20 +47,10 @@
     }
 }
 
-.table > thead > tr > th{
-    font-size: 1.2em;
-    font-weight: bold; 
-    // font-family: 'track';
-}
-
-.navbar-brand{
-
-}
-
 /* Navbar */
 
 .navbar-inverse .navbar-nav > li > a:hover{
-    color: red;
+    color: yellow;
 }
 
 #navbtn{
@@ -86,7 +66,7 @@
 }
 
 body{
-    // height: 100vh;
+    height: 100vh;
     background: radial-gradient(#999, #000) no-repeat center center fixed;    
     --webkit-background-size: cover;
     -moz-background-size: cover;
@@ -101,51 +81,37 @@ body{
     max-width: 230px;
 }
 
-#main{
+#main-container{
     color: black;
-    margin-top: 75px;
-    padding: 50px 50px 15px 50px;
-    background: white;
-    border-color: black;
-    border-width: 5px;
-    border-radius: 15px;
-
-    .main-heading{
-        width: 100%;
-        text-align: center;
-    }
-
-    h2.forum-header{
-        font-size: 1.8em;
-    }
-
-    #posts > div{
-        padding: 0px;
-    }
-
     a:hover{
       color: red;
-      text-decoration: none;
     }
-
-    .center_header{
+    h1, h2, h3, h4, h5, h6, h7{
         color: #4682B4;
         text-align: center; 
     }
     
-    .main-body{
-        margin-top: 100px;
+    #main{
+        width: 100%;
+        padding: 75px 50px 15px 50px;
     }
-
-    .main{
-        // color: black;
-        // background: beige;
-        // border-color: beige;
-        // text-align: center;
-        // font-size: 2.5em;
-        // font-weight: bold;
+    
+    .panel-default{
+        background: white;
+        padding: 0px 0px 0px 0px;
+        border-color: black;
+        border-width: 5px;
+        .panel-heading{
+            color: black;
+            background: beige;
+            border-color: beige;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .panel-body{
+        }
     }
-
 }
 
 .black-text{

@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @post, notice: 'Comment created.' 
     else
-      redirect_to @post 
+      render :new 
     end
   end
 

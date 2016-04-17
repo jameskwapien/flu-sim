@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'leaderboard/index'
+
+  get 'calendar/index'
   # for java simulation call
-  get 'simulation/show'
+  # get 'simulation/show'
   resources :groups
   resources :memberships
   resources :enrollments
   resources :courses
   resources :outputs
   resources :inputs
-  resources :simulations do
-    put :java_test_2
-  end
+  # resources :simulations do
+  #   put :java_test_2
+  # end
   resources :posts do
     resources :comments
   end

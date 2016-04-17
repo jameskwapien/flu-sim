@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= f.label :instructor %><br />
-    <%= f.select :instructor, [current_user.name] %>
+    <%= f.text_field :instructor, value: current_user.name, readonly: true %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.select :email, [current_user.email] %>
+    <%= f.text_field :email, value: current_user.email, readonly: true %>
   </div>
 
   <br />

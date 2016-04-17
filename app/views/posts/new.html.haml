@@ -1,6 +1,7 @@
-.main
-	.main-heading.border-button New Post
-  
-	= render 'form'
+.panel-heading New Post
 
-	=button_to "Cancel", posts_path, class: "btn btn-sm", :method => :get
+.panel-body
+  
+  = render 'form'
+
+=link_to "Cancel", posts_path
