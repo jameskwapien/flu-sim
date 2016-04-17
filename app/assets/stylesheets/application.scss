@@ -23,6 +23,16 @@
 
 /* Alerts & Notices */
 
+@font-face {
+    font-family: 'track';
+    src:url('track.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}   
+
+
+
+
 .alertnotice{
     height: 10px;
     margin: 5px 5px 5px 30px;
@@ -47,10 +57,20 @@
     }
 }
 
+.table > thead > tr > th{
+    font-size: 1.2em;
+    font-weight: bold; 
+    // font-family: 'track';
+}
+
+.navbar-brand{
+
+}
+
 /* Navbar */
 
 .navbar-inverse .navbar-nav > li > a:hover{
-    color: yellow;
+    color: red;
 }
 
 #navbtn{
@@ -66,7 +86,7 @@
 }
 
 body{
-    height: 100vh;
+    // height: 100vh;
     background: radial-gradient(#999, #000) no-repeat center center fixed;    
     --webkit-background-size: cover;
     -moz-background-size: cover;
@@ -83,10 +103,25 @@ body{
 
 #main{
     color: black;
-    padding: 75px 50px 15px 50px;
+    margin-top: 75px;
+    padding: 50px 50px 15px 50px;
     background: white;
     border-color: black;
     border-width: 5px;
+    border-radius: 15px;
+
+    .main-heading{
+        width: 100%;
+        text-align: center;
+    }
+
+    h2.forum-header{
+        font-size: 1.8em;
+    }
+
+    #posts > div{
+        padding: 0px;
+    }
 
     a:hover{
       color: red;
@@ -98,7 +133,11 @@ body{
         text-align: center; 
     }
     
-    .main-heading{
+    .main-body{
+        margin-top: 100px;
+    }
+
+    .main{
         // color: black;
         // background: beige;
         // border-color: beige;
@@ -107,9 +146,6 @@ body{
         // font-weight: bold;
     }
 
-    .main-body{
-
-    }
 }
 
 .black-text{

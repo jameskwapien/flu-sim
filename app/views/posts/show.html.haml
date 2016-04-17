@@ -13,9 +13,11 @@
 
 %br/
 %br/
+%hr/
 
 - if can? :update, @post
-	= link_to "Edit", edit_post_path(@post), class: "button"
-	= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Delete for real?" }, class: "button"
+	= button_to "Edit Post", edit_post_path(@post), class: "btn btn-sm", :method => :get
+	= button_to "Delete Post", post_path(@post), method: :delete, data: { confirm: "Delete for real?" }, class: "btn btn-sm"
+%br/	
 %br/
-= link_to "Back to all posts", posts_path
+= button_to "Back to all posts", posts_path, class: "btn btn-sm", :method => :get

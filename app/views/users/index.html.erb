@@ -1,12 +1,12 @@
-<h2 class="main-heading">
-  <% if current_user.admin? %>
-    Instructors & Students
-  <% else %>
-    Students
-  <% end %>
-</h2>
 
-<div class="main-body">
+<div class="main">
+  <h2 class="main-heading">
+    <% if current_user.admin? %>
+      Instructors & Students
+    <% else %>
+      Students
+    <% end %>
+  </h2>
   <% if current_user.admin? %>
     <h1>Instructors</h1>
     <div class = "table-responsive">

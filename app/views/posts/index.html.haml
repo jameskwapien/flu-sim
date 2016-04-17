@@ -1,8 +1,9 @@
-.main-body
+.main
+	= button_to "New Post", new_post_path, method: :get, class: "btn btn-lg btn-primary"
+	%br
+	%br
+	%hr
 	#posts
-		#buttons
-			%h1= link_to "New Post", new_post_path
-
 		- @posts.each do |post|
 			.post
 				%h2.forum-header= link_to post.title, post
