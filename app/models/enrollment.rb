@@ -17,4 +17,8 @@ class Enrollment < ActiveRecord::Base
 	def self.in_this_course(courseID, userID)
 		Enrollment.includes(:course).includes(:user).where(:courses => {:id => courseID}).where(:users => {:id => userID})
 	end
+
+	def self.in_course(course_id)
+		Enrollment.where(:course_id => course_id)
+	end
 end

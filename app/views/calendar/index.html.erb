@@ -1,0 +1,8 @@
+<div class="main">
+	<h2 class="main-heading">Calendar</h2>
+	<% if current_user.instructor? %>
+		<%= render 'icalendar' %>
+	<% else %>
+		<%= render 'scalendar' %>
+	<% end %>
+</div>

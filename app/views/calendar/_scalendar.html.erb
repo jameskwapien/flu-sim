@@ -1,7 +1,7 @@
 <% group = @session_group %>
 <% course = Course.find(group.course_id) %>
 <% if course.days %>
-	<h2><%= group.name %> in <%= course.name %></h2>
+	<h3><%= group.name %> in <%= course.name %></h3>
 	<table class="table table-striped table-hover">
 		<thead>
 	    	<tr>

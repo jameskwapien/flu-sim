@@ -13,24 +13,13 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, value: @course.name, readonly: true %>
   </div>
 
   <div class="field">
-    <%= f.label :crn %><br />
-    <%= f.number_field :crn, min: 1, max: 99999, step: 1 %>    
+  	<%= f.label :days %><br />
+  	<%= f.number_field :days, in: @course.days..365, step: 1 %>
   </div>
-
-  <div class="field">
-    <%= f.label :instructor %><br />
-    <%= f.text_field :instructor, value: current_user.name, readonly: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email, value: current_user.email, readonly: true %>
-  </div>
-
   <br />
 
   <div class="actions">

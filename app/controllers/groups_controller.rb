@@ -1,12 +1,15 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
-  helper_method :group_directory
+  helper_method :group_directory, :rem_group_directory
 
   # Create group specific directories
   def group_directory(group)
     system "cd public/assets/images && mkdir '#{group}'"
   end
-    
+
+  def rem_group_directory(group)
+    system "cd public/assets/images && rm -rf '#{group}'"
+  end
 
   # GET /groups
   # GET /groups.json
@@ -21,11 +24,13 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
+    get_session_course
     @group = Group.new
   end
 
   # GET /groups/1/edit
   def edit
+    get_session_course
   end
 
   # POST /groups
@@ -35,6 +40,7 @@ class GroupsController < ApplicationController
     get_session_course
     respond_to do |format|
       if @group.save
+        group_directory(@group.name)
         if @session_course
           format.html { redirect_to @session_course, notice: 'Group was successfully created.' }
         else
@@ -69,6 +75,7 @@ class GroupsController < ApplicationController
   def destroy
     @group.destroy
     get_session_course
+    rem_group_directory
     respond_to do |format|
       if @session_course
         format.html { redirect_to @session_course, notice: 'Group was successfully destroyed.' }

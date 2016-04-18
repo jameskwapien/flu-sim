@@ -1,6 +1,6 @@
 <% Course.by_teacher(current_user.email).each do |course| %>
 	<% if course.days %>
-		<h2><%= course.name %></h2>
+		<h3><%= course.name %></h3>
 		<table class="table table-striped table-hover">
 			<thead>
 		    	<tr>
@@ -33,4 +33,7 @@
 		  	</tbody>
 		</table>
 	<% end %>
+<% end %>
+<% if Course.by_teacher(current_user.email).empty? %>
+	<p>You must have at least one course with an updated day limit for simulations in order to view your calendar.</p>
 <% end %>

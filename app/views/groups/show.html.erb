@@ -1,7 +1,6 @@
 <% session[:group_id] = @group.id %>
-
+<% flag = false %>
  
-<div class="panel-body"> 
 <h2 class="main-heading">Group Details</h2>
   <div class = "table-responsive">
     <table class="table table-striped table-hover">
@@ -10,6 +9,9 @@
           <th>Name</th>
           <th>Course</th>
           <th># of Members</th>
+          <th>Current Sim Period</th>
+          <th>Available Sim Period</th>
+          <th>Calendar</th> 
         </tr>
       </thead>
       <tbody>
@@ -22,7 +24,10 @@
               <% end %>
             <% end %>
           </td>
-          <td><%= Membership.belongs_to_group(@group.id).count %></td> 
+          <td><%= Membership.belongs_to_group(@group.id).count %></td>
+          <td><%= @count %></td>
+          <td><%= Course.find(@group.course_id).days %></td>
+          <td><%= link_to 'Calendar', calendar_index_path %></td>
         </tr>
       </tbody>
     </table>  
@@ -82,6 +87,7 @@
             <% end %>
             <% unless Output.belongs_to_input(input.id).present? %>
               <% session[:input_id] = input.id %>
+              <% flag = true %>
               <td><%= link_to 'Run', outputs_path, :onclick=>"$('#showLoad').toggle();" %></td>
             <% else %>
               <% output = Output.belongs_to_input(input.id).first %>
@@ -93,7 +99,9 @@
     </table>
   </div>
 
-  <%= button_to 'New Input', new_input_path(group_id: @group.id), method: :get, class: 'btn btn-sm' %><br />
+  <% unless flag %>
+    <%= button_to 'New Input', new_input_path(group_id: @group.id), method: :get, class: 'btn btn-sm' %><br />
+  <% end %>
   
   <div id="showLoad" style="display: none">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">

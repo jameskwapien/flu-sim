@@ -45,7 +45,7 @@
 
   <div class="field">
     <%= f.label :days %><br />
-    <%= f.number_field :days, in: 0..365, step: 1 %>
+    <%= f.number_field :days, in: 0..@limit, step: 1 %>
   </div>
 
   <br />
