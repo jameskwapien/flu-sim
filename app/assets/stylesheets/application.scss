@@ -24,21 +24,11 @@
 /* Alerts & Notices */
 
 @font-face {
-    font-family: 'track';
-    src: url('track.ttf') format('truetype');
+    font-family: 'cantarell';
+    src: url('cantarell.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }   
-
-@font-face {
-   font-family: 'zwodrei';
-   src: url('zwodrei.ttf') format('truetype');
-   font-weight: normal;
-   font-style: normal;
-}
-
-
-
 
 .alertnotice{
     height: 10px;
@@ -71,17 +61,31 @@
 }
 
 .navbar-brand{
-
+    font-weight: bolder;
+    font-size: 2em
 }
 
 /* Navbar */
 
+.nav .navbar-nav > ul {
+    padding: 0px;
+}
 .navbar-inverse .navbar-nav > li > a:hover{
     color: red;
 }
 
 #navbtn{
     margin-top: 10px;
+}
+
+
+
+.navbar-fixed-top{
+  position: relative; /* this can also be static */
+}
+
+.navbar-fixed-bottom{
+    position: relative;
 }
 
 /* body */
@@ -94,12 +98,15 @@
 
 body{
     // height: 100vh;
-    background: radial-gradient(#999, #000) no-repeat center center fixed;    
-    --webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    font-family: track;
+    // background: radial-gradient(#232B30, #344046) no-repeat center center fixed;    
+    // --webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    position:relative;
+    background-color: #464643;
+    font-family: cantarell;
+    font-size: 180%;
 }
 
 .fancybox > img{
@@ -109,10 +116,15 @@ body{
     max-width: 230px;
 }
 
+// input, textarea {
+//     font-family: zwodrei;
+
+// }
+
 #main{
     color: black;
-    margin-top: 75px;
-    padding: 50px 50px 15px 50px;
+    // margin-top: 75px;
+    padding: 30px 40px 30px 40px;
     background: white;
     border-color: black;
     border-width: 5px;
@@ -124,7 +136,7 @@ body{
     }
 
     h2.forum-header{
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     #posts > div{
@@ -156,7 +168,48 @@ body{
 
 }
 
+
+.alertnotice {
+    position:fixed; 
+    top: 48px; 
+    left: 0px; 
+    width: 100%;
+    text-align: center;
+    z-index:9999; 
+    border-radius:0px
+}
+
+.alertnotice {
+    -moz-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 2s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+
+
 .black-text{
     color: black; 
     resize: none;
 }
+
+
