@@ -23,6 +23,7 @@
 
 /* Alerts & Notices */
 
+
 @font-face {
     font-family: 'cantarell';
     src: url('cantarell.ttf') format('truetype');
@@ -67,8 +68,8 @@
 
 /* Navbar */
 
-.nav .navbar-nav > ul {
-    padding: 0px;
+.nav .navbar-nav > li {
+    
 }
 .navbar-inverse .navbar-nav > li > a:hover{
     color: red;
@@ -103,7 +104,7 @@ body{
     // -moz-background-size: cover;
     // -o-background-size: cover;
     // background-size: cover;
-    position:relative;
+    position: relative;
     background-color: #464643;
     font-family: cantarell;
     font-size: 180%;
@@ -170,41 +171,39 @@ body{
 
 
 .alertnotice {
-    position:fixed; 
-    top: 48px; 
-    left: 0px; 
-    width: 100%;
-    text-align: center;
-    z-index:9999; 
-    border-radius:0px
+    position: absolute; 
+    bottom: -50px; 
+//     left: 0px; 
+//     text-align: left;
+//     z-index:9999; 
 }
 
-.alertnotice {
-    -moz-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 2s forwards;
-    /* Opera */
-    animation: cssAnimation 0s ease-in 2s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
+// .alertnotice {
+//     -moz-animation: cssAnimation 0s ease-in 2s forwards;
+//     /* Firefox */
+//     -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+//     /* Safari and Chrome */
+//     -o-animation: cssAnimation 0s ease-in 2s forwards;
+//     /* Opera */
+//     animation: cssAnimation 0s ease-in 2s forwards;
+//     -webkit-animation-fill-mode: forwards;
+//     animation-fill-mode: forwards;
+// }
 
-@keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        overflow:hidden;
-    }
-}
-@-webkit-keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        visibility:hidden;
-    }
-}
+// @keyframes cssAnimation {
+//     to {
+//         width:0;
+//         height:0;
+//         overflow:hidden;
+//     }
+// }
+// @-webkit-keyframes cssAnimation {
+//     to {
+//         width:0;
+//         height:0;
+//         visibility:hidden;
+//     }
+// }
 
 
 .black-text{

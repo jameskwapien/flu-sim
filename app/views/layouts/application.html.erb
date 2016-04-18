@@ -39,17 +39,16 @@
 <%-#--- BEGIN MAIN CONTAINER ----%>
 <div id = "main" class="container">
     <%= yield %>
-<% if notice || alert %>
-    <div class="alertnotice">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-    </div>
-<% end %>
+<%-#--- BEGIN FOOTER BAR ----%>
+    <% if notice || alert %>
+        <div class="alertnotice">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+        </div>
+    <% end %>
+<%-#--- END FOOTER BAR ----%>
 </div>
 <%-#--- END MAIN CONTAINER ----%>
-
-<%-#--- BEGIN FOOTER BAR ----%>
-<%-#--- END FOOTER BAR ----%>
 
 </body>
 </html>
