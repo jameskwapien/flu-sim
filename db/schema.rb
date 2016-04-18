@@ -56,10 +56,9 @@ ActiveRecord::Schema.define(version: 20160405020019) do
   add_index "group_memberships", ["member_type", "member_id"], name: "index_group_memberships_on_member_type_and_member_id", using: :btree
 
   create_table "groups", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "course_id",  limit: 4
+    t.string  "type",      limit: 255
+    t.string  "name",      limit: 255
+    t.integer "course_id", limit: 4
   end
 
   create_table "inputs", force: :cascade do |t|
