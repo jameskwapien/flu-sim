@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'leaderboard/index'
+
   resources :groups
   resources :memberships
   resources :enrollments
