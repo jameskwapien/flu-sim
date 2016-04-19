@@ -26,9 +26,12 @@ public class Person {
     }              
     
     family = random.rFamily();
-    home.family[family]++;         
-    status = random.rStatus();
+    home.family[family]++;
 
+    if (home.id == home.STARTSICK  || home.STARTSICK == -1)
+      status = random.rStatus();
+
+//home.STARTSICK
   }
   
   void simulate(){
@@ -57,10 +60,13 @@ public class Person {
   void walkDay(){
     status = random.rFamSick(home.familySick[family]);
     if(age>0)
-        status = (random.rPlaceSick(home.worksSick[work], home.works[work])|status);
+        status = (random.rPlaceSick(home.worksSick[work], home.works[work]) | status);
     else
-        status = (random.rPlaceSick(home.schoolsSick[school], home.schools[school])|status);
-    status = (random.rPlaceSick(home.sick, home.population)|status);
+        status = (random.rPlaceSick(home.schoolsSick[school], home.schools[school]) | status);
+
+    status = (random.rCitySick(home.nearSick, home.nearPop) | status);
+
+    status = (random.rPlaceSick(home.sick, home.population) | status);
   }
   
   void arrayAdd(){

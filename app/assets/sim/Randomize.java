@@ -57,6 +57,13 @@ public class Randomize {
         return (roll > sickLevel) ? 1 : 0;
     }
 
+    public int rCitySick(int x, int y) {
+        //implemented as a percentage of people around you at the moment
+        float percent = ((float) x / y) * 100;
+        int roll = random.nextInt(5000);
+        return (roll <= percent) ? 1 : 0;
+    }
+
     public int nextInt(int range){
         return random.nextInt(range);
     }    

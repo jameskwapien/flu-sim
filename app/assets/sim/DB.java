@@ -88,10 +88,17 @@ public class DB {
     }
 
     public boolean checkOutput(int input_id, String group) throws SQLException {
-        String tableSelect = String.format("select id from outputs where group_name like '%s' and input_id = %d limit 1",
+        String tableSelect = String.format("select input_id from outputs where group_name like '%s' and input_id = %d limit 1",
                                             group, input_id);
         s = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         return s.executeQuery(tableSelect).next();
+    }
+
+    public void dropOutput(int input_id, String group) throws SQLException {
+        String tableDelete = String.format("delete from outputs where group_name like '%s' and input_id = %d",
+                group, input_id);
+        s = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        s.executeUpdate(tableDelete);
     }
 
 }

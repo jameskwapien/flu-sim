@@ -27,8 +27,14 @@ public class City {
     int money_spent_vaccines;
     Person[] people;
     Randomize random;
+    int id;
+    int STARTSICK;
+    int nearPop;
+    int nearSick;
     
-City(int id, Randomize random, int CITYPOP, int CITYFAM){
+City(int id, Randomize random, int CITYPOP, int CITYFAM, int STARTSICK){
+    this.id = id;
+    this.STARTSICK = STARTSICK;
     this.random = random;
     //this is for a new city
     //create your people to go in it    
@@ -57,7 +63,10 @@ City(int id, Randomize random, int CITYPOP, int CITYFAM){
       people[i] = new Person(random, this);
   }
 
-  void run(){
+  void run(int nearSick, int nearPop){
+    this.nearSick = nearSick;
+    this.nearPop = nearPop;
+
     //reset temp arrays to current day
     agesSickTemp = agesSick;
     familySickTemp = familySick;
@@ -87,21 +96,21 @@ City(int id, Randomize random, int CITYPOP, int CITYFAM){
     return false;
   }
   
-    void commit(int input_id, int day, DB data, String group){
+    void commit(int input_no, int day, DB data, String group){
         //this will be the database portion
-        data.toDatabase(input_id, this, group, day);
+        data.toDatabase(input_no, this, group, day);
         print(day, this); // Comment out in production.
     }
 
     // synchronize when printing to console so it doesn't get all messed up
     // City object needed for this static method to print instance variables
     static synchronized void print(int day, City thisCity){
-        // System.out.printf("[%d]Population total for City[%d]: %d\n", day, thisCity.cityId, thisCity.population);
-        // System.out.printf("[%d]Sick: %d, Immnune: %d\n", day, thisCity.sick, thisCity.immune);
-        // System.out.printf("[%d]Ages: %d/%d, %d/%d, %d/%d\n", day,   thisCity.agesSick[0],thisCity.ages[0],
-        //                                                             thisCity.agesSick[1],thisCity.ages[1],
-        //                                                             thisCity.agesSick[2],thisCity.ages[2]);
-        // System.out.println("-------------------------------------");
+        System.out.printf("[%d]Population total for City[%d]: %d\n", day, thisCity.cityId, thisCity.population);
+        System.out.printf("[%d]Sick: %d, Immnune: %d\n", day, thisCity.sick, thisCity.immune);
+        System.out.printf("[%d]Ages: %d/%d, %d/%d, %d/%d\n", day,   thisCity.agesSick[0],thisCity.ages[0],
+                                                                    thisCity.agesSick[1],thisCity.ages[1],
+                                                                    thisCity.agesSick[2],thisCity.ages[2]);
+        System.out.println("-------------------------------------");
     }
 
     void setParams(int vaccines, int ads, int schoolsOff, int vacc_chance, int money_left){
