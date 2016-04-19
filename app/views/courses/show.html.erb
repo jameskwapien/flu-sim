@@ -79,7 +79,7 @@
         <% end %>
       </tbody>
     </table>
-    <%= button_to 'New Enrollment', new_enrollment_path, method: :get, class: 'btn btn-sm' %><br />
+    <%= button_to 'New Enrollment', new_enrollment_path, method: :get, class: 'btn btn-sm btn-primary' %><br />
 
     <hr />
     <h2>Groups</h2>
@@ -113,8 +113,8 @@
 		<p>There are no group memberships for this class yet. You can change this by clicking the 'New Group' button below.</p>
 	<% end %>
 
-	<%= button_to 'New Group', new_group_path, method: :get, class: 'btn btn-sm' %><br />
+	<%= button_to 'New Group', new_group_path, method: :get, class: 'btn btn-sm btn-primary' %><br />
 
     <hr />
-    <%= button_to 'Back', courses_path, method: :get, class: 'btn btn-sm' %>
+    <%= button_to 'Back', courses_path, method: :get, class: 'btn btn-sm btn-primary' %>
 </div>

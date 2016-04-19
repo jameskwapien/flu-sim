@@ -86,7 +86,7 @@
 }
 
 .navbar-fixed-bottom{
-    position: relative;
+    /*position: relative;*/
 }
 
 /* body */
@@ -122,9 +122,13 @@ body{
 
 // }
 
+a{
+  font-weight: bold;
+}
+
 #main{
     color: black;
-    // margin-top: 75px;
+    margin-top: 75px;
     padding: 30px 40px 30px 40px;
     background: white;
     border-color: black;
@@ -144,6 +148,10 @@ body{
         padding: 0px;
     }
 
+    a{
+        font-weight: bold;
+    }
+
     a:hover{
       color: red;
       text-decoration: none;
@@ -158,52 +166,50 @@ body{
         margin-top: 100px;
     }
 
-    .main{
-        // color: black;
-        // background: beige;
-        // border-color: beige;
-        // text-align: center;
-        // font-size: 2.5em;
-        // font-weight: bold;
-    }
+}
 
+.main{
+    margin-top: 75px;
+    a{
+      font-weight: bold;
+    }
 }
 
 
 .alertnotice {
     position: absolute; 
     bottom: -50px; 
-//     left: 0px; 
-//     text-align: left;
-//     z-index:9999; 
+    left: 0px; 
+    text-align: left;
+    z-index:9999; 
 }
 
-// .alertnotice {
-//     -moz-animation: cssAnimation 0s ease-in 2s forwards;
-//     /* Firefox */
-//     -webkit-animation: cssAnimation 0s ease-in 2s forwards;
-//     /* Safari and Chrome */
-//     -o-animation: cssAnimation 0s ease-in 2s forwards;
-//     /* Opera */
-//     animation: cssAnimation 0s ease-in 2s forwards;
-//     -webkit-animation-fill-mode: forwards;
-//     animation-fill-mode: forwards;
-// }
+ .alertnotice {
+     -moz-animation: cssAnimation 0s ease-in 2s forwards;
+     /* Firefox */
+     -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+     /* Safari and Chrome */
+     -o-animation: cssAnimation 0s ease-in 2s forwards;
+     /* Opera */
+     animation: cssAnimation 0s ease-in 2s forwards;
+     -webkit-animation-fill-mode: forwards;
+     animation-fill-mode: forwards;
+ }
 
-// @keyframes cssAnimation {
-//     to {
-//         width:0;
-//         height:0;
-//         overflow:hidden;
-//     }
-// }
-// @-webkit-keyframes cssAnimation {
-//     to {
-//         width:0;
-//         height:0;
-//         visibility:hidden;
-//     }
-// }
+ @keyframes cssAnimation {
+     to {
+         width:0;
+         height:0;
+         overflow:hidden;
+     }
+ }
+ @-webkit-keyframes cssAnimation {
+     to {
+         width:0;
+         height:0;
+         visibility:hidden;
+     }
+ }
 
 
 .black-text{

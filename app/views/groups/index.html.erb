@@ -39,9 +39,9 @@
 <% end %>
 
 <hr />
-<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
+<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm btn-primary' %>
 <% if current_user.instructor? %>
-  <%= button_to 'New Group', new_group_path, method: :get, class: 'btn btn-sm' %>
+  <%= button_to 'New Group', new_group_path, method: :get, class: 'btn btn-sm btn-primary' %>
 <% end %>
 
 </div>

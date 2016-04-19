@@ -40,7 +40,7 @@ class OutputsController < ApplicationController
   def get_day_span
     @day_span = 0
     Input.belongs_to_group(@output.group_name).each do |i|
-      if @output.input_id < i.id
+      if @output.input_id >= i.id
         @day_span += i.days
       end
     end

@@ -16,8 +16,8 @@
 %hr/
 
 - if can? :update, @post
-	= button_to "Edit Post", edit_post_path(@post), class: "btn btn-sm", :method => :get
-	= button_to "Delete Post", post_path(@post), method: :delete, data: { confirm: "Delete for real?" }, class: "btn btn-sm"
+	= button_to "Edit Post", edit_post_path(@post), class: "btn btn-sm btn-primary", :method => :get
+	= button_to "Delete Post", post_path(@post), method: :delete, data: { confirm: "Delete for real?" }, class: "btn btn-sm btn-primary"
 %br/	
 %br/
-= button_to "Back to all posts", posts_path, class: "btn btn-sm", :method => :get
+= button_to "Back to all posts", posts_path, class: "btn btn-sm btn-primary", :method => :get

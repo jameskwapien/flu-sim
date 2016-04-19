@@ -4,6 +4,6 @@
 		%p.comment_author= comment.user.email
 	.buttons
 		-if can? :update, comment
-			= button_to "Edit", edit_post_comment_path(comment.post, comment), class: "btn btn-sm", :method => :get
-			= button_to "Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm"
+			= button_to "Edit", edit_post_comment_path(comment.post, comment), class: "btn btn-sm btn-primary", :method => :get
+			= button_to "Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-primary"
 %hr/

@@ -14,11 +14,13 @@ class EnrollmentsController < ApplicationController
 
   # GET /enrollments/new
   def new
+    get_session_course
     @enrollment = Enrollment.new
   end
 
   # GET /enrollments/1/edit
   def edit
+    get_session_course
   end
 
   # POST /enrollments

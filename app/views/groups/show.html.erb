@@ -100,7 +100,7 @@
   </div>
 
   <% unless flag %>
-    <%= button_to 'New Input', new_input_path(group_id: @group.id), method: :get, class: 'btn btn-sm' %><br />
+    <%= button_to 'New Input', new_input_path(group_id: @group.id), method: :get, class: 'btn btn-sm btn-primary' %><br />
   <% end %>
   
   <div id="showLoad" style="display: none">
@@ -109,5 +109,5 @@
   </div>
 
   <hr />
-  <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm' %>
+  <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm btn-primary' %>
 </div>

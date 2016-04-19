@@ -65,6 +65,10 @@ class User < ActiveRecord::Base
     User.includes(:enrollments).where(:enrollments => {:course_id => courseID})
   end
 
+  def self.not_in_a_course(courseID)
+    User.includes(:enrollments).where(:enrollments => {:course_id => courseID}).where.not(:enrollments => {:course_id => courseID})
+  end
+
   def self.in_a_course_group(courseID)
     User.includes(:memberships).includes(:groups).where(:groups => {:course_id => courseID})
   end

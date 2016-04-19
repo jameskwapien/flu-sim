@@ -128,14 +128,14 @@ public class Main {
     //currently all cities have the same populations then it is cleaned up in post
     /* R needs this */
     try {
-      System.out.printf("wtf");
       Runtime rt = Runtime.getRuntime();
       Process pr = rt.exec("Rscript ../Rscripts/pieCharts.R " + GROUP);
-      System.out.printf("wtf");
+      System.out.printf("pre wait call");
+      pr.waitFor();
+      System.out.printf("post wait call");
     }
     catch (Exception e){
       System.out.printf("Command line call is not working: " + e);
-      System.out.printf("WTF");
     }
     /* end of R call */
     final long finish = System.currentTimeMillis();
