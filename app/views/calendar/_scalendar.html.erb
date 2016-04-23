@@ -15,10 +15,14 @@
 	    			<td><%= i %></td>
 	    			<td>
 	    				<% day = 0 %>
+	    				<% flag = false %>
 	    				<% Input.belongs_to_group(group.name).each do |input| %>
 	    					<% day += input.days %>
+	    					<% if Output.belongs_to_input(input.id).first.present? %>
+	    						<% flag = true %>
+	    					<% end %>
 	    				<% end %>
-	    				<% if day >= i %>
+	    				<% if day >= i && flag %>
 	    					Completed
 	    				<% else %>
 	    					Open
@@ -29,7 +33,3 @@
 	  	</tbody>
 	</table>
 <% end %>
-
-
-<hr />
-<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm btn-primary' %>

@@ -1,6 +1,6 @@
-<div class="panel-heading">Editing Course</div>
+<div class="main">
+	<h2 class="main-heading">Editing Course</h2>
 
-<div class="panel-body">
 	<% if Enrollment.in_course(@course.id).present? %>
 		<%= render 'calendar' %>
 	<% else %>

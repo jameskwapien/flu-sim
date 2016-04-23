@@ -17,21 +17,4 @@ one:
   sick_age2: 1
   day: 1
   cityID: 1
-
-two:
-  group_name: MyString
-  money_left: 9.99
-  money_spent_vaccines: 9.99
-  money_spent_ads: 9.99
-  vaccs_left: 1
-  population: 1
-  sick: 1
-  immune: 1
-  pop_age0: 1
-  sick_age0: 1
-  pop_age1: 1
-  sick_age1: 1
-  pop_age2: 1
-  sick_age2: 1
-  day: 1
-  cityID: 1
+  created_at: <%= Time.now %>

@@ -1,8 +1,7 @@
 class Enrollment < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :course
-
-	validate :enrollment_valid, :on => :create
+	validate :enrollment_valid
 
 	def enrollment_valid
 		if Enrollment.where(:user_id => self.user_id, :course_id => self.course_id).exists?

@@ -40,6 +40,7 @@ class InputsController < ApplicationController
   # POST /inputs.json
   def create
     @input = Input.new(input_params)
+    get_simulation_limit
     get_session_group
     respond_to do |format|
       if @input.save

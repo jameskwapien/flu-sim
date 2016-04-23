@@ -2,6 +2,7 @@ require 'test_helper'
 
 class InputsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @input = inputs(:one)
   end
 

@@ -45,9 +45,9 @@ public class DB {
             rs.moveToInsertRow();
             rs.updateInt("input_id", input_id);
             rs.updateString("group_name", groupName);
-            rs.updateInt("money_left", city.money_left);
-            rs.updateInt("money_spent_ads", city.ads);
-            rs.updateInt("money_spent_vaccines", city.money_spent_vaccines); // 13 is the price for the vaccines
+            // rs.updateInt("money_left", city.money_left);
+            // rs.updateInt("money_spent_ads", city.ads);
+            // rs.updateInt("money_spent_vaccines", city.money_spent_vaccines); // 13 is the price for the vaccines
             rs.updateInt("vaccs_left", city.cityVaccines);
             rs.updateInt("population", city.population);
             rs.updateInt("sick",city.sick);

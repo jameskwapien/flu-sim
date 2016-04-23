@@ -2,6 +2,7 @@ require 'test_helper'
 
 class EnrollmentsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @enrollment = enrollments(:one)
   end
 

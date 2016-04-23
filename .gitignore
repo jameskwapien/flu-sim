@@ -36,3 +36,6 @@
 
 # tilde files are usually backup files from a text editor
 *~
+
+# ignore compiled source filed
+/app/assets/sim/*.class

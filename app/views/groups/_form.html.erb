@@ -19,12 +19,12 @@
   <% if @session_course %>
     <div class="field">
       <%= f.label :course_id %><br />
-      <%= f.text_field :course_id, value: Course.find(@session_course.id).id, readonly: true %>
+      <%= f.collection_select :course_id, Course.where(:id => @session_course.id), :id, "name_crn" %>
     </div>
   <% else %>
     <div class="field">
       <%= f.label :course_id %><br />
-      <%= f.collection_select :course_id, Course.by_teacher(current_user.email), :id, :name %>
+      <%= f.collection_select :course_id, Course.by_teacher(current_user.email), :id, "name_crn" %>
     </div>
   <% end %>
   

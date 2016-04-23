@@ -2,7 +2,10 @@ require 'test_helper'
 
 class GroupsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @group = groups(:one)
+    @course = courses(:one)
+    @controller.session[:course_id] = @course.id
   end
 
   test "should get index" do
@@ -21,7 +24,8 @@ class GroupsControllerTest < ActionController::TestCase
       post :create, group: { name: @group.name }
     end
 
-    assert_redirected_to group_path(assigns(:group))
+    assert_response :redirect
+    # assert_redirected_to course_path(assigns(@controller.session[:course_id]))
   end
 
   test "should show group" do
@@ -44,6 +48,6 @@ class GroupsControllerTest < ActionController::TestCase
       delete :destroy, id: @group
     end
 
-    assert_redirected_to groups_path
+    assert_response :redirect
   end
 end

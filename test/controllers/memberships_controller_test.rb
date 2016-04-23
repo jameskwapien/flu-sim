@@ -2,6 +2,7 @@ require 'test_helper'
 
 class MembershipsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @membership = memberships(:one)
   end
 

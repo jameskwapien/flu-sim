@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Course Name' %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :crn %><br />
+    <%= f.label :crn, 'Course Reference Number' %><br />
     <%= f.number_field :crn, min: 1, max: 99999, step: 1 %>    
   </div>
 
   <div class="field">
-    <%= f.label :instructor %><br />
+    <%= f.label :instructor, 'Instructor Name' %><br />
     <%= f.text_field :instructor, value: current_user.name, readonly: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, 'Instructor Email' %><br />
     <%= f.text_field :email, value: current_user.email, readonly: true %>
   </div>
 

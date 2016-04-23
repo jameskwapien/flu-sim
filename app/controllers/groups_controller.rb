@@ -75,7 +75,7 @@ class GroupsController < ApplicationController
   def destroy
     @group.destroy
     get_session_course
-    rem_group_directory
+    rem_group_directory(@group.name)
     respond_to do |format|
       if @session_course
         format.html { redirect_to @session_course, notice: 'Group was successfully destroyed.' }

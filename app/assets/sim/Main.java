@@ -60,19 +60,20 @@ public class Main {
     // Loop through inputs and simulate with given values for the specified amount of days
     while (inputs.next()) {
       input_id = inputs.getInt("id");
-      vaccines += inputs.getInt("vaccines")/CITY_COUNT; //for now, must be greater of equal than city count.
+      vaccines += inputs.getInt("vaccines")/CITY_COUNT; //for now, must be greater or equal than city count.
       ads = inputs.getInt("ads"); //for now, must be greater of equal than city count.
       DAYS = inputs.getInt("days");
       school_off = inputs.getInt("school_off"); //for now, must be greater of equal than city count.
       money_left = inputs.getInt("money_left");
 
-      if (!lessVaccMoney(vaccines)){
-        System.out.println("Not enough money.");
-        System.exit(0);
-      }
+      /* Rails is handling this */
+      // if (!lessVaccMoney(vaccines)){
+      //   System.out.println("Not enough money.");
+      //   System.exit(0);
+      // }
 
       setVacc_chance((float) ((ads/1000) * 0.01 ));
-      money_left -= ads;
+      // money_left -= ads;
 
       for (int i = 0; i < CITY_COUNT; i++) {
         if (map[i] == null)

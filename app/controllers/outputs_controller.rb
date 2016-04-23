@@ -24,7 +24,7 @@ class OutputsController < ApplicationController
 
   def get_summary_data
     @input = Input.find(@output.input_id)
-    @vaccs_money = @input.vaccines
+    @vaccs_money = @input.vaccines * 13
     @vaccs_left = 0
     @population = 0
     @sick = 0
@@ -57,32 +57,21 @@ class OutputsController < ApplicationController
     get_session_group
     group_name = @session_group.name
     inputID = @session_input.id
+    input = Input.find(inputID)
+    @budget_rem = input.money_left
+    @budget_vaccs = input.vaccines * 13
+    @budget_ads = input.ads
     @population = 0
     @sick = 0
     @immune = 0
-    @budget_rem = 0
     @vaccines_rem = 0
-    @budget_vaccs = 0
-    @budget_ads = 0
     Output.belongs_to_input(inputID).each do |output|
       @population += output.population
       @sick += output.sick
       @immune += output.immune
       @vaccines_rem += output.vaccs_left
-      @budget_vaccs += output.money_spent_vaccines
-    end
-    output = Output.belongs_to_input(inputID).last
-    if output.present?
-        @budget_rem = output.money_left
-    end
-    Input.belongs_to_group(group_name).each do |input|
-      if Output.belongs_to_input(input.id).first.present?
-        output = Output.belongs_to_input(input.id).first
-        @budget_ads += output.money_spent_ads
-      end
     end
     # end of data compilation
-
     @outputs = Output.all
   end
 

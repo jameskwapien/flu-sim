@@ -13,38 +13,42 @@
 
 
   <div class="field">
-    <%= f.label :group_name %><br />
-    <%= f.text_field :group_name, value: Group.find(@session_group).name, readonly: true  %>
+    <%= f.label :group_name, 'Group' %><br />
+    <%= f.text_field :group_name, value: Group.find(@session_group.id).name, readonly: true  %>
   </div>
 
+  <% last_input = Input.belongs_to_group(@session_group.name).last %>
+
   <div class="field">
-    <%= f.label :money_left %><br />
+    <%= f.label :money_left, 'Budget' %><br />
     <% if Output.belongs_to_group(@session_group.name).exists? %>
-      <%= f.number_field :money_left, value: Output.belongs_to_group(@session_group.name).last.money_left, readonly: true %>
+      <%= f.number_field :money_left, value: last_input.money_left, readonly: true %>
     <% else %>
       <%= f.number_field :money_left, value: 1000000, readonly: true %>
     <% end %>
   </div> 
 
   <div class="field">
-    <%= f.label :vaccines %><br />
+    <%= f.label :vaccines, 'Vaccines ($13 Each)' %><br />
     <%= f.number_field :vaccines, min: 0, step: 1, :onblur=>"document.getElementById('vacCost').innerHTML = ('Total Cost for vaccines= $').concat(document.getElementById('input_vaccines').value * 13);" %>
     <label id="vacCost">No vaccines purchased</label>
   </div>
 
   <div class="field">
-    <%= f.label :ads %><br />
+    <%= f.label :ads, 'Advertising in $' %><br />
     <%= f.number_field :ads, min: 0, step: 1, :onblur=>"document.getElementById('adCost').innerHTML = ('Total Cost for ads= $').concat(document.getElementById('input_ads').value);" %>
     <label id="adCost">No ads purchased</label>
   </div>
 
-  <div class="field">
-    <%= f.label :school_off %><br />
-    <%= f.number_field :school_off, in: 0..1, step: 1 %>
-  </div>
+  <% if false %>
+    <div class="field">
+      <%= f.label :school_off %><br />
+      <%= f.number_field :school_off, in: 0..1, step: 1 %>
+    </div>
+  <% end %>
 
   <div class="field">
-    <%= f.label :days %><br />
+    <%= f.label :days, 'Days to Simulate (Current Limit: ' + @limit.to_s + ')' %><br />
     <%= f.number_field :days, in: 0..@limit, step: 1 %>
   </div>
 

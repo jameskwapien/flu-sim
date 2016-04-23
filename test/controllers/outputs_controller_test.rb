@@ -2,6 +2,7 @@ require 'test_helper'
 
 class OutputsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @output = outputs(:one)
   end
 

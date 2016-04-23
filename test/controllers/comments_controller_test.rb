@@ -1,8 +1,14 @@
 require 'test_helper'
 
-class commentsControllerTest < ActionController::TestCase
+class CommentsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @comment = comments(:one)
+    @update = {
+      user_id: '1',
+      post_id: '1',
+      content: 'Lorem ipsum dolor sit amet.'
+    }
   end
 
   test "should get index" do
@@ -17,7 +23,7 @@ class commentsControllerTest < ActionController::TestCase
   end
 
   test "should create comment" do
-    assert_difference('comment.count') do
+    assert_difference('comments.count') do
       post :create, comment: { create: @comment.create, destroy: @comment.destroy, edit: @comment.edit, update: @comment.update }
     end
 
@@ -40,7 +46,7 @@ class commentsControllerTest < ActionController::TestCase
   end
 
   test "should destroy comment" do
-    assert_difference('comment.count', -1) do
+    assert_difference('comments.count', -1) do
       delete :destroy, id: @comment
     end
 

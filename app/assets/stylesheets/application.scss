@@ -21,9 +21,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* Alerts & Notices */
 
-
+/************* Fonts *************/
 @font-face {
     font-family: 'cantarell';
     src: url('cantarell.ttf') format('truetype');
@@ -31,6 +30,7 @@
     font-style: normal;
 }   
 
+/************* Alerts & Notices *************/
 .alertnotice{
     height: 10px;
     margin: 5px 5px 5px 30px;
@@ -40,151 +40,11 @@
     .alert{
         color: red;
     }
-}
-
-/* Tables */
-
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{
-    background-color: #999999;
-}
-
-.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th{
-    background-color: #4682B4;
-    a{
-        color: yellow;
-    }
-}
-
-.table > thead > tr > th{
-    font-size: 1.2em;
-    font-weight: bold; 
-    // font-family: 'track';
-}
-
-.navbar-brand{
-    font-weight: bolder;
-    font-size: 2em
-}
-
-/* Navbar */
-
-.nav .navbar-nav > li {
-    
-}
-.navbar-inverse .navbar-nav > li > a:hover{
-    color: red;
-}
-
-#navbtn{
-    margin-top: 10px;
-}
-
-
-
-.navbar-fixed-top{
-  position: relative; /* this can also be static */
-}
-
-.navbar-fixed-bottom{
-    /*position: relative;*/
-}
-
-/* body */
-
-.btn{
-    float: left;
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-body{
-    // height: 100vh;
-    // background: radial-gradient(#232B30, #344046) no-repeat center center fixed;    
-    // --webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
-    position: relative;
-    background-color: #464643;
-    font-family: cantarell;
-    font-size: 180%;
-}
-
-.fancybox > img{
-    height: auto;
-    width: auto;
-    max-height: 230px;
-    max-width: 230px;
-}
-
-// input, textarea {
-//     font-family: zwodrei;
-
-// }
-
-a{
-  font-weight: bold;
-}
-
-#main{
-    color: black;
-    margin-top: 75px;
-    padding: 30px 40px 30px 40px;
-    background: white;
-    border-color: black;
-    border-width: 5px;
-    border-radius: 15px;
-
-    .main-heading{
-        width: 100%;
-        text-align: center;
-    }
-
-    h2.forum-header{
-        font-size: 1.6em;
-    }
-
-    #posts > div{
-        padding: 0px;
-    }
-
-    a{
-        font-weight: bold;
-    }
-
-    a:hover{
-      color: red;
-      text-decoration: none;
-    }
-
-    .center_header{
-        color: #4682B4;
-        text-align: center; 
-    }
-    
-    .main-body{
-        margin-top: 100px;
-    }
-
-}
-
-.main{
-    margin-top: 75px;
-    a{
-      font-weight: bold;
-    }
-}
-
-
-.alertnotice {
     position: absolute; 
     bottom: -50px; 
-    left: 0px; 
+    left: 0px;
     text-align: left;
     z-index:9999; 
-}
-
- .alertnotice {
      -moz-animation: cssAnimation 0s ease-in 2s forwards;
      /* Firefox */
      -webkit-animation: cssAnimation 0s ease-in 2s forwards;
@@ -196,25 +56,150 @@ a{
      animation-fill-mode: forwards;
  }
 
- @keyframes cssAnimation {
+/************* Tables *************/
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{
+    background-color: #999999;
+}
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th{
+    background-color: #4682B4;
+    a{
+      color: yellow;
+    }
+}
+.table > thead > tr > th{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    /* font-family: 'track'; */
+}
+.table > tbody > tr > td{
+    text-align: center;
+}
+
+/************* Navbar *************/
+.navbar-brand{
+    font-weight: bolder;
+    font-size: 2em
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: red;
+}
+#navbtn{
+    margin-top: 10px;
+}
+.navbar-fixed-top{
+  position: relative; /* this can also be static */
+}
+.navbar-fixed-bottom{
+    /*position: relative;*/
+}
+
+/************* body *************/
+body{
+    /*height: 100vh;
+    background: radial-gradient(#232B30, #344046) no-repeat center center fixed;    
+    --webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+    position: relative;
+    background-color: #464643;
+    font-family: cantarell;
+    font-size: 180%;
+}
+/* needed for output image zoom feature */
+.fancybox > img{
+    height: auto;
+    width: auto;
+    max-height: 230px;
+    max-width: 230px;
+}
+/*input, textarea {
+    font-family: zwodrei;
+}*/
+/* highlights links */
+a{
+  font-weight: bold;
+}
+/* pads fields in forms so labels are closer to their field relative to others */
+.field{
+  padding-bottom: 15px;
+}
+/* pops horizontal lines for contrast */
+hr{
+  border-color: #777;
+}
+/* floats buttons in a row */
+.btn{
+    float: left;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.black-text{
+    color: black; 
+    resize: none;
+}
+/* application layout MAIN div, containing all yield and render elements */
+#main{
+    color: black;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    padding: 30px 40px 50px 40px;
+    background: white;
+    border-color: black;
+    border-width: 5px;
+    border-radius: 15px;
+    /* headings within pages */
+    .main-heading{
+        width: 100%;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    /* forum heading */
+    h2.forum-header{
+        font-size: 1.6em;
+    }
+    /* forum post styling */
+    #posts > div{
+        padding: 0px;
+    }
+    /* standard in page link hover */
+    a:hover{
+      color: red;
+      text-decoration: none;
+    }
+    /* table links must contrast nicely with blue highlight */
+    .table > tbody > tr > td > a:hover{
+      color: white;
+      text-decoration: none;
+    }
+    .center_header{
+        color: #4682B4;
+        text-align: center; 
+    }
+    .main-body{
+        margin-top: 100px;
+    }
+}
+/* inner main divs */
+.main{
+  /*padding-bottom: 30px;*/
+  a{
+    font-weight: bold;
+  }
+}
+/* keyframes */
+@keyframes cssAnimation {
      to {
          width:0;
          height:0;
          overflow:hidden;
      }
  }
- @-webkit-keyframes cssAnimation {
+@-webkit-keyframes cssAnimation {
      to {
          width:0;
          height:0;
          visibility:hidden;
      }
  }
-
-
-.black-text{
-    color: black; 
-    resize: none;
-}
-
-
