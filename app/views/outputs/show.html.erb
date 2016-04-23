@@ -1,7 +1,5 @@
-<div class="panel-heading">Results for <%= @output.group_name %>: Input #<%= @count %></div>
- 
-<div class="panel-body"> 
-
+<div class="main"> 
+  <h2 class="main-heading">Results for <%= @output.group_name %>: Input #<%= @count %></h2>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -81,3 +79,4 @@
 
   <hr />
   <%= button_to 'Back', :back, method: :get, class: 'btn btn-sm btn-primary' %>
+</div>

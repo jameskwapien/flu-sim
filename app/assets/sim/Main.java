@@ -135,17 +135,12 @@ public class Main {
 	try {
       Runtime rt = Runtime.getRuntime();
       Process pr = rt.exec("Rscript ../Rscripts/pieCharts.R " + GROUP);
-      System.out.printf("pre wait call");
       pr.waitFor();
-      System.out.printf("post wait call");
     }
     catch (Exception e){
       System.out.printf("Command line call is not working: " + e);
     }
     /* end of R call */
-    final long finish = System.currentTimeMillis();
-    System.out.printf("Time to run: %02.2f seconds\n",(float)(finish-start)/1000);
-
     final long finish = System.currentTimeMillis();
     System.out.printf("Time to run: %02.2f seconds\n",(float)(finish-start)/1000);
   }
