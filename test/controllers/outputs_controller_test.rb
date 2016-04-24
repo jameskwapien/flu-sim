@@ -4,6 +4,10 @@ class OutputsControllerTest < ActionController::TestCase
   setup do
     sign_in users(:one)
     @output = outputs(:one)
+    @group = groups(:one)
+    @controller.session[:group_id] = @group.id
+    @input = inputs(:one)
+    @controller.session[:input_id] = @input.id
   end
 
   test "should get index" do
@@ -19,7 +23,7 @@ class OutputsControllerTest < ActionController::TestCase
 
   test "should create output" do
     assert_difference('Output.count') do
-      post :create, output: { cityID: @output.cityID, day: @output.day, group_name: @output.group_name, immune: @output.immune, money_left: @output.money_left, money_spent_ads: @output.money_spent_ads, money_spent_vaccines: @output.money_spent_vaccines, pop_age0: @output.pop_age0, pop_age1: @output.pop_age1, pop_age2: @output.pop_age2, population: @output.population, sick: @output.sick, sick_age0: @output.sick_age0, sick_age1: @output.sick_age1, sick_age2: @output.sick_age2, vaccs_left: @output.vaccs_left }
+      post :create, output: { cityID: @output.cityID, day: @output.day, group_name: @output.group_name, immune: @output.immune, pop_age0: @output.pop_age0, pop_age1: @output.pop_age1, pop_age2: @output.pop_age2, population: @output.population, sick: @output.sick, sick_age0: @output.sick_age0, sick_age1: @output.sick_age1, sick_age2: @output.sick_age2, vaccs_left: @output.vaccs_left }
     end
 
     assert_redirected_to output_path(assigns(:output))
@@ -36,7 +40,7 @@ class OutputsControllerTest < ActionController::TestCase
   end
 
   test "should update output" do
-    patch :update, id: @output, output: { cityID: @output.cityID, day: @output.day, group_name: @output.group_name, immune: @output.immune, money_left: @output.money_left, money_spent_ads: @output.money_spent_ads, money_spent_vaccines: @output.money_spent_vaccines, pop_age0: @output.pop_age0, pop_age1: @output.pop_age1, pop_age2: @output.pop_age2, population: @output.population, sick: @output.sick, sick_age0: @output.sick_age0, sick_age1: @output.sick_age1, sick_age2: @output.sick_age2, vaccs_left: @output.vaccs_left }
+    patch :update, id: @output, output: { cityID: @output.cityID, day: @output.day, group_name: @output.group_name, immune: @output.immune, pop_age0: @output.pop_age0, pop_age1: @output.pop_age1, pop_age2: @output.pop_age2, population: @output.population, sick: @output.sick, sick_age0: @output.sick_age0, sick_age1: @output.sick_age1, sick_age2: @output.sick_age2, vaccs_left: @output.vaccs_left }
     assert_redirected_to output_path(assigns(:output))
   end
 

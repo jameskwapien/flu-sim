@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
   def show
     redirect_to post_path(@post)
     flash[:alert] = "Comments cannot be shown"
-
   end
 
   def update

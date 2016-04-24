@@ -4,13 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   # USER has many GROUPS through MEMBERSHIPS
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
   # USER has many POSTS and many COMMENTS
-  has_many :posts
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :posts, dependent: :destroy
   # USER has many COURSES through REGISTRATIONS
-  has_many :enrollments
+  has_many :enrollments, dependent: :destroy
   has_many :courses, through: :enrollments
   # For invite code validation
   attr_accessor :invite_code
