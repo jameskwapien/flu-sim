@@ -13,4 +13,4 @@ one:
   created_at: <%= Time.now %>
   seed: 7
   ads: 5
-  money_left: 35
+  money_left: 10000

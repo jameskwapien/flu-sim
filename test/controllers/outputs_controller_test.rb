@@ -4,16 +4,49 @@ class OutputsControllerTest < ActionController::TestCase
   setup do
     sign_in users(:one)
     @output = outputs(:one)
-    @group = groups(:one)
-    @controller.session[:group_id] = @group.id
     @input = inputs(:one)
+    @group = groups(:one)
+    @course = courses(:one)
+    @controller.session[:group_id] = @group.id
     @controller.session[:input_id] = @input.id
+    @controller.session[:course_id] = @course.id
   end
 
   test "should get index" do
+    # system "cd public/assets/images && rm -rf '#{@group.name}'"
+    # controller set up
+    old_controller = @controller
+    # Inputs controller methods
+    @controller = InputsController.new
+    assert_difference('Input.count', +1) do
+      post :create, input: { group_name: @input.group_name, vaccines: @input.vaccines, school_off: @input.school_off, days: @input.days, ads: @input.ads, money_left: @input.money_left, seed: @input.seed }
+    end
+    assert_response :redirect
+    # Outputs controller methods
+    @controller = old_controller
+    @controller.session[:input_id] = Input.where(:group_name => @input.group_name).first.id
     get :index
     assert_response :success
     assert_not_nil assigns(:outputs)
+    # Inputs controller methods
+    @controller = InputsController.new
+    assert_difference('Input.count', -1) do
+      delete :destroy, id: @input
+    end
+    assert_response :redirect
+    # Outputs controller methods
+    @controller = old_controller
+    assert_difference('Output.count', 0) do
+      Input.where(:group_name => @input.group_name).destroy_all
+    end
+    # Groups controller methods
+    @controller = GroupsController.new
+    assert_difference('Group.count', -1) do
+      delete :destroy, id: @group
+    end
+    assert_response :redirect
+    # Reset to Outputs controller
+    @controller = old_controller
   end
 
   test "should get new" do
@@ -30,7 +63,7 @@ class OutputsControllerTest < ActionController::TestCase
   end
 
   test "should show output" do
-    get :show, id: @output
+    get :show, id: @output.id
     assert_response :success
   end
 

@@ -52,8 +52,6 @@ class GroupsController < ApplicationController
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
-
-    group_directory(@group.name)
   end
 
   # PATCH/PUT /groups/1

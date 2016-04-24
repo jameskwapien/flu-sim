@@ -1,7 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  group_name: MyString
+  id: 1
+  group_name: Thisgroup
   vaccs_left: 1
   population: 1
   sick: 1

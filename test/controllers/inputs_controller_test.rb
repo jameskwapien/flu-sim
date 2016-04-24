@@ -22,7 +22,7 @@ class InputsControllerTest < ActionController::TestCase
   test "should create input" do
     post :create, input: { group_name: @input.group_name, vaccines: @input.vaccines, school_off: @input.school_off, days: @input.days, ads: @input.ads, money_left: @input.money_left, seed: @input.seed }
 
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should show input" do
