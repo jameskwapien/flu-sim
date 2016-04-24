@@ -14,3 +14,14 @@ one:
   seed: 7
   ads: 5
   money_left: 10000
+
+two:
+  id: 2
+  group_name: Thisgroup
+  vaccines: 10
+  school_off: 0
+  days: 1
+  created_at: <%= Time.now %>
+  seed: 7
+  ads: 5
+  money_left: 10000
