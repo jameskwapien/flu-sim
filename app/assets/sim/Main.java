@@ -60,7 +60,7 @@ public class Main {
     // Loop through inputs and simulate with given values for the specified amount of days
     while (inputs.next()) {
       input_id = inputs.getInt("id");
-      vaccines += inputs.getInt("vaccines")/CITY_COUNT; //for now, must be greater or equal than city count.
+      vaccines = inputs.getInt("vaccines")/CITY_COUNT; //for now, must be greater or equal than city count.
       ads = inputs.getInt("ads"); //for now, must be greater of equal than city count.
       DAYS = inputs.getInt("days");
       school_off = inputs.getInt("school_off"); //for now, must be greater of equal than city count.

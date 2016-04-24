@@ -23,8 +23,11 @@
     <%= f.label :money_left, 'Budget' %><br />
     <% if Output.belongs_to_group(@session_group.name).exists? %>
       <%= f.number_field :money_left, value: last_input.money_left, readonly: true %>
+      <%= f.hidden_field :seed, value: last_input.seed %>
     <% else %>
       <%= f.number_field :money_left, value: 1000000, readonly: true %>
+      <% prng = Random.new %>
+      <%= f.hidden_field :seed, value: prng.rand(100) %>
     <% end %>
   </div> 
 

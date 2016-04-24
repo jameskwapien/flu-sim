@@ -23,8 +23,8 @@ public class City {
     int ads;
     int citySchoolsOff;
     int vacc_chance;
-    int money_left;
-    int money_spent_vaccines;
+    // int money_left;
+    // int money_spent_vaccines;
     Person[] people;
     Randomize random;
     int id;
@@ -41,8 +41,6 @@ City(int id, Randomize random, int CITYPOP, int CITYFAM, int STARTSICK){
     people = new Person[CITYPOP]; //people matches number assigned to the city
     //they will not reside outside of the city because at this point they dont need to
     //they will be committed at the end of each day.  
-    //No travel between cities as of right now 
-    //but what if we had a public one that is effected by the cities next to it
     
     works = new int[CITYPOP/10+1];
     worksSick = new int[CITYPOP/10+1];
@@ -86,10 +84,9 @@ City(int id, Randomize random, int CITYPOP, int CITYFAM, int STARTSICK){
   }
 
   boolean vaccinate(){
-    if (cityVaccines == 0)
+    if (cityVaccines == 0){
       return false;
-
-    if (random.nextInt(population) < vacc_chance){
+    }else if (random.nextInt(population) < vacc_chance){
       cityVaccines--;
       return true;
     }
@@ -99,7 +96,7 @@ City(int id, Randomize random, int CITYPOP, int CITYFAM, int STARTSICK){
     void commit(int input_no, int day, DB data, String group){
         //this will be the database portion
         data.toDatabase(input_no, this, group, day);
-        print(day, this); // Comment out in production.
+        // print(day, this); // Comment out in production.
     }
 
     // synchronize when printing to console so it doesn't get all messed up
@@ -115,11 +112,11 @@ City(int id, Randomize random, int CITYPOP, int CITYFAM, int STARTSICK){
 
     void setParams(int vaccines, int ads, int schoolsOff, int vacc_chance, int money_left){
         cityVaccines = vaccines;
-        money_spent_vaccines += vaccines * 13;
+        // money_spent_vaccines += vaccines * 13;
         this.ads = ads;
         citySchoolsOff = schoolsOff;
         this.vacc_chance = vacc_chance;
-        this.money_left = money_left;
+        // this.money_left = money_left;
     }
 }
 
