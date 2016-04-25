@@ -1,6 +1,8 @@
-<h1>Editing User</h1>
+<div class="main">
+	<h2 class="main-heading">Editing User</h2>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+	<hr />
+	<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm btn-primary' %>
+</div>

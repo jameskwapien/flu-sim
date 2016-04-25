@@ -1,0 +1,18 @@
+<div class = "table-responsive">
+	<table class="table table-striped table-hover">
+		<thead>
+	    	<tr>
+	      		<th>Class</th>
+	    	</tr>
+	  	</thead>
+	  	<tbody>
+	  		<% Course.all.each do |course| %>
+		  		<% Enrollment.in_this_course(course.id, current_user.id).each do |enrollment| %>
+					<tr>
+						<td><%= link_to enrollment.course.name_crn, leaderboard_show_path(course_id: course.id), method: :get %></td>
+					</tr>
+				<% end %>
+			<% end %>
+	  	</tbody>
+	</table>
+</div>

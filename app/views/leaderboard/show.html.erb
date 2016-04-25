@@ -1,0 +1,40 @@
+<div class="main">	
+	<h2 class="main-heading">Leaderboard: <%= Course.find(@course_id).name_crn %></h2>
+	<div class = "table-responsive">
+		<table class="table table-striped table-hover">
+			<thead>
+		    	<tr>
+		      		<th>Group</th>
+		      		<th># of Days</th>
+		      		<th># of Sick</th>
+		      		<th># of Immune</th>
+		    	</tr>
+		  	</thead>
+		  	<tbody>
+		  		<% Group.belongs_to_course(@course_id).each do |group| %>
+		  			<% output = Output.belongs_to_group(group.name).last %>
+	    			<% input = Input.find(output.input_id) %>
+	    			<% sick = 0 %>
+	    			<% immune = 0 %>
+	    			<% Output.belongs_to_input(output.input_id).each do |o| %>
+	        			<% sick += o.sick %>
+	        			<% immune += o.immune %>
+				  	<% end %>
+		  			<% day = 0 %>	    				
+		  			<% Input.belongs_to_group(group.name).each do |input| %>
+	    				<% day += input.days %>
+	    			<% end %>
+					<tr>
+						<td><%= group.name %></td>
+						<td><%= day %></td>
+						<td><%= sick %></td>
+						<td><%= immune %></td>
+					</tr>
+				<% end %>
+		  	</tbody>
+		</table>
+	</div>
+
+	<hr />
+	<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm btn-primary' %>
+</div>

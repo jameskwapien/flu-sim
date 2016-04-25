@@ -1,5 +1,6 @@
 class InputsController < ApplicationController
   before_action :set_input, only: [:show, :edit, :update, :destroy]
+  helper_method :get_simulation_limit
 
   def get_simulation_limit
     get_session_group

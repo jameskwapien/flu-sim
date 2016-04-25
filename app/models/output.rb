@@ -1,23 +1,23 @@
 class Output < ActiveRecord::Base
 	belongs_to :input
 
-	def self.belongs_to_input(inputID)
-		Output.where(:input_id => inputID)
+	def self.belongs_to_input(input_id)
+		Output.where(:input_id => input_id)
 	end
 
-	def self.belongs_to_group(groupName)
-		Output.where(:group_name => groupName)
+	def self.belongs_to_group(group_name)
+		Output.where(:group_name => group_name)
 	end
 
-	def self.num_uniq_days(groupName)
-		Output.belongs_to_group(groupName)
+	def self.num_uniq_days(group_name)
+		Output.belongs_to_group(group_name)
 	end
 
-	def self.max_day(groupName)
-		Output.where(:group_name => groupName).maximum(:day)
+	def self.max_day(group_name)
+		Output.where(:group_name => group_name).maximum(:day)
 	end	
 
-	def self.money_left(groupName)
-		Output.belongs_to_group(groupName).last(:money_left)
+	def self.money_left(group_name)
+		Output.belongs_to_group(group_name).last(:money_left)
 	end
 end

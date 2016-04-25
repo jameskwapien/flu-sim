@@ -1,5 +1,6 @@
 class OutputsController < ApplicationController
   before_action :set_output, only: [:show, :edit, :update, :destroy]
+  helper_method :get_summary_data
 
   def run_sim
     get_session_group
@@ -22,21 +23,6 @@ class OutputsController < ApplicationController
     end
   end
 
-  def get_summary_data
-    @input = Input.find(@output.input_id)
-    @vaccs_money = @input.vaccines * 13
-    @vaccs_left = 0
-    @population = 0
-    @sick = 0
-    @immune = 0
-    Output.belongs_to_input(@output.input_id).each do |o| 
-      @vaccs_left += o.vaccs_left
-      @population += o.population
-      @sick += o.sick
-      @immune += o.immune
-    end
-  end
-
   def get_day_span
     @day_span = 0
     Input.belongs_to_group(@output.group_name).each do |i|
@@ -46,6 +32,20 @@ class OutputsController < ApplicationController
     end
   end
       
+  def get_summary_data(output)
+      @input = Input.find(output.input_id)
+      @vaccs_money = @input.vaccines * 13
+      @vaccs_left = 0
+      @population = 0
+      @sick = 0
+      @immune = 0
+      Output.belongs_to_input(output.input_id).each do |o| 
+          @vaccs_left += o.vaccs_left
+          @population += o.population
+          @sick += o.sick
+          @immune += o.immune
+      end
+    end
 
   # GET /outputs
   # GET /outputs.json
@@ -79,7 +79,7 @@ class OutputsController < ApplicationController
   # GET /outputs/1.json
   def show
     get_output_count
-    get_summary_data
+    get_summary_data(@output)
     get_day_span
   end
 

@@ -106,7 +106,19 @@
   </div>
 
   <% unless flag %>
-    <%= button_to 'New Input', new_input_path(group_id: @group.id), method: :get, class: 'btn btn-sm btn-primary' %><br />
+    <% days = 0 %>
+    <% Input.belongs_to_group(@group.name).each do |i| %>
+      <% days += i.days %>
+    <% end %>
+    <% available = Course.find(@group.course_id).days %>
+    <% limit = available - days %>
+      <% unless limit == 0 %>
+        <%= button_to 'New Input', new_input_path(group_id: @group.id), method: :get, class: 'btn btn-sm btn-primary' %><br />
+      <% else %>
+          <p>There are no available simulation days left! Please wait for your instructor to open more.</p>
+      <% end %>
+  <% else %>
+    <p>You can't add an input unless the last input has already been run.</p>
   <% end %>
   
   <div id="showLoad" style="display: none">

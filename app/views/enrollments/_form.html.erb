@@ -14,8 +14,12 @@
   <% end %>
 
   <% if @session_course.present? %>
-    <% query = User.in_a_course(@session_course.id) %>
-    <% inverse = User.where('id not in (?)', query.pluck(:id)).student %>
+    <% if User.in_a_course(@session_course.id).present? %>
+      <% query = User.in_a_course(@session_course.id) %>
+      <% inverse = User.where('id not in (?)', query.pluck(:id)).student %>
+    <% else %>
+      <% inverse = User.student %>
+    <% end %>
     <div class="field">
       <%= f.label :user_id %><br />
       <%= f.collection_select :user_id, inverse, :id, :name, prompt: true %>

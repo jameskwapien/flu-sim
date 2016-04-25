@@ -2,7 +2,7 @@
 
 <div class="main">
 
-<h2 class="main-heading">Course Control Panel</h2>
+<h2 class="main-heading">Class Control Panel</h2>
 
 	<table class="table table-striped table-hover">
 	  <thead>
@@ -48,7 +48,7 @@
         <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Group</th>
+            <th colspan="2">Group</th>
             <th>Last Signed In</th>
             <th>Login Count</th>
             <th>Controls</th>
@@ -66,16 +66,22 @@
 						<%= user.groups.first.name %>
               		<% end %>
               	<% elsif Group.belongs_to_course(@course.id).present? %>
-              		<%= link_to 'Add to Group',new_membership_path(course_id: @course.id, user_id: user.id) %>
+              		<%= link_to 'Add to Group', new_membership_path(course_id: @course.id, user_id: user.id) %>
               	<% else %>
               		None Available
+              	<% end %>
+              </td>
+              <td>
+              	<% if User.in_a_course_group(@course.id).match(user.id).exists? %>
+              		<% membership = Membership.belongs_to_course(@course.id).belongs_to_user(user.id).first %>
+              		<%= link_to 'Remove from Group', membership, method: :delete, data: {confirm: 'Are you sure?' } %>
               	<% end %>
               </td>
               <td><%= user.last_sign_in_at %></td>
               <td><%= user.sign_in_count %></td>
               <td>
               	<% Enrollment.in_this_course(@course.id, user.id).each do |e| %>
-              		<%= link_to 'Remove', e, method: :delete, data: { confirm: 'Are you sure?' } %> 
+              		<%= link_to 'Remove from Class', e, method: :delete, data: { confirm: 'Are you sure?' } %> 
               	<% end %>
               </td>
             </tr>

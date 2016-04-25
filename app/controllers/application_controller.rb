@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   helper_method :get_session_course, :get_session_group, :get_session_input, :whatAmI, :get_output_count
-  
+
   def after_sign_in_path_for(user)
     root_path
   end

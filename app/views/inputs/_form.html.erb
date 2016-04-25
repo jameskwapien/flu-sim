@@ -59,7 +59,7 @@
 
   <label id="totalCost" onmouseover="document.getElementById('totalCost').innerHTML = ('Money Spent: $').concat(+(document.getElementById('input_ads').value) + +(document.getElementById('input_vaccines').value * 13));">Total Cost</label>
   <div class="actions">
-    <%= f.submit 'New Input', class: 'btn btn-sm btn-primary', :onmouseover=> "document.getElementById('totalCost').innerHTML = ('Money Spent: $').concat(+(document.getElementById('input_ads').value) + +(document.getElementById('input_vaccines').value * 13));"%><br />
+    <%= f.submit 'Create Input', class: 'btn btn-sm btn-primary', :onmouseover=> "document.getElementById('totalCost').innerHTML = ('Money Spent: $').concat(+(document.getElementById('input_ads').value) + +(document.getElementById('input_vaccines').value * 13));"%><br />
   </div>
 
 <% end %>

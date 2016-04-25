@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'leaderboard/index'
-
   resources :groups
   resources :memberships
   resources :enrollments
@@ -13,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   get 'calendar/index'
+  get 'leaderboard/index'
+  get 'leaderboard/show'
 
   post 'groups/run_sim'
 
