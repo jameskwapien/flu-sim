@@ -32,9 +32,10 @@ class PostsController < ApplicationController
 	def destroy
 		@post.destroy
 		respond_to do |format|
-		  format.js {render inline: "location.reload();" }
+			format.html { redirect_to posts_url, notice: 'Post was successfully deleted.' }
+		  # format.js {render inline: "location.reload();" }
 		end
-		flash[:notice] = "Post deleted."
+		# flash[:notice] = "Post deleted."
 	end
 
 	private

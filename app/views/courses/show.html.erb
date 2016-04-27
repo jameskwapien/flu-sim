@@ -3,98 +3,102 @@
 <div class="main">
 
 <h2 class="main-heading">Class Control Panel</h2>
-
-	<table class="table table-striped table-hover">
-	  <thead>
-	    <tr>
-	      <th>Name</th>
-	      <th>CRN</th>
-	      <th>Instructor</th>
-	      <th>Email</th>
-	      <th>Calendar Days</th>
-	      <th colspan="2">Controls</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td><%= @course.name %></td>
-	      <td><%= @course.crn %></td>
-	      <td><%= @course.instructor %></td>
-	      <td><%= @course.email %></td>
-	      <td><%= @course.days %></td>
-	      <td>
-	      	<% if Enrollment.in_course(@course.id).present? %>
-	      		<%= link_to 'Update Calendar', edit_course_path(@course) %>
-	      	<% else %>
-	      		<%= link_to 'Edit', edit_course_path(@course) %>
-	      	<% end %>
-	      </td>
-	      <td>
-	      	<% unless User.in_a_course(@course.id).exists? %>
-	      		<%= link_to 'Delete', @course, method: :delete, data: { confirm: 'Are you sure?' } %>
-	      	<% end %>
-	      </td>
-	    </tr>
-	  </tbody>
-	</table>
+	<div class = "table-responsive">
+		<table class="table table-striped table-hover">
+		  <thead>
+		    <tr>
+		      <th>Name</th>
+		      <th>CRN</th>
+		      <th>Instructor</th>
+		      <th>Email</th>
+		      <th>Calendar Days</th>
+		      <th colspan="2">Controls</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td><%= @course.name %></td>
+		      <td><%= @course.crn %></td>
+		      <td><%= @course.instructor %></td>
+		      <td><%= @course.email %></td>
+		      <td><%= @course.days %></td>
+		      <td>
+		      	<% if Enrollment.in_course(@course.id).present? %>
+		      		<%= link_to 'Update Calendar', edit_course_path(@course) %>
+		      	<% else %>
+		      		<%= link_to 'Edit', edit_course_path(@course) %>
+		      	<% end %>
+		      </td>
+		      <td>
+		      	<% unless User.in_a_course(@course.id).exists? %>
+		      		<%= link_to 'Delete', @course, method: :delete, data: { confirm: 'Are you sure?' } %>
+		      	<% end %>
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
 
 	<p>Important: If you do not update the calendar (via the 'Update Calendar' link above) with an open simulation period, your class will not be able to run any simulations. Likewise, if they reach your simulation limit, they will have to wait for you to open more dates.</p>
 
 	<hr />
 	<h2>Enrolled Students</h2>
 
-	<table class="table table-striped table-hover">
-      <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th colspan="2">Group</th>
-            <th>Last Signed In</th>
-            <th>Login Count</th>
-            <th>Controls</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% User.in_a_course(@course.id).each do |user| %>
-          <% if !user.instructor? && !user.admin? %>
-            <tr>
-              <td><%= user.name %></td>
-              <td><%= user.email %></td>
-              <td>
-              	<% if User.in_a_course_group(@course.id).match(user.id).exists? %> 
-              		<% User.in_a_course_group(@course.id).match(user.id).each do |user| %>
-						<%= user.groups.first.name %>
-              		<% end %>
-              	<% elsif Group.belongs_to_course(@course.id).present? %>
-              		<%= link_to 'Add to Group', new_membership_path(course_id: @course.id, user_id: user.id) %>
-              	<% else %>
-              		None Available
-              	<% end %>
-              </td>
-              <td>
-              	<% if User.in_a_course_group(@course.id).match(user.id).exists? %>
-              		<% membership = Membership.belongs_to_course(@course.id).belongs_to_user(user.id).first %>
-              		<%= link_to 'Remove from Group', membership, method: :delete, data: {confirm: 'Are you sure?' } %>
-              	<% end %>
-              </td>
-              <td><%= user.last_sign_in_at %></td>
-              <td><%= user.sign_in_count %></td>
-              <td>
-              	<% Enrollment.in_this_course(@course.id, user.id).each do |e| %>
-              		<%= link_to 'Remove from Class', e, method: :delete, data: { confirm: 'Are you sure?' } %> 
-              	<% end %>
-              </td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
+	<div class = "table-responsive">
+		<table class="table table-striped table-hover">
+	      <thead>
+	        <tr>
+	            <th>Name</th>
+	            <th>Email</th>
+	            <th colspan="2">Group</th>
+	            <th>Last Signed In</th>
+	            <th>Login Count</th>
+	            <th>Controls</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <% User.in_a_course(@course.id).each do |user| %>
+	          <% if !user.instructor? && !user.admin? %>
+	            <tr>
+	              <td><%= user.name %></td>
+	              <td><%= user.email %></td>
+	              <td>
+	              	<% if User.in_a_course_group(@course.id).match(user.id).exists? %> 
+	              		<% User.in_a_course_group(@course.id).match(user.id).each do |user| %>
+							<%= user.groups.first.name %>
+	              		<% end %>
+	              	<% elsif Group.belongs_to_course(@course.id).present? %>
+	              		<%= link_to 'Add to Group', new_membership_path(course_id: @course.id, user_id: user.id) %>
+	              	<% else %>
+	              		None Available
+	              	<% end %>
+	              </td>
+	              <td>
+	              	<% if User.in_a_course_group(@course.id).match(user.id).exists? %>
+	              		<% membership = Membership.belongs_to_course(@course.id).belongs_to_user(user.id).first %>
+	              		<%= link_to 'Remove from Group', membership, method: :delete, data: {confirm: 'Are you sure?' } %>
+	              	<% end %>
+	              </td>
+	              <td><%= user.last_sign_in_at %></td>
+	              <td><%= user.sign_in_count %></td>
+	              <td>
+	              	<% Enrollment.in_this_course(@course.id, user.id).each do |e| %>
+	              		<%= link_to 'Remove from Class', e, method: :delete, data: { confirm: 'Are you sure?' } %> 
+	              	<% end %>
+	              </td>
+	            </tr>
+	          <% end %>
+	        <% end %>
+	      </tbody>
+	    </table>
+	</div>
     <%= button_to 'New Enrollment', new_enrollment_path, method: :get, class: 'btn btn-sm btn-primary' %><br />
 
     <hr />
     <h2>Groups</h2>
 
 	<% unless Group.belongs_to_course(@course.id).blank? %>
+	<div class = "table-responsive">
 	    <table class="table table-striped table-hover">
 		  <thead>
 		    <tr>
@@ -119,6 +123,7 @@
 		    <% end %>
 		  </tbody>
 		</table>
+	</div>
 	<% else %>
 		<p>There are no groups for this class yet. You can add groups to this course by clicking the 'New Group' button below.</p>
 	<% end %>
