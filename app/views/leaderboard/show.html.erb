@@ -12,28 +12,39 @@
 		  	</thead>
 		  	<tbody>
 		  		<% Group.belongs_to_course(@course_id).each do |group| %>
-		  			<% output = Output.belongs_to_group(group.name).last %>
-	    			<% input = Input.find(output.input_id) %>
-	    			<% sick = 0 %>
-	    			<% immune = 0 %>
-	    			<% Output.belongs_to_input(output.input_id).each do |o| %>
-	        			<% sick += o.sick %>
-	        			<% immune += o.immune %>
-				  	<% end %>
-		  			<% day = 0 %>	    				
-		  			<% Input.belongs_to_group(group.name).each do |input| %>
-	    				<% day += input.days %>
-	    			<% end %>
-					<tr>
-						<td><%= group.name %></td>
-						<td><%= day %></td>
-						<td><%= sick %></td>
-						<td><%= immune %></td>
-					</tr>
+		  			<% unless Output.belongs_to_group(group.name).empty? %>
+			  			<% output = Output.belongs_to_group(group.name).last %>
+		    			<% input = Input.find(output.input_id) %>
+		    			<% sick = 0 %>
+		    			<% immune = 0 %>
+		    			<% Output.belongs_to_input(output.input_id).each do |o| %>
+		        			<% sick += o.sick %>
+		        			<% immune += o.immune %>
+					  	<% end %>
+			  			<% day = 0 %>	    				
+			  			<% Input.belongs_to_group(group.name).each do |input| %>
+		    				<% day += input.days %>
+		    			<% end %>
+						<tr>
+							<td><%= group.name %></td>
+							<td><%= day %></td>
+							<td><%= sick %></td>
+							<td><%= immune %></td>
+						</tr>
+					<% else %>
+						<tr>
+							<td><%= group.name %></td>
+							<td>N/A</td>
+							<td>N/A</td>
+							<td>N/A</td>
+						</tr>
+					<% end %>
 				<% end %>
 		  	</tbody>
 		</table>
 	</div>
+
+	<p>If any groups have <i>N/A</i> for their data fields, it means they have not run the simulation yet.</p>
 
 	<hr />
 	<%= button_to 'Back', :back, method: :get, class: 'btn btn-sm btn-primary' %>

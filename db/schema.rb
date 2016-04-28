@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423195918) do
+ActiveRecord::Schema.define(version: 20160428004843) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20160423195918) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string  "type",      limit: 255
     t.string  "name",      limit: 255
     t.integer "course_id", limit: 4
   end
