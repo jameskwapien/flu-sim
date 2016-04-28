@@ -6,11 +6,11 @@ class Ability
     if user.admin? 
         can :manage, :all 
 
-    elsif user.instructor?
-        can :manage, Course
-        can :manage, Group
-
     else
+        can :manage, Course if user.instructor?
+
+        can :manage, Group if user.instructor?
+
         can [:edit, :update, :destroy], [Post] do |post|
             post.user == user
         end
