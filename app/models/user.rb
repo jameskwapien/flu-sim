@@ -19,11 +19,13 @@ class User < ActiveRecord::Base
   # Invite code validation
   def invite_code_valid
     if self.instructor?
-      unless self.invite_code == "999"
-        self.errors.add(:invite_code, "invalid for instructors.")
-      end
+      correct = Code.where(:active => true, :instructor => self.invite_code)
+        if correct.empty? 
+          self.errors.add(:invite_code, "invalid for instructors.")
+        end
     else
-      unless self.invite_code == "000"
+      correct = Code.where(:active => true, :student => self.invite_code)
+      if correct.empty?
         self.errors.add(:invite_code, "invalid for students.")
       end
     end

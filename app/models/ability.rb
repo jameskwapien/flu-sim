@@ -6,6 +6,10 @@ class Ability
     if user.admin? 
         can :manage, :all 
 
+    elsif user.instructor?
+        can :manage, Course
+        can :manage, Group
+
     else
         can [:edit, :update, :destroy], [Post] do |post|
             post.user == user
@@ -17,7 +21,7 @@ class Ability
 
         can [:index, :show, :new, :create], [Post, Comment]
 
-        
+        can [:index, :show], [Group]
     end
     # Define abilities for the passed in user here. For example:
     #

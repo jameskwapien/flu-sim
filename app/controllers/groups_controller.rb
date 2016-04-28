@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   helper_method :group_directory, :rem_group_directory
+  load_and_authorize_resource
 
   # Create group specific directories
   def group_directory(group)

@@ -1,0 +1,21 @@
+<div class="main">
+	<h2 class="main-heading">Show Code</h2>
+<p>
+  <strong>Active:</strong>
+  <%= @code.active %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @code.student %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @code.instructor %>
+</p>
+
+<br />
+<hr />
+<%= button_to 'Edit', edit_code_path(@code), method: :get, class: 'btn btn-sm btn-primary' %>
+<%= button_to 'Back', codes_path, method: :get, class: 'btn btn-sm btn-primary' %>

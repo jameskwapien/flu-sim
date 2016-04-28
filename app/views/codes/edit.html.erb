@@ -1,0 +1,9 @@
+<div class="main">	
+	<h2 class="main-heading">Editing Code</h2>
+
+	<%= render 'form' %>
+
+	<hr />
+	<%= button_to 'Show', @code, method: :get, class: 'btn btn-sm btn-primary' %>
+	<%= button_to 'Back', codes_path, method: :get, class: 'btn btn-sm btn-primary' %>
+</div>

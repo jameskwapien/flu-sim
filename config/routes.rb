@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :codes
   resources :groups
   resources :memberships
   resources :enrollments

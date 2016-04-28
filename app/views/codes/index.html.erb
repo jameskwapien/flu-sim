@@ -1,0 +1,36 @@
+<div class="main">
+  <h2 class="main-heading">Access Codes</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Active</th>
+          <th>Student</th>
+          <th>Instructor</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @codes.each do |code| %>
+          <tr>
+            <td><%= code.active %></td>
+            <td><%= code.student %></td>
+            <td><%= code.instructor %></td>
+            <td><%= link_to 'Show', code %></td>
+            <td><%= link_to 'Edit', edit_code_path(code) %></td>
+            <td><%= link_to 'Delete', code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  <br />
+
+  <%= button_to 'New Code', new_code_path, method: :get, class: 'btn btn-sm btn-primary' %>
+  <br />
+  <br />
+  <hr />
+  <%= button_to 'Back', :back, method: :get, class: 'bnt btn-sm btn-primary' %>
+
+</div>

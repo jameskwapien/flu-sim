@@ -11,5 +11,5 @@ one:
   encrypted_password: abcdef1
   created_at: <%= Time.now %>
   instructor: false
-  admin: false
+  admin: true
 
